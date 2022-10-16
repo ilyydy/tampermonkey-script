@@ -31,6 +31,7 @@ new-script() {
     cp -r template "$SRC_DIR"/"$name" && echo "script dir $name done"
   fi
 }
+
 reload() {
   # shellcheck source=/dev/null
   source dev.sh
