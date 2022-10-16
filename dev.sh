@@ -28,7 +28,7 @@ new-script() {
   if [ -d "$SRC_DIR"/"$name" ]; then
     echo "script dir $name already exists."
   else
-    cp -r template "$SRC_DIR"/"$name" && echo "script dir $name done"
+    cp -r "$SRC_DIR"/template "$SRC_DIR"/"$name" && echo "script dir $name done"
   fi
 }
 

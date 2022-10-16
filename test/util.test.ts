@@ -1,7 +1,7 @@
 import { describe, expect, test, vi } from 'vitest';
 import path, { join } from 'node:path';
 
-import * as util from '@/util';
+import * as util from '../src/util';
 
 const fileName = 'util.test.ts';
 

@@ -1,7 +1,8 @@
 import monkey from 'vite-plugin-monkey';
 import { join } from 'node:path';
+import { fileURLToPath } from 'node:url';
 
-import { getMonkeyEntry, getProjectRootAbsPath } from '@/util';
+import { getMonkeyEntry, getProjectRootAbsPath } from './util';
 
 export type MonkeyOption = Parameters<typeof monkey>[0];
 
