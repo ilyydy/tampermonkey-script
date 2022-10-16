@@ -1,0 +1,5 @@
+{
+  "$schema": "https://json.schemastore.org/lintstagedrc.schema.json",
+  "src/**/*": ["eslint --cache --fix"],
+  "test/**/*": ["eslint --cache --fix"]
+}
