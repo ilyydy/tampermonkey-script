@@ -9,6 +9,8 @@
 ```shell
 pnpm i
 pnpm dev $script_name # 会打开浏览器 tampermonkey 安装脚本
+pnpm test # 全量测试
+pnpm test $script_name # 测试指定脚本
 
 pnpm build $script_name # 编译脚本到 dist 目录下
 
@@ -22,6 +24,9 @@ cz # 用 commitizen 替换 git commit
 . dev.sh
 
 dev $script_name
+vtest # 全量测试
+vtest $script_name # 测试指定脚本
+
 build $script_name
 new-script $script_name
 ...
