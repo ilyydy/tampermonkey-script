@@ -18,22 +18,25 @@ export function getDirname(metaUrl: string) {
 }
 
 export function getProjectRootAbsPath() {
-  return fileURLToPath(new URL('..', import.meta.url));
+  return dirname(fileURLToPath(new URL('../package.json', import.meta.url)));
 }
 
-export function isProd() {
-  return process.env.NODE_ENV === 'production';
+export function isProd(env?: string) {
+  return env === 'production';
 }
 
-const mainEntry = 'main.ts';
+export function getEnv() {
+  return process.env.NODE_ENV;
+}
 
-export function getMonkeyEntry(scriptDirName: string) {
-  return isProd()
+export const mainEntry = 'main.ts';
+
+export function getMonkeyEntry(scriptDirName: string, env = getEnv()) {
+  return isProd(env)
     ? join(getDirname(import.meta.url), scriptDirName, mainEntry)
     : mainEntry;
 }
 
-console.log(getMonkeyEntry('csdn'));
-export function getScriptName(scriptDirName: string) {
-  return isProd() ? scriptDirName : `${scriptDirName}-test`;
+export function getScriptName(scriptDirName: string, env = getEnv()) {
+  return isProd(env) ? scriptDirName : `${scriptDirName}-test`;
 }
