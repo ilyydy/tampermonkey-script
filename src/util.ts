@@ -21,13 +21,9 @@ export function getProjectRootAbsPath() {
   return dirname(fileURLToPath(new URL('../package.json', import.meta.url)));
 }
 
-export function isProd(env?: string) {
-  return env === 'production';
-}
+export const isProd = (env?: string) => env === 'production';
 
-export function getEnv() {
-  return process.env.NODE_ENV;
-}
+export const getEnv = () => process.env.NODE_ENV;
 
 export const mainEntry = 'main.ts';
 
