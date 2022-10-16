@@ -24,6 +24,7 @@
     "@types/lodash-es": "4.17.6",
     "@types/node": "16.11.66",
     "@vitejs/plugin-vue": "3.1.2",
+    "@vitest/coverage-c8": "^0.24.3",
     "@vue/eslint-config-prettier": "7.0.0",
     "@vue/eslint-config-typescript": "11.0.2",
     "cz-conventional-changelog": "3.3.0",
