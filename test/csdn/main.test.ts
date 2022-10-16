@@ -1,12 +1,23 @@
 import { describe, expect, test, vi } from 'vitest';
 import path, { join } from 'node:path';
+import { Window } from 'happy-dom';
 
-import * as util from '../../src/util';
+import run from '../../src/csdn/script';
 
-const fileName = 'util.test.ts';
+test('csdn test', () => {
+  const html = `
+<pre data-index="0" class="set-code-hide prettyprint">
+  <code class="prism language-java has-numbering" onclick="mdcp.signin(event)" style="position: unset;">
+    <span class="token annotation punctuation">@Data</span>
+  </code>
+</pre>
+`;
 
-test('getFileAbsPath test', () => {
-  expect(util.getFileAbsPath(import.meta.url)).toBe(
-    join(process.cwd(), 'test', fileName)
-  );
+  const window = new Window();
+  const document = window.document;
+  document.body.innerHTML = html;
+  run(document as any);
+
+  expect(document.body.innerHTML.split('user-select: auto').length - 1).toBe(2);
+  expect(document.body.innerHTML.includes('onclick')).toBe(false);
 });
