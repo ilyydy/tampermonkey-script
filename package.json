@@ -18,6 +18,9 @@
   "dependencies": {
     "vue": "3.2.41"
   },
+  "engines": {
+    "node": "^14.18.0 || >=16.0.0"
+  },
   "devDependencies": {
     "@commitlint/cli": "17.1.2",
     "@commitlint/config-conventional": "17.1.0",
