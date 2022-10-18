@@ -2,7 +2,7 @@ import { join } from 'node:path';
 
 import type { MonkeyOption } from 'vite-plugin-monkey';
 
-import { getMonkeyEntry, getProjectRootAbsPath } from './util';
+import { getProjectRootAbsPath } from './util';
 
 export const baseViteConfig = {
   build: {
@@ -13,7 +13,7 @@ export const baseViteConfig = {
 
 export function getBaseMonkeyConfig(scriptDirName: string): MonkeyOption {
   return {
-    entry: getMonkeyEntry(scriptDirName),
+    entry: 'src/main.ts',
     userscript: {
       name: `${scriptDirName}.user.js`,
       namespace: 'https://github.com/ilyydy/tampermonkey-script',

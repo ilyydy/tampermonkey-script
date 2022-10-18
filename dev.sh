@@ -2,50 +2,63 @@
 
 PROJECT_ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" &>/dev/null && pwd)"
 
-SRC_DIR="$PROJECT_ROOT_DIR"/src
-TEST_DIR="$PROJECT_ROOT_DIR"/test
+PACKAGES_DIR="./packages"
 
 lint() {
-  pnpm lint
-}
-
-check() {
-  pnpm type-check
+  if [ -z "$1" ]; then
+    pnpm -r --parallel lint
+  else
+    pnpm -F "$1" lint
+  fi
 }
 
 dev() {
   local name=${1:?"Please provide script dir name."}
-  pnpm vite "$SRC_DIR"/"$name"
+  pnpm -F "$name" dev
 }
 
 build() {
-  local name=${1:?"Please provide script dir name."}
-  pnpm type-check && pnpm vite build "$SRC_DIR"/"$name"
+  if [ -z "$1" ]; then
+    pnpm -r --parallel build
+  else
+    pnpm -F "$1" build
+  fi
 }
 
 vtest() {
   if [ -z "$1" ]; then
-    pnpm test "$TEST_DIR"
+    pnpm -r --parallel test
   else
-    pnpm test "$TEST_DIR"/"$1"
+    pnpm -F "$1" test
   fi
 }
 
 vcoverage() {
   if [ -z "$1" ]; then
-    pnpm coverage "$TEST_DIR"
+    pnpm -r --parallel coverage
   else
-    pnpm coverage "$TEST_DIR"/"$1"
+    pnpm -F "$1" coverage
+  fi
+}
+
+type-check() {
+  if [ -z "$1" ]; then
+    pnpm -r --parallel type-check
+  else
+    pnpm -F "$1" type-check
   fi
 }
 
 new-script() {
   local name=${1:?"Please provide script dir name."}
 
-  if [ -d "$SRC_DIR"/"$name" ]; then
+  if [ -d "$PACKAGES_DIR"/"$name" ]; then
     echo "script dir $name already exists."
   else
-    cp -r "$SRC_DIR"/template "$SRC_DIR"/"$name" && echo "script dir $name done"
+    cp -r "$PACKAGES_DIR"/template "$PACKAGES_DIR"/"$name" &&
+      sed -i "0,/TODO/ s/TODO/$name/" "$PACKAGES_DIR"/"$name"/package.json &&
+      pnpm -F "$name" i &&
+      echo "create script dir $name done"
   fi
 }
 

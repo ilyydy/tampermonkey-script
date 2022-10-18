@@ -1,13 +1,13 @@
 import { describe, expect, test, vi } from 'vitest';
 import path, { join } from 'node:path';
 
-import * as util from '../src/util';
+import * as util from './util';
 
 const fileName = 'util.test.ts';
 
 test('getFileAbsPath test', () => {
   expect(util.getFileAbsPath(import.meta.url)).toBe(
-    join(process.cwd(), 'test', fileName)
+    join(process.cwd(), 'packages', fileName)
   );
 });
 
@@ -16,29 +16,17 @@ test('getFilename test', () => {
 });
 
 test('getDirAbsPath test', () => {
-  expect(util.getDirAbsPath(import.meta.url)).toBe(join(process.cwd(), 'test'));
+  expect(util.getDirAbsPath(import.meta.url)).toBe(
+    join(process.cwd(), 'packages')
+  );
 });
 
 test('getDirname test', () => {
-  expect(util.getDirname(import.meta.url)).toBe('test');
+  expect(util.getDirname(import.meta.url)).toBe('packages');
 });
 
 test('getProjectRootAbsPath test', () => {
   expect(util.getProjectRootAbsPath()).toBe(process.cwd());
-});
-
-describe.concurrent('getMonkeyEntry test', () => {
-  const scriptDirName = 'a';
-
-  test('production', () => {
-    expect(util.getMonkeyEntry(scriptDirName, 'production')).toBe(
-      path.join('src', scriptDirName, util.mainEntry)
-    );
-  });
-
-  test('local dev or test', () => {
-    expect(util.getMonkeyEntry(scriptDirName)).toBe(util.mainEntry);
-  });
 });
 
 describe.concurrent('getScriptName test', () => {

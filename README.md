@@ -8,11 +8,14 @@
 
 ```shell
 pnpm i
-pnpm dev $script_name # 会打开浏览器 tampermonkey 安装脚本
-pnpm test # 全量测试
-pnpm test $script_name # 测试指定脚本
 
-pnpm build $script_name # 编译脚本到 dist 目录下
+pnpm -F $script_name dev # 会打开浏览器 tampermonkey 安装脚本
+
+pnpm test # 全量测试
+pnpm -F $script_name test # 测试指定脚本
+
+pnpm build # 全量编译
+pnpm -F $script_name build # 编译脚本到 dist 目录下
 
 pnpm i -g commitizen
 cz # 用 commitizen 替换 git commit
@@ -24,11 +27,14 @@ cz # 用 commitizen 替换 git commit
 . dev.sh
 
 dev $script_name
+
 vtest # 全量测试
 vtest $script_name # 测试指定脚本
 
-build $script_name
-new-script $script_name
+build # 全量编译
+build $script_name # 编译脚本到 dist 目录下
+
+new-script $script_name # 新建一个 script 项目
 ...
 ```
 

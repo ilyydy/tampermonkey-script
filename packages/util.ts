@@ -25,14 +25,6 @@ export const isProd = (env?: string) => env === 'production';
 
 export const getEnv = () => process.env.NODE_ENV;
 
-export const mainEntry = 'main.ts';
-
-export function getMonkeyEntry(scriptDirName: string, env = getEnv()) {
-  return isProd(env)
-    ? join(getDirname(import.meta.url), scriptDirName, mainEntry)
-    : mainEntry;
-}
-
 export function getScriptName(scriptDirName: string, env = getEnv()) {
   return isProd(env) ? scriptDirName : `${scriptDirName}-test`;
 }

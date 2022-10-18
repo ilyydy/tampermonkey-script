@@ -1,0 +1,24 @@
+{
+  "name": "csdn",
+  "private": true,
+  "version": "0.0.1",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "pnpm type-check && pnpm build-only",
+    "build-only": "vite build",
+    "type-check": "tsc --noEmit",
+    "test": "vitest run",
+    "coverage": "vitest run --coverage",
+    "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix",
+    "lint:check": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts"
+  },
+  "packageManager": "^pnpm@7.13.4",
+  "dependencies": {},
+  "devDependencies": {
+    "tsx": "3.10.3",
+    "typescript": "4.8.4",
+    "vite": "3.1.8",
+    "vitest": "0.24.3"
+  }
+}
