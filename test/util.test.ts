@@ -1,13 +1,13 @@
 import { describe, expect, test, vi } from 'vitest';
 import path, { join } from 'node:path';
 
-import * as util from './util';
+import * as util from '../packages/util';
 
 const fileName = 'util.test.ts';
 
 test('getFileAbsPath test', () => {
   expect(util.getFileAbsPath(import.meta.url)).toBe(
-    join(process.cwd(), 'packages', fileName)
+    join(process.cwd(), 'test', fileName)
   );
 });
 
@@ -16,13 +16,11 @@ test('getFilename test', () => {
 });
 
 test('getDirAbsPath test', () => {
-  expect(util.getDirAbsPath(import.meta.url)).toBe(
-    join(process.cwd(), 'packages')
-  );
+  expect(util.getDirAbsPath(import.meta.url)).toBe(join(process.cwd(), 'test'));
 });
 
 test('getDirname test', () => {
-  expect(util.getDirname(import.meta.url)).toBe('packages');
+  expect(util.getDirname(import.meta.url)).toBe('test');
 });
 
 test('getProjectRootAbsPath test', () => {

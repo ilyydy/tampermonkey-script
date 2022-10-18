@@ -12,7 +12,7 @@ pnpm i
 pnpm -F $script_name dev # 会打开浏览器 tampermonkey 安装脚本
 
 pnpm test # 全量测试
-pnpm -F $script_name test # 测试指定脚本
+pnpm test $script_name # 测试指定脚本
 
 pnpm build # 全量编译
 pnpm -F $script_name build # 编译脚本到 dist 目录下

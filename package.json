@@ -7,8 +7,8 @@
     "build": "pnpm type-check && pnpm build-only",
     "type-check": "pnpm -r --parallel type-check",
     "build-only": "pnpm -r --parallel build",
-    "test": "pnpm -r --parallel test",
-    "coverage": "pnpm -r --parallel coverage",
+    "test": "vitest run",
+    "coverage": "vitest run --coverage",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore",
     "lint:check": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --ignore-path .gitignore",
     "prepare": "husky install"

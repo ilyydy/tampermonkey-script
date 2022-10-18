@@ -25,19 +25,21 @@ build() {
   fi
 }
 
+TEST_DIR="test"
+
 vtest() {
   if [ -z "$1" ]; then
-    pnpm -r --parallel test
+    pnpm test
   else
-    pnpm -F "$1" test
+    pnpm test "$TEST_DIR"/"$1"
   fi
 }
 
 vcoverage() {
   if [ -z "$1" ]; then
-    pnpm -r --parallel coverage
+    pnpm coverage
   else
-    pnpm -F "$1" coverage
+    pnpm coverage "$TEST_DIR"/"$1"
   fi
 }
 

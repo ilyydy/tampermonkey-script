@@ -1,7 +1,7 @@
 import { describe, expect, test, vi } from 'vitest';
 import { Window } from 'happy-dom';
 
-import run from '../src/script';
+import run from '../../packages/csdn/src/script';
 
 test('csdn test', () => {
   const html = `
