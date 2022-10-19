@@ -40,6 +40,4 @@ new-script $script_name # 新建一个 script 项目
 
 ## 脚本列表
 
-### [CSDN](./src/csdn/)
-
-对 CSDN 页面优化处理
+- [csdn](./packages/csdn/README.md): 对 CSDN 页面优化处理
