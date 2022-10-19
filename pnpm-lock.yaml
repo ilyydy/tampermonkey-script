@@ -17,7 +17,7 @@ importers:
       cz-conventional-changelog: 3.3.0
       eslint: 8.25.0
       eslint-plugin-vue: 9.6.0
-      happy-dom: 7.5.13
+      happy-dom: 7.6.0
       husky: 8.0.1
       lint-staged: 13.0.3
       lodash-es: 4.17.21
@@ -38,14 +38,14 @@ importers:
       '@types/lodash-es': 4.17.6
       '@types/node': 16.11.68
       '@vitejs/plugin-vue': 3.1.2_vite@3.1.8+vue@3.2.41
-      '@vitest/coverage-c8': 0.24.3_happy-dom@7.5.13
+      '@vitest/coverage-c8': 0.24.3_happy-dom@7.6.0
       '@vue/eslint-config-prettier': 7.0.0_znq2sm4m5bonjw4qqm6mwhbe2q
       '@vue/eslint-config-typescript': 11.0.2_qsmcthc5ijamuzfurbvbpwqwnm
       conventional-changelog-cli: 2.2.2
       cz-conventional-changelog: 3.3.0
       eslint: 8.25.0
       eslint-plugin-vue: 9.6.0_eslint@8.25.0
-      happy-dom: 7.5.13
+      happy-dom: 7.6.0
       husky: 8.0.1
       lint-staged: 13.0.3
       lodash-es: 4.17.21
@@ -54,7 +54,7 @@ importers:
       typescript: 4.8.4
       vite: 3.1.8
       vite-plugin-monkey: 2.8.0_vite@3.1.8
-      vitest: 0.24.3_happy-dom@7.5.13
+      vitest: 0.24.3_happy-dom@7.6.0
       vue-tsc: 1.0.8_typescript@4.8.4
 
   packages/csdn:
@@ -649,11 +649,11 @@ packages:
       vue: 3.2.41
     dev: true
 
-  /@vitest/coverage-c8/0.24.3_happy-dom@7.5.13:
+  /@vitest/coverage-c8/0.24.3_happy-dom@7.6.0:
     resolution: {integrity: sha512-tAmMyHxWYnAwGeJb7QgTuEX8aLasTg4X1/6INobXa/7wYGEJ28CACFO5iLn1HzFVPoLvhsS3luQjiflGjjSMRQ==}
     dependencies:
       c8: 7.12.0
-      vitest: 0.24.3_happy-dom@7.5.13
+      vitest: 0.24.3_happy-dom@7.6.0
     transitivePeerDependencies:
       - '@edge-runtime/vm'
       - '@vitest/browser'
@@ -2423,8 +2423,8 @@ packages:
       uglify-js: 3.17.3
     dev: true
 
-  /happy-dom/7.5.13:
-    resolution: {integrity: sha512-J8OehFPl71FtmkifnxqUpFWHA9jJ5pIwnEAFdZvZnXexev6RIgtkB6H/pTEHhBp7qCGUPHhkjvF3gqKxlBTeLg==}
+  /happy-dom/7.6.0:
+    resolution: {integrity: sha512-QnNsiblZdyVDzW5ts6E7ub79JnabqHJeJgt+1WGNq9fSYqS/r/RzzTVXCZSDl6EVkipdwI48B4bgXAnMZPecIw==}
     dependencies:
       css.escape: 1.5.1
       he: 1.2.0
@@ -4229,7 +4229,7 @@ packages:
       - terser
     dev: true
 
-  /vitest/0.24.3_happy-dom@7.5.13:
+  /vitest/0.24.3_happy-dom@7.6.0:
     resolution: {integrity: sha512-aM0auuPPgMSstWvr851hB74g/LKaKBzSxcG3da7ejfZbx08Y21JpZmbmDYrMTCGhVZKqTGwzcnLMwyfz2WzkhQ==}
     engines: {node: '>=v14.16.0'}
     hasBin: true
@@ -4256,7 +4256,7 @@ packages:
       '@types/node': 16.11.66
       chai: 4.3.6
       debug: 4.3.4
-      happy-dom: 7.5.13
+      happy-dom: 7.6.0
       local-pkg: 0.4.2
       strip-literal: 0.4.2
       tinybench: 2.3.0
