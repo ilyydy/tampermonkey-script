@@ -4,6 +4,10 @@
 
 基于 [vite-plugin-monkey](https://github.com/lisonge/vite-plugin-monkey) 的 tampermonkey 脚本开发仓库
 
+## 脚本列表
+
+- [csdn](./packages/csdn/README.md): 对 CSDN 页面优化处理
+
 ## 开发
 
 ```shell
@@ -37,7 +41,3 @@ build $script_name # 编译脚本到 dist 目录下
 new-script $script_name # 新建一个 script 项目
 ...
 ```
-
-## 脚本列表
-
-- [csdn](./packages/csdn/README.md): 对 CSDN 页面优化处理
