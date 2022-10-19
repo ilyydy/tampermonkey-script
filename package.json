@@ -11,6 +11,7 @@
     "coverage": "vitest run --coverage",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore",
     "lint:check": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --ignore-path .gitignore",
+    "changelog": "pnpm -r --parallel changelog",
     "prepare": "husky install"
   },
   "packageManager": "^pnpm@7.13.4",
@@ -30,6 +31,7 @@
     "@vitest/coverage-c8": "0.24.3",
     "@vue/eslint-config-prettier": "7.0.0",
     "@vue/eslint-config-typescript": "11.0.2",
+    "conventional-changelog-cli": "^2.2.2",
     "cz-conventional-changelog": "3.3.0",
     "eslint": "8.25.0",
     "eslint-plugin-vue": "9.6.0",
