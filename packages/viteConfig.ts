@@ -18,6 +18,7 @@ export function getBaseMonkeyConfig(scriptDirName: string): MonkeyOption {
       name: `${scriptDirName}.user.js`,
       namespace: 'https://github.com/ilyydy/tampermonkey-script',
       author: 'ilyydy',
+      license: 'MIT',
       supportURL: 'https://github.com/ilyydy/tampermonkey-script',
     },
     build: {
