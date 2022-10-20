@@ -14,8 +14,16 @@ export default defineConfig({
     monkey(
       merge(getBaseMonkeyConfig(dirName), {
         userscript: {
+          name: {
+            '': 'csdn 页面优化处理',
+            zh: 'csdn 页面优化处理',
+          },
           version,
-          description: 'CSDN 页面优化处理',
+          description: {
+            '': '解除页面对复制的限制',
+            zh: '解除页面对复制的限制',
+            'zh-CN': '解除页面对复制的限制',
+          },
           icon: 'https://g.csdnimg.cn/static/logo/favicon32.ico',
           match: ['http*://blog.csdn.net/*'],
         },

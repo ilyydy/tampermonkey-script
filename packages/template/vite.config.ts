@@ -14,8 +14,18 @@ export default defineConfig({
     monkey(
       merge(getBaseMonkeyConfig(dirName), {
         userscript: {
+          name: {
+            '': 'TODO',
+            zh: 'TODO',
+            en: 'TODO',
+          },
           version,
-          description: 'TODO',
+          description: {
+            '': 'TODO',
+            zh: 'TODO',
+            en: 'TODO ',
+            'zh-CN': 'TODO',
+          },
           icon: 'TODO',
           match: ['TODO'],
         },
