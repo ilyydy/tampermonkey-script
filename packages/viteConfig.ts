@@ -20,8 +20,8 @@ export function getBaseMonkeyConfig(scriptDirName: string): MonkeyOption {
       author: 'ilyydy',
       license: 'MIT',
       supportURL: 'https://github.com/ilyydy/tampermonkey-script/issues',
-      updateURL: `https://github.com/ilyydy/tampermonkey-script/blob/${scriptDirName}/${scriptDirName}.meta.js`,
-      downloadURL: `https://github.com/ilyydy/tampermonkey-script/blob/${scriptDirName}/${scriptDirName}.user.js`,
+      updateURL: `https://raw.githubusercontent.com/ilyydy/tampermonkey-script/${scriptDirName}/${scriptDirName}.meta.js`,
+      downloadURL: `https://raw.githubusercontent.com/ilyydy/tampermonkey-script/${scriptDirName}/${scriptDirName}.user.js`,
     },
     build: {
       metaFileName: true,
