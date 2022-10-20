@@ -67,7 +67,7 @@ new-script() {
   else
     cp -r "$PACKAGES_DIR"/template "$PACKAGES_DIR"/"$name" &&
       sed -i "s/TODO/$name/" "$PACKAGES_DIR"/"$name"/package.json &&
-      sed -i "0,/TODO/ s/TODO/$name/" "$PACKAGES_DIR"/"$name"/README.md &&
+      sed -i "s/TODO/$name/" "$PACKAGES_DIR"/"$name"/README.md &&
       pnpm -F "$name" i &&
       echo "create script dir $name done"
   fi
