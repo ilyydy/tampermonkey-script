@@ -11,6 +11,7 @@
 ## 脚本列表
 
 - [csdn](./packages/csdn/README.md): 对 CSDN 页面优化处理
+- [douban-bookshelf](./packages/douban-bookshelf/README.md): 豆瓣读书虚拟书架
 
 ## 开发
 
