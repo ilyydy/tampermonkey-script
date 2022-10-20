@@ -1,8 +1,12 @@
 # tampermonkey-script
 
+[![LICENSE](https://img.shields.io/github/license/ilyydy/tampermonkey-script)](https://github.com/ilyydy/tampermonkey-script/blob/main/LICENSE)
+[![codecov](https://codecov.io/gh/ilyydy/tampermonkey-script/branch/main/graph/badge.svg?token=85M2JFKXLY)](https://codecov.io/gh/ilyydy/tampermonkey-script)
+[![ci test](https://github.com/ilyydy/tampermonkey-script/actions/workflows/ci-test.yml/badge.svg?branch=main)](https://github.com/ilyydy/tampermonkey-script/actions/workflows/ci-test.yml)
+[![node compatibility](https://img.shields.io/badge/node-%3E%3D16-brightgreen)](https://nodejs.org/en/about/releases/)
 [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
 
-基于 [vite-plugin-monkey](https://github.com/lisonge/vite-plugin-monkey) 的 tampermonkey 脚本开发仓库
+基于 [vite-plugin-monkey](https://github.com/lisonge/vite-plugin-monkey) 的 [tampermonkey](https://www.tampermonkey.net/) 脚本开发仓库
 
 ## 脚本列表
 
@@ -10,7 +14,7 @@
 
 ## 开发
 
-```shell
+```bash
 pnpm i
 
 pnpm -F $script_name dev # 会打开浏览器 tampermonkey 安装脚本
@@ -27,7 +31,7 @@ cz # 用 commitizen 替换 git commit
 
 另外提供了 [dev.sh](dev.sh) 集成了常用开发命令
 
-```shell
+```bash
 . dev.sh
 
 dev $script_name
