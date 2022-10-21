@@ -62,10 +62,16 @@ changelog() {
 new-script() {
   local name=${1:?"Please provide script dir name."}
 
+  if [ -z "$2" ]; then
+    template="template"
+  else
+    template="template-$2"
+  fi
+
   if [ -d "$PACKAGES_DIR"/"$name" ]; then
     echo "script dir $name already exists."
   else
-    cp -r "$PACKAGES_DIR"/template "$PACKAGES_DIR"/"$name" &&
+    cp -r "$PACKAGES_DIR"/"$template" "$PACKAGES_DIR"/"$name" &&
       sed -i "s/TODO/$name/" "$PACKAGES_DIR"/"$name"/package.json &&
       sed -i "s/TODO/$name/" "$PACKAGES_DIR"/"$name"/README.md &&
       pnpm -F "$name" i &&
