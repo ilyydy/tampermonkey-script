@@ -2,7 +2,7 @@
 // @name               csdn 页面优化处理
 // @name:zh            csdn 页面优化处理
 // @namespace          https://github.com/ilyydy/tampermonkey-script
-// @version            0.0.2
+// @version            0.0.3
 // @author             ilyydy
 // @description        解除页面对复制的限制
 // @description:zh     解除页面对复制的限制

@@ -2,7 +2,7 @@
 // @name               csdn 页面优化处理
 // @name:zh            csdn 页面优化处理
 // @namespace          https://github.com/ilyydy/tampermonkey-script
-// @version            0.0.2
+// @version            0.0.3
 // @author             ilyydy
 // @description        解除页面对复制的限制
 // @description:zh     解除页面对复制的限制
@@ -18,9 +18,12 @@
 (function() {
   "use strict";
   function run(doc) {
+    var _a;
     doc.body.contentEditable = "true";
     for (const element of Array.from(doc.getElementsByTagName("pre"))) {
       element.style.userSelect = "auto";
+      element.classList.remove("set-code-hide");
+      (_a = element.querySelector(".hide-preCode-box")) == null ? void 0 : _a.remove();
     }
     for (const element of Array.from(doc.getElementsByTagName("code"))) {
       element.style.userSelect = "auto";
