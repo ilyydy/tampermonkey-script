@@ -1,4 +1,10 @@
-## [0.0.3](https://github.com/ilyydy/tampermonkey-script/compare/csdn@0.0.2...csdn@0.0.3) (2022-10-21)
+## [0.0.4](https://github.com/ilyydy/tampermonkey-script/compare/csdn@0.0.3...csdn@0.0.4) (2022-10-22)
+
+### Bug Fixes
+
+* 更换 updateURL downloadURL ([16b4286](https://github.com/ilyydy/tampermonkey-script/commit/16b4286f73d81641187753f366edcec18da07e38))
+
+## [0.0.3](https://github.com/ilyydy/tampermonkey-script/compare/csdn@0.0.2...csdn@0.0.3) (2022-10-21)## [0.0.3](https://github.com/ilyydy/tampermonkey-script/compare/csdn@0.0.2...csdn@0.0.3) (2022-10-21)
 
 
 ### Features
