@@ -8,7 +8,7 @@ importers:
       '@commitlint/config-conventional': 17.1.0
       '@rushstack/eslint-patch': 1.2.0
       '@types/lodash-es': 4.17.6
-      '@types/node': 16.11.68
+      '@types/node': 16.18.0
       '@vitejs/plugin-vue': 3.1.2
       '@vitest/coverage-c8': 0.24.3
       '@vue/eslint-config-prettier': 7.0.0
@@ -36,7 +36,7 @@ importers:
       '@commitlint/config-conventional': 17.1.0
       '@rushstack/eslint-patch': 1.2.0
       '@types/lodash-es': 4.17.6
-      '@types/node': 16.11.68
+      '@types/node': 16.18.0
       '@vitejs/plugin-vue': 3.1.2_vite@3.1.8+vue@3.2.41
       '@vitest/coverage-c8': 0.24.3_happy-dom@7.6.0
       '@vue/eslint-config-prettier': 7.0.0_5t6g5rrqvlktilv3n3sw5svbdi
@@ -448,13 +448,13 @@ packages:
   /@types/concat-stream/1.6.1:
     resolution: {integrity: sha512-eHE4cQPoj6ngxBZMvVf6Hw7Mh4jMW4U9lpGmS5GBPB9RYxlFg+CHaVN7ErNY4W9XfLIEn20b4VDYaIrbq0q4uA==}
     dependencies:
-      '@types/node': 16.11.68
+      '@types/node': 16.18.0
     dev: true
 
   /@types/form-data/0.0.33:
     resolution: {integrity: sha512-8BSvG1kGm83cyJITQMZSulnl6QV8jqAGreJsc5tPu1Jq0vTSOiY/k24Wx82JRpWwZSqrala6sd5rWi6aNXvqcw==}
     dependencies:
-      '@types/node': 16.11.68
+      '@types/node': 16.18.0
     dev: true
 
   /@types/istanbul-lib-coverage/2.0.4:
@@ -491,8 +491,8 @@ packages:
     resolution: {integrity: sha512-+xvMrGl3eAygKcf5jm+4zA4tbfEgmKM9o6/glTmN0RFVdu2VuFXMYYtRmuv3zTGCgAYMnEZLde3B7BTp+Yxcig==}
     dev: true
 
-  /@types/node/16.11.68:
-    resolution: {integrity: sha512-JkRpuVz3xCNCWaeQ5EHLR/6woMbHZz/jZ7Kmc63AkU+1HxnoUugzSWMck7dsR4DvNYX8jp9wTi9K7WvnxOIQZQ==}
+  /@types/node/16.18.0:
+    resolution: {integrity: sha512-LqYqYzYvnbCaQfLAwRt0zboqnsViwhZm+vjaMSqcfN36vulAg7Pt0T83q4WZO2YOBw3XdyHi8cQ88H22zmULOA==}
     dev: true
 
   /@types/node/8.10.66:
