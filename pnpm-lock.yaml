@@ -80,7 +80,7 @@ importers:
       vite: 3.1.8
       vitest: 0.24.3
       vue: 3.2.41
-      vue-tsc: 1.0.8
+      vue-tsc: 1.0.9
     dependencies:
       vue: 3.2.41
     devDependencies:
@@ -90,26 +90,28 @@ importers:
       typescript: 4.8.4
       vite: 3.1.8
       vitest: 0.24.3
-      vue-tsc: 1.0.8_typescript@4.8.4
+      vue-tsc: 1.0.9_typescript@4.8.4
 
   packages/template-vue:
     specifiers:
+      '@vitejs/plugin-vue': 3.1.2
       conventional-changelog-cli: 2.2.2
       tsx: 3.10.3
       typescript: 4.8.4
       vite: 3.1.8
       vitest: 0.24.3
       vue: 3.2.41
-      vue-tsc: 1.0.8
+      vue-tsc: 1.0.9
     dependencies:
       vue: 3.2.41
     devDependencies:
+      '@vitejs/plugin-vue': 3.1.2_vite@3.1.8+vue@3.2.41
       conventional-changelog-cli: 2.2.2
       tsx: 3.10.3
       typescript: 4.8.4
       vite: 3.1.8
       vitest: 0.24.3
-      vue-tsc: 1.0.8_typescript@4.8.4
+      vue-tsc: 1.0.9_typescript@4.8.4
 
 packages:
 
@@ -4077,6 +4079,17 @@ packages:
     dependencies:
       tslib: 1.14.1
       typescript: 4.8.4
+    dev: true
+
+  /tsx/3.10.3:
+    resolution: {integrity: sha512-yni2/n09VMOihGw6fCTKAowvQZ7BOWRVlpW9RnJPDakoHqHIlpxWieUUr5fnQa3zWoR1Jb902Un4Bv/JsKQ4RQ==}
+    hasBin: true
+    dependencies:
+      '@esbuild-kit/cjs-loader': 2.4.0
+      '@esbuild-kit/core-utils': 3.0.0
+      '@esbuild-kit/esm-loader': 2.5.0
+    optionalDependencies:
+      fsevents: 2.3.2
     dev: true
 
   /tsx/3.10.4:
