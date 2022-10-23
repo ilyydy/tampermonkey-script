@@ -73,6 +73,7 @@ importers:
 
   packages/douban-bookshelf:
     specifiers:
+      '@vitejs/plugin-vue': 3.1.2
       conventional-changelog-cli: 2.2.2
       tsx: 3.10.3
       typescript: 4.8.4
@@ -83,6 +84,7 @@ importers:
     dependencies:
       vue: 3.2.41
     devDependencies:
+      '@vitejs/plugin-vue': 3.1.2_vite@3.1.8+vue@3.2.41
       conventional-changelog-cli: 2.2.2
       tsx: 3.10.3
       typescript: 4.8.4

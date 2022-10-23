@@ -1,6 +1,7 @@
 import { defineConfig } from 'vite';
-import monkey from 'vite-plugin-monkey';
+import monkey, { cdn } from 'vite-plugin-monkey';
 import { merge } from 'lodash-es';
+import vue from '@vitejs/plugin-vue';
 
 import { version } from './package.json';
 import { baseViteConfig, getBaseMonkeyConfig } from '../viteConfig';
@@ -11,6 +12,7 @@ const dirName = getDirname(import.meta.url);
 export default defineConfig({
   ...baseViteConfig,
   plugins: [
+    vue(),
     monkey(
       merge(getBaseMonkeyConfig(dirName), {
         userscript: {
@@ -28,6 +30,11 @@ export default defineConfig({
           },
           icon: 'TODO',
           match: ['TODO'],
+        },
+        build: {
+          externalGlobals: {
+            vue: cdn.jsdelivr('Vue', 'dist/vue.global.prod.js'),
+          },
         },
       })
     ),
