@@ -15,19 +15,21 @@ export default defineConfig({
       merge(getBaseMonkeyConfig(dirName), {
         userscript: {
           name: {
-            '': 'TODO',
-            zh: 'TODO',
-            en: 'TODO',
+            '': '豆瓣读书书架',
+            zh: '豆瓣读书书架',
           },
           version,
           description: {
-            '': 'TODO',
-            zh: 'TODO',
-            en: 'TODO ',
-            'zh-CN': 'TODO',
+            '': '无需登录，快速选择书籍加入书架，复制导出书籍信息',
+            zh: '无需登录，快速选择书籍加入书架，复制导出书籍信息',
+            'zh-CN': '无需登录，快速选择书籍加入书架，复制导出书籍信息',
           },
-          icon: 'TODO',
-          match: ['TODO'],
+          icon: 'https://img3.doubanio.com/favicon.ico',
+          match: [
+            'http*://book.douban.com/subject/*',
+            'https://book.douban.com/series/*',
+            'https://search.douban.com/book/subject_search',
+          ],
         },
       })
     ),
