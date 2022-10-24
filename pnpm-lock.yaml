@@ -22,7 +22,7 @@ importers:
       lint-staged: 13.0.3
       lodash-es: 4.17.21
       prettier: 2.7.1
-      tsx: 3.10.4
+      tsx: 3.11.0
       typescript: 4.8.4
       vite: 3.1.8
       vite-plugin-monkey: 2.8.0
@@ -50,7 +50,7 @@ importers:
       lint-staged: 13.0.3
       lodash-es: 4.17.21
       prettier: 2.7.1
-      tsx: 3.10.4
+      tsx: 3.11.0
       typescript: 4.8.4
       vite: 3.1.8
       vite-plugin-monkey: 2.8.0_vite@3.1.8
@@ -60,13 +60,13 @@ importers:
   packages/csdn:
     specifiers:
       conventional-changelog-cli: 2.2.2
-      tsx: 3.10.4
+      tsx: 3.11.0
       typescript: 4.8.4
       vite: 3.1.8
       vitest: 0.24.3
     devDependencies:
       conventional-changelog-cli: 2.2.2
-      tsx: 3.10.4
+      tsx: 3.11.0
       typescript: 4.8.4
       vite: 3.1.8
       vitest: 0.24.3
@@ -4043,8 +4043,8 @@ packages:
       typescript: 4.8.4
     dev: true
 
-  /tsx/3.10.4:
-    resolution: {integrity: sha512-sBxeSgUAPVqRgBPk6TY0yFiNDUlva9rA+Nj46oYEd89FXVD2MFWChFhybTtq7Qh1Ies/O75mQNwpLuO7m8gToA==}
+  /tsx/3.11.0:
+    resolution: {integrity: sha512-q+q4xxu41+AafVwvAGqtNJ1ekPFd33ZhTMXvgIpHMqv/W89efwDRE9IyjhEAZm5iTHsshKaf1BYWSk789BrNCA==}
     hasBin: true
     dependencies:
       '@esbuild-kit/cjs-loader': 2.4.0
