@@ -53,6 +53,16 @@ test('books test', () => {
   expect(booksStore.books).toEqual([book1]);
 });
 
+test('getBookIdx test', () => {
+  expect(booksStore.getBookIdx(book1.id)).toBe(0);
+  expect(booksStore.getBookIdx(book2.id)).toBe(-1);
+});
+
+test('hasBook test', () => {
+  expect(booksStore.hasBook(book1.id)).toBe(true);
+  expect(booksStore.hasBook(book2.id)).toBe(false);
+});
+
 test('addBook test', async () => {
   booksStore.addBook(book2);
 

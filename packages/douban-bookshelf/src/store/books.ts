@@ -17,9 +17,16 @@ export function useStore(force = false) {
   return books;
 }
 
+export function getBookIdx(id: string) {
+  return books.findIndex((i) => i.id === id);
+}
+
+export function hasBook(id: string) {
+  return getBookIdx(id) !== -1;
+}
+
 export function addBook(book: Book) {
-  const idx = books.findIndex((i) => i.id === book.id);
-  if (idx === -1) {
+  if (!hasBook(book.id)) {
     books.push(book);
   } else {
     console.log(`书籍 ${book.id} 已在书架中`);
@@ -27,7 +34,7 @@ export function addBook(book: Book) {
 }
 
 export function removeBook(id: string) {
-  const idx = books.findIndex((i) => i.id === id);
+  const idx = getBookIdx(id);
   if (idx === -1) return false;
   books.splice(idx, 1);
   return true;
