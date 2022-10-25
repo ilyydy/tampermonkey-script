@@ -178,3 +178,17 @@ test('getCoverUrl test', () => {
     'https://img2.doubanio.com/view/subject/s/public/s33932932.jpg'
   );
 });
+
+test('getAlreadyReadButton test', () => {
+  const btnAlice = subjectParser.getAlreadyReadButton(docAlice as any);
+  expect(btnAlice?.getAttribute('name')?.endsWith('collect')).toBe(true);
+
+  const btnMySkirt = subjectParser.getAlreadyReadButton(docMySkirt as any);
+  expect(btnMySkirt?.getAttribute('name')?.endsWith('collect')).toBe(true);
+
+  const btnUrlSer = subjectParser.getAlreadyReadButton(docSer as any);
+  expect(btnUrlSer?.getAttribute('name')?.endsWith('collect')).toBe(true);
+
+  const btnDing = subjectParser.getAlreadyReadButton(docDing as any);
+  expect(btnDing?.getAttribute('name')?.endsWith('collect')).toBe(true);
+});

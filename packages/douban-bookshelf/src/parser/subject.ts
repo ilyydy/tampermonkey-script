@@ -149,3 +149,7 @@ export function getBook(subjectDoc: Document) {
 
   return book;
 }
+
+export function getAlreadyReadButton(subjectDoc: Document) {
+  return subjectDoc.querySelector('#interest_sect_level > a:nth-child(3)');
+}
