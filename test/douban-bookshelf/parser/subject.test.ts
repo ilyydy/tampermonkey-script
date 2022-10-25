@@ -71,7 +71,7 @@ test('getMetaInfo test', () => {
   });
 });
 
-test.only('getExtraInfo test', () => {
+test('getExtraInfo test', () => {
   const extraAlice = subjectParser.getExtraInfo(docAlice as any);
   expect(extraAlice).toEqual({
     publishingHouse: '湖南文艺出版社',

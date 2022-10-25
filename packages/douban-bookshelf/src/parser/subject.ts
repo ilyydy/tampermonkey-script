@@ -65,39 +65,36 @@ export function getExtraInfo(subjectDoc: Document) {
     translators: [] as string[],
   };
 
-  const infoElement = subjectDoc.getElementById('info');
-  if (infoElement) {
-    const plElements = infoElement.getElementsByClassName('pl');
-    Array.from(plElements).forEach((element) => {
-      switch (element.textContent?.trim()) {
-        case '出版社:':
-          data.publishingHouse = getFromAOrText(element)[0] ?? '';
-          break;
-        case '副标题:':
-          data.subTitle = getFromText(element);
-          break;
-        case '原作名:':
-          data.originName = getFromText(element);
-          break;
-        case '译者':
-          data.translators = getFromAOrText(element);
-          break;
-        case '出版年:':
-          data.publishingTime = getFromText(element);
-          break;
-        case '页数:': {
-          const pageStr = getFromText(element);
-          data.page = pageStr ? Number.parseInt(pageStr, 10) : 0;
-          break;
-        }
-        case '丛书:':
-          data.seriesName = getFromAOrText(element)[0] ?? '';
-          break;
-        default:
-          break;
+  const plElements = subjectDoc.querySelectorAll('#info .pl');
+  Array.from(plElements).forEach((element) => {
+    switch (element.textContent?.trim()) {
+      case '出版社:':
+        data.publishingHouse = getFromAOrText(element)[0] ?? '';
+        break;
+      case '副标题:':
+        data.subTitle = getFromText(element);
+        break;
+      case '原作名:':
+        data.originName = getFromText(element);
+        break;
+      case '译者':
+        data.translators = getFromAOrText(element);
+        break;
+      case '出版年:':
+        data.publishingTime = getFromText(element);
+        break;
+      case '页数:': {
+        const pageStr = getFromText(element);
+        data.page = pageStr ? Number.parseInt(pageStr, 10) : 0;
+        break;
       }
-    });
-  }
+      case '丛书:':
+        data.seriesName = getFromAOrText(element)[0] ?? '';
+        break;
+      default:
+        break;
+    }
+  });
 
   return data;
 }
@@ -106,8 +103,7 @@ export function getScoreInfo(subjectDoc: Document) {
   const element = subjectDoc.getElementById('interest_sectl');
   const scoreStr = element?.querySelector('strong')?.textContent?.trim();
   const scorePeopleCountStr = element
-    ?.querySelector('.rating_people')
-    ?.querySelector('span')
+    ?.querySelector('.rating_people > span')
     ?.textContent?.trim();
 
   let scorePeopleCount = 0;
@@ -122,10 +118,11 @@ export function getScoreInfo(subjectDoc: Document) {
 }
 
 export function getContentBrief(subjectDoc: Document) {
-  const element = subjectDoc.getElementById('link-report');
-  if (!element) return '';
+  const introElements = Array.from(
+    subjectDoc?.querySelectorAll('#link-report .intro')
+  );
+  if (introElements.length === 0) return '';
 
-  const introElements = Array.from(element?.querySelectorAll('.intro'));
   const pElements =
     introElements[introElements.length - 1]?.getElementsByTagName('p') ?? [];
 
