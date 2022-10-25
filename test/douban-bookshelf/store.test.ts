@@ -1,7 +1,8 @@
 import { beforeAll, beforeEach, describe, expect, test, vi } from 'vitest';
 import { nextTick } from 'vue';
 
-import { booksStore } from '../../packages/douban-bookshelf/src/store/index';
+import * as booksStore from '../../packages/douban-bookshelf/src/store/books';
+import { useStore } from '../../packages/douban-bookshelf/src/store/index';
 
 import type { Book } from '../../packages/douban-bookshelf/src/types';
 
@@ -45,7 +46,7 @@ const book2: Book = {
 
 beforeEach(() => {
   localStorage.setItem(booksStore.BOOK_SHELF_KEY, JSON.stringify([book1]));
-  booksStore.init();
+  useStore(true);
 });
 
 test('books test', () => {

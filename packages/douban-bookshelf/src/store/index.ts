@@ -1,5 +1,7 @@
 import * as booksStore from './books';
 
-booksStore.init();
+export function useStore(force = false) {
+  booksStore.useStore(force);
 
-export { booksStore };
+  return { booksStore };
+}

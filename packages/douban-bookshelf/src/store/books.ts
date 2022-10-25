@@ -6,12 +6,13 @@ export const BOOK_SHELF_KEY = 'tampermonkey_douban_books';
 
 export let books: Book[];
 
-export function init() {
-  books = reactive(JSON.parse(localStorage.getItem(BOOK_SHELF_KEY) ?? '[]'));
-
-  watch(books, (newValue) => {
-    localStorage.setItem(BOOK_SHELF_KEY, JSON.stringify(newValue));
-  });
+export function useStore(force = false) {
+  if (!books || force) {
+    books = reactive(JSON.parse(localStorage.getItem(BOOK_SHELF_KEY) ?? '[]'));
+    watch(books, (newValue) => {
+      localStorage.setItem(BOOK_SHELF_KEY, JSON.stringify(newValue));
+    });
+  }
 
   return books;
 }
