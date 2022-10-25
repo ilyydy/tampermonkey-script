@@ -16,3 +16,5 @@ export interface Book {
   scorePeopleCount: number;
   contentBrief: string;
 }
+
+export type BookFields = keyof Book;
