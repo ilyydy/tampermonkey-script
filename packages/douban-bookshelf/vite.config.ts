@@ -28,6 +28,7 @@ export default defineConfig({
           },
           icon: 'https://img3.doubanio.com/favicon.ico',
           match: [
+            'http*://*book.douban.com/*',
             'http*://book.douban.com/subject/*',
             'https://book.douban.com/series/*',
             'https://search.douban.com/book/subject_search',
@@ -36,6 +37,9 @@ export default defineConfig({
         build: {
           externalGlobals: {
             vue: cdn.jsdelivr('Vue', 'dist/vue.global.prod.js'),
+          },
+          externalResource: {
+            'element-plus/dist/index.css': cdn.jsdelivr(),
           },
         },
       })
