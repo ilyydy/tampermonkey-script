@@ -126,9 +126,9 @@ export function getContentBrief(subjectDoc: Document) {
   const pElements =
     introElements[introElements.length - 1]?.getElementsByTagName('p') ?? [];
 
-  return Array.from(pElements).reduce((str, current) => {
+  return Array.from(pElements).reduce((str, current, idx) => {
     const text = current.textContent?.trim();
-    if (text) str += `\n${text}`;
+    if (text) str += idx === 0 ? text : `\n${text}`;
     return str;
   }, '');
 }
