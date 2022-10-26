@@ -25,7 +25,6 @@ describe('getBookViewText test', () => {
   };
 
   test('some fields', () => {
-    console.log(util.getBookViewText(book1));
     expect(util.getBookViewText(book1)).toBe(`id: 1\n作者: a, b\n页数: 1`);
   });
 

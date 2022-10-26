@@ -1,6 +1,6 @@
 import { useStore } from '../../store';
 import { getAlreadyReadButton } from '../../parser/subject';
-import { copyBook } from '../../util';
+import { copyBook, warning } from '../../util';
 
 import type { Book } from '../../types';
 
@@ -28,15 +28,18 @@ export const ADD_SHELF = '加入书架';
 export function useInitBtns(doc: Document, book: Book) {
   const alreadyReadButton = getAlreadyReadButton(doc);
   if (!alreadyReadButton) {
-    console.log(`定位'读过'按钮失败`);
+    warning(`定位'读过'按钮失败`);
     return;
   }
 
   const copyBtn = createBtn(alreadyReadButton, COPY, () => copyBook(book));
   const { booksStore } = useStore();
-  const addBtn = createBtn(alreadyReadButton, ADD_SHELF, () =>
-    booksStore.addBook(book)
-  );
+  const addBtn = createBtn(alreadyReadButton, ADD_SHELF, () => {
+    const r = booksStore.addBook(book);
+    if (!r.success) {
+      warning(r.msg);
+    }
+  });
 
   alreadyReadButton.after(copyBtn);
   copyBtn.after(addBtn);

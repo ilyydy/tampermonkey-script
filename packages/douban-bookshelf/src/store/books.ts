@@ -30,9 +30,7 @@ export function addBook(book: Book) {
     books.push(book);
     return { success: true, msg: '' };
   } else {
-    const msg = `书籍 ${book.id} 已在书架中`;
-    console.log(msg);
-    return { success: false, msg };
+    return { success: false, msg: `《${book.title}》 已在书架中` };
   }
 }
 
