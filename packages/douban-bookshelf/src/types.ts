@@ -17,4 +17,4 @@ export interface Book {
   contentBrief: string;
 }
 
-export type BookFields = keyof Book;
+export type BookField = keyof Book;

@@ -1,11 +1,15 @@
-import { createApp } from 'vue';
+import { ref } from 'vue';
 
-import App from './App.vue';
+import { getBook } from '../../parser/subject';
+import { useInitBtns } from './util';
 
-export async function init(doc: Document) {
-  const app = document.createElement('div');
-  doc.body.appendChild(app);
-  setTimeout(() => {
-    createApp(App).mount(app);
-  });
+import type { Book } from '../../types';
+
+export function init(doc: Document) {
+  const book = ref<null | Book>(null);
+
+  book.value = getBook(doc);
+  if (book.value) {
+    useInitBtns(doc, book.value);
+  }
 }

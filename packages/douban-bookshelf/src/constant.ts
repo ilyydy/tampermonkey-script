@@ -1,6 +1,6 @@
-import type { Book, BookFields } from './types';
+import type { Book, BookField } from './types';
 
-export const BOOK_FIELD_MAP: { [key in BookFields]: string } = {
+export const BOOK_FIELD_MAP: { [key in BookField]: string } = {
   id: 'id',
   title: '书名',
   subTitle: '子标题',
@@ -19,4 +19,4 @@ export const BOOK_FIELD_MAP: { [key in BookFields]: string } = {
   contentBrief: '摘要',
 };
 
-export const defaultBookFields = Object.keys(BOOK_FIELD_MAP) as BookFields[];
+export const defaultBookFields = Object.keys(BOOK_FIELD_MAP) as BookField[];
