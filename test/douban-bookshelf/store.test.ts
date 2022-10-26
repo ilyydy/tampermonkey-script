@@ -25,9 +25,13 @@ test('hasBook test', () => {
 });
 
 test('addBook test', async () => {
-  booksStore.addBook(book2);
-
+  const r1 = booksStore.addBook(book2);
+  expect(r1.success).toBe(true);
   const expected = [book1, book2];
+  expect(booksStore.books).toEqual(expected);
+
+  const r2 = booksStore.addBook(book2);
+  expect(r2.success).toBe(false);
   expect(booksStore.books).toEqual(expected);
   await nextTick();
   expect(localStorage.getItem(booksStore.BOOK_SHELF_KEY)).toEqual(

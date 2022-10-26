@@ -28,8 +28,11 @@ export function hasBook(id: string) {
 export function addBook(book: Book) {
   if (!hasBook(book.id)) {
     books.push(book);
+    return { success: true, msg: '' };
   } else {
-    console.log(`书籍 ${book.id} 已在书架中`);
+    const msg = `书籍 ${book.id} 已在书架中`;
+    console.log(msg);
+    return { success: false, msg };
   }
 }
 
