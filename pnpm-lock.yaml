@@ -24,7 +24,7 @@ importers:
       prettier: 2.7.1
       tsx: 3.11.0
       typescript: 4.8.4
-      vite: 3.1.8
+      vite: 3.2.0
       vite-plugin-monkey: 2.8.0
       vitest: 0.24.3
       vue: 3.2.41
@@ -37,7 +37,7 @@ importers:
       '@rushstack/eslint-patch': 1.2.0
       '@types/lodash-es': 4.17.6
       '@types/node': 16.18.2
-      '@vitejs/plugin-vue': 3.1.2_vite@3.1.8+vue@3.2.41
+      '@vitejs/plugin-vue': 3.1.2_vite@3.2.0+vue@3.2.41
       '@vitest/coverage-c8': 0.24.3_happy-dom@7.6.6
       '@vue/eslint-config-prettier': 7.0.0_5t6g5rrqvlktilv3n3sw5svbdi
       '@vue/eslint-config-typescript': 11.0.2_dssioqymv64e7t7ogoe3tncpcu
@@ -52,8 +52,8 @@ importers:
       prettier: 2.7.1
       tsx: 3.11.0
       typescript: 4.8.4
-      vite: 3.1.8
-      vite-plugin-monkey: 2.8.0_vite@3.1.8
+      vite: 3.2.0
+      vite-plugin-monkey: 2.8.0_vite@3.2.0
       vitest: 0.24.3_happy-dom@7.6.6
       vue-tsc: 1.0.9_typescript@4.8.4
 
@@ -62,13 +62,13 @@ importers:
       conventional-changelog-cli: 2.2.2
       tsx: 3.11.0
       typescript: 4.8.4
-      vite: 3.1.8
+      vite: 3.2.0
       vitest: 0.24.3
     devDependencies:
       conventional-changelog-cli: 2.2.2
       tsx: 3.11.0
       typescript: 4.8.4
-      vite: 3.1.8
+      vite: 3.2.0
       vitest: 0.24.3
 
 packages:
@@ -638,14 +638,14 @@ packages:
       eslint-visitor-keys: 3.3.0
     dev: true
 
-  /@vitejs/plugin-vue/3.1.2_vite@3.1.8+vue@3.2.41:
+  /@vitejs/plugin-vue/3.1.2_vite@3.2.0+vue@3.2.41:
     resolution: {integrity: sha512-3zxKNlvA3oNaKDYX0NBclgxTQ1xaFdL7PzwF6zj9tGFziKwmBa3Q/6XcJQxudlT81WxDjEhHmevvIC4Orc1LhQ==}
     engines: {node: ^14.18.0 || >=16.0.0}
     peerDependencies:
       vite: ^3.0.0
       vue: ^3.2.25
     dependencies:
-      vite: 3.1.8
+      vite: 3.2.0
       vue: 3.2.41
     dev: true
 
@@ -663,6 +663,7 @@ packages:
       - less
       - sass
       - stylus
+      - sugarss
       - supports-color
       - terser
     dev: true
@@ -3597,8 +3598,8 @@ packages:
       glob: 7.2.3
     dev: true
 
-  /rollup/2.78.1:
-    resolution: {integrity: sha512-VeeCgtGi4P+o9hIg+xz4qQpRl6R401LWEXBmxYKOV4zlF82lyhgh2hTZnheFUbANE8l2A41F458iwj2vEYaXJg==}
+  /rollup/2.79.1:
+    resolution: {integrity: sha512-uKxbd0IhMZOhjAiD5oAFp7BqvkA4Dv47qpOCtaNvng4HBwdbWtdOh8f5nZNuk2rp51PMGk3bzfWu5oayNEuYnw==}
     engines: {node: '>=10.0.0'}
     hasBin: true
     optionalDependencies:
@@ -4150,7 +4151,7 @@ packages:
       spdx-expression-parse: 3.0.1
     dev: true
 
-  /vite-plugin-monkey/2.8.0_vite@3.1.8:
+  /vite-plugin-monkey/2.8.0_vite@3.2.0:
     resolution: {integrity: sha512-lvPeW0AJ9VYHCWa+PBne3nW5lCAsBvLM1HT6estKpbKJei/qUG/dbKJyMgL8gXIWU5lbVawRTMBNRoPhj4+9dA==}
     engines: {node: ^14.18 || >= 16, pnpm: '>=6'}
     peerDependencies:
@@ -4162,19 +4163,20 @@ packages:
       mrmime: 1.0.1
       open: 8.4.0
       picocolors: 1.0.0
-      vite: 3.1.8
+      vite: 3.2.0
     transitivePeerDependencies:
       - supports-color
     dev: true
 
-  /vite/3.1.8:
-    resolution: {integrity: sha512-m7jJe3nufUbuOfotkntGFupinL/fmuTNuQmiVE7cH2IZMuf4UbfbGYMUT3jVWgGYuRVLY9j8NnrRqgw5rr5QTg==}
+  /vite/3.2.0:
+    resolution: {integrity: sha512-Ovj7+cqIdM1I0LPCk2CWxzgADXMix3NLXpUT6g7P7zg/a9grk/TaC3qn9YMg7w7M0POIVCBOp1aBANJW+RH7oA==}
     engines: {node: ^14.18.0 || >=16.0.0}
     hasBin: true
     peerDependencies:
       less: '*'
       sass: '*'
       stylus: '*'
+      sugarss: '*'
       terser: ^5.4.0
     peerDependenciesMeta:
       less:
@@ -4183,13 +4185,15 @@ packages:
         optional: true
       stylus:
         optional: true
+      sugarss:
+        optional: true
       terser:
         optional: true
     dependencies:
       esbuild: 0.15.11
       postcss: 8.4.18
       resolve: 1.22.1
-      rollup: 2.78.1
+      rollup: 2.79.1
     optionalDependencies:
       fsevents: 2.3.2
     dev: true
@@ -4226,11 +4230,12 @@ packages:
       tinybench: 2.3.0
       tinypool: 0.3.0
       tinyspy: 1.0.2
-      vite: 3.1.8
+      vite: 3.2.0
     transitivePeerDependencies:
       - less
       - sass
       - stylus
+      - sugarss
       - supports-color
       - terser
     dev: true
@@ -4268,11 +4273,12 @@ packages:
       tinybench: 2.3.0
       tinypool: 0.3.0
       tinyspy: 1.0.2
-      vite: 3.1.8
+      vite: 3.2.0
     transitivePeerDependencies:
       - less
       - sass
       - stylus
+      - sugarss
       - supports-color
       - terser
     dev: true
