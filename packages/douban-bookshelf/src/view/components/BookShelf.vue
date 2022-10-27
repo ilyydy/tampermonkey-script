@@ -3,19 +3,29 @@
     <ElButton
       :icon="ArrowLeft"
       circle
-      type="success"
+      type="primary"
       @click="showDrawer = !showDrawer"
     ></ElButton>
   </div>
 
   <ElDrawer v-model="showDrawer" title="书架">
     <template #default>
-      <div>
-        <div>
-          <ElButton @click="booksStore.clearBook">清空</ElButton>
+      <div class="book-list-container">
+        <div class="book-list-container-header">
+          <ElButton
+            round
+            type="danger"
+            :disabled="booksStore.books.length === 0"
+            @click="booksStore.clearBook"
+            >清空</ElButton
+          >
         </div>
 
-        <div v-for="book in booksStore.books" :key="book.id">
+        <div
+          class="book-list-container-body"
+          v-for="book in booksStore.books"
+          :key="book.id"
+        >
           <BookItem :book="book"></BookItem>
         </div>
       </div>
@@ -33,7 +43,7 @@ import BookItem from './BookItem.vue';
 
 const { booksStore } = useStore();
 
-const showDrawer = ref(false);
+const showDrawer = ref(true);
 </script>
 
 <style scoped>
@@ -41,5 +51,17 @@ const showDrawer = ref(false);
   position: fixed;
   bottom: 50px;
   right: 50px;
+}
+
+.book-list-container {
+  margin: auto 20px;
+}
+
+.book-list-container-header {
+  margin-bottom: 20px;
+}
+
+.book-list-container-body {
+  margin-bottom: 20px;
 }
 </style>
