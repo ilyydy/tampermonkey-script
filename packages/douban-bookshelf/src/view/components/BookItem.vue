@@ -1,25 +1,29 @@
 <template>
   <div>
-    <ElCard>
-      <div class="book-field" v-for="item in fields" :key="item.key">
-        {{ BOOK_FIELD_MAP[item.key] }}:
-        <span v-if="item.type === 'string'">{{ book[item.key] }}</span>
-        <ElButton v-else-if="item.type === 'link'" type="primary" link>{{
-          book[item.key]
-        }}</ElButton>
-      </div>
+    <div class="book-field" v-for="item in fields" :key="item.key">
+      {{ BOOK_FIELD_MAP[item.key] }}:
+      <span v-if="item.type === 'string'">{{
+        item.getText ? item.getText(book) : book[item.key]
+      }}</span>
 
-      <div class="book-button">
-        <ElButton round size="small" type="primary">查看详情</ElButton>
-        <ElButton
-          round
-          size="small"
-          type="danger"
-          @click="booksStore.removeBook(book.id)"
-          >移除</ElButton
-        >
-      </div>
-    </ElCard>
+      <a
+        v-else-if="item.type === 'link'"
+        :href="item.getLink ? item.getLink(book) : `${book[item.key]}`"
+        target="_blank"
+        >{{ book[item.key] }}</a
+      >
+    </div>
+
+    <div class="book-button">
+      <ElButton round size="small" type="primary">详情</ElButton>
+      <ElButton
+        round
+        size="small"
+        type="danger"
+        @click="booksStore.removeBook(book.id)"
+        >移除</ElButton
+      >
+    </div>
   </div>
 </template>
 
@@ -37,22 +41,39 @@ defineProps<{
 }>();
 
 const { booksStore } = useStore();
-const fields: { key: BookField; type: 'string' | 'link' }[] = reactive([
+
+interface PlainTextType {
+  key: BookField;
+  type: 'string';
+  getText?: (book: Book) => string;
+}
+
+interface ButtonType {
+  key: BookField;
+  type: 'link';
+  getLink?: (book: Book) => string;
+}
+
+const fields: (ButtonType | PlainTextType)[] = reactive([
   {
     key: 'id',
-    type: 'string',
+    type: 'link',
+    getLink: (book) => book.doubanUrl,
   },
   {
     key: 'title',
     type: 'string',
+    getText: (book) =>
+      book.subTitle ? `${book.title}-${book.subTitle}` : book.title,
+  },
+  {
+    key: 'authors',
+    type: 'string',
+    getText: (book) => book.authors.join(', '),
   },
   {
     key: 'ISBN',
     type: 'string',
-  },
-  {
-    key: 'doubanUrl',
-    type: 'link',
   },
 ]);
 </script>
