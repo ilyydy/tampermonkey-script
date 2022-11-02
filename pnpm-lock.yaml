@@ -10,7 +10,7 @@ importers:
       '@types/lodash-es': 4.17.6
       '@types/node': 16.18.3
       '@vitejs/plugin-vue': 3.2.0
-      '@vitest/coverage-c8': 0.24.4
+      '@vitest/coverage-c8': 0.24.5
       '@vue/eslint-config-prettier': 7.0.0
       '@vue/eslint-config-typescript': 11.0.2
       conventional-changelog-cli: 2.2.2
@@ -26,7 +26,7 @@ importers:
       typescript: 4.8.4
       vite: 3.2.2
       vite-plugin-monkey: 2.8.0
-      vitest: 0.24.4
+      vitest: 0.24.5
       vue: 3.2.41
       vue-tsc: 1.0.9
     dependencies:
@@ -38,7 +38,7 @@ importers:
       '@types/lodash-es': 4.17.6
       '@types/node': 16.18.3
       '@vitejs/plugin-vue': 3.2.0_vite@3.2.2+vue@3.2.41
-      '@vitest/coverage-c8': 0.24.4_happy-dom@7.6.6
+      '@vitest/coverage-c8': 0.24.5_happy-dom@7.6.6
       '@vue/eslint-config-prettier': 7.0.0_5t6g5rrqvlktilv3n3sw5svbdi
       '@vue/eslint-config-typescript': 11.0.2_a2woajwjjwk2j4x6hcq37wa7k4
       conventional-changelog-cli: 2.2.2
@@ -54,7 +54,7 @@ importers:
       typescript: 4.8.4
       vite: 3.2.2
       vite-plugin-monkey: 2.8.0_vite@3.2.2
-      vitest: 0.24.4_happy-dom@7.6.6
+      vitest: 0.24.5_happy-dom@7.6.6
       vue-tsc: 1.0.9_typescript@4.8.4
 
   packages/csdn:
@@ -63,13 +63,13 @@ importers:
       tsx: 3.11.0
       typescript: 4.8.4
       vite: 3.2.2
-      vitest: 0.24.4
+      vitest: 0.24.5
     devDependencies:
       conventional-changelog-cli: 2.2.2
       tsx: 3.11.0
       typescript: 4.8.4
       vite: 3.2.2
-      vitest: 0.24.4
+      vitest: 0.24.5
 
 packages:
 
@@ -646,11 +646,11 @@ packages:
       vue: 3.2.41
     dev: true
 
-  /@vitest/coverage-c8/0.24.4_happy-dom@7.6.6:
-    resolution: {integrity: sha512-1mhYQip6IJw1p9hzM+sH8O/RbILMe7FwScWI7COoMGAThdDRytDjmOal38F/EVrIPZY3nZ5hf7S7JFGjbb4bTg==}
+  /@vitest/coverage-c8/0.24.5_happy-dom@7.6.6:
+    resolution: {integrity: sha512-955yK/SdSBZPYrSXgXB0F+0JnOX5EY9kSL7ywJ4rNajmkFUhwLjuKm13Xb6YKSyIY/g5WvbBnyowqfNRxBJ3ww==}
     dependencies:
       c8: 7.12.0
-      vitest: 0.24.4_happy-dom@7.6.6
+      vitest: 0.24.5_happy-dom@7.6.6
     transitivePeerDependencies:
       - '@edge-runtime/vm'
       - '@vitest/browser'
@@ -4195,8 +4195,8 @@ packages:
       fsevents: 2.3.2
     dev: true
 
-  /vitest/0.24.4:
-    resolution: {integrity: sha512-4ratHSyVEJPtBLV00uhL4Wj3Pmandc9rsxUkE0q9peNOfaOgGF4lEepdkaXGRi9AGFKr1GRVtjGOJ6Fp2lCpEg==}
+  /vitest/0.24.5:
+    resolution: {integrity: sha512-zw6JhPUHtLILQDe5Q39b/SzoITkG+R7hcFjuthp4xsi6zpmfQPOZcHodZ+3bqoWl4EdGK/p1fuMiEwdxgbGLOA==}
     engines: {node: '>=v14.16.0'}
     hasBin: true
     peerDependencies:
@@ -4237,8 +4237,8 @@ packages:
       - terser
     dev: true
 
-  /vitest/0.24.4_happy-dom@7.6.6:
-    resolution: {integrity: sha512-4ratHSyVEJPtBLV00uhL4Wj3Pmandc9rsxUkE0q9peNOfaOgGF4lEepdkaXGRi9AGFKr1GRVtjGOJ6Fp2lCpEg==}
+  /vitest/0.24.5_happy-dom@7.6.6:
+    resolution: {integrity: sha512-zw6JhPUHtLILQDe5Q39b/SzoITkG+R7hcFjuthp4xsi6zpmfQPOZcHodZ+3bqoWl4EdGK/p1fuMiEwdxgbGLOA==}
     engines: {node: '>=v14.16.0'}
     hasBin: true
     peerDependencies:
