@@ -79,7 +79,31 @@ new-script() {
   fi
 }
 
-reload() {
+reload-dev() {
   # shellcheck source=/dev/null
   source dev.sh
 }
+
+_packages_autotab() {
+  local cur=${COMP_WORDS[COMP_CWORD]}
+
+  if [ "${#COMP_WORDS[@]}" -eq 2 ]; then
+    cd "$PROJECT_ROOT_DIR"/packages && _filedir -d; cd ..
+  else
+    return 0
+  fi
+}
+
+_test_autotab() {
+  # shellcheck disable=SC2034
+  local cur=${COMP_WORDS[COMP_CWORD]}
+
+  if [ "${#COMP_WORDS[@]}" -eq 2 ]; then
+    cd "$PROJECT_ROOT_DIR"/test && _filedir 'test.ts'; cd ..
+  else
+    return 0
+  fi
+}
+
+complete -X 'template*' -F _packages_autotab lint dev build type-check changelog
+complete -F _test_autotab vtest vcoverage
