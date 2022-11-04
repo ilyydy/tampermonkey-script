@@ -1,8 +1,11 @@
 import { ElMessage } from 'element-plus';
+import XLSX from 'xlsx';
+import fs from 'node:fs';
 
-import { BOOK_FIELD_MAP, defaultBookFields } from './constant';
+import { BOOK_FIELD_MAP, defaultBookFields, exportExcelName } from './constant';
 
 import type { Book } from './types';
+import type { JSON2SheetOpts, WritingOptions } from 'xlsx';
 
 export function getBookViewText(book: Book, fields = defaultBookFields) {
   const textList: string[] = [];
@@ -40,4 +43,23 @@ export function error(msg: string) {
 
 export function info(msg: string) {
   return ElMessage.info({ message: msg, showClose: true, grouping: true });
+}
+
+export function exportExcel<T = any>(
+  rows: T[],
+  filename = exportExcelName,
+  json2SheetOpts?: JSON2SheetOpts,
+  writingOptions?: WritingOptions
+) {
+  if (import.meta.env.DEV) {
+    /**
+     * @see https://docs.sheetjs.com/docs/getting-started/installation/nodejs/#usage
+     */
+    XLSX.set_fs(fs);
+  }
+
+  const worksheet = XLSX.utils.json_to_sheet(rows, json2SheetOpts);
+  const workbook = XLSX.utils.book_new();
+  XLSX.utils.book_append_sheet(workbook, worksheet);
+  XLSX.writeFile(workbook, filename, writingOptions);
 }

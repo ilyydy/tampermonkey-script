@@ -1,6 +1,10 @@
 import { describe, expect, test, vi } from 'vitest';
+import { unlinkSync, existsSync } from 'node:fs';
+import { join } from 'node:path';
 
+import { getProjectRootAbsPath } from '../../packages/util';
 import * as util from '../../packages/douban-bookshelf/src/util';
+import { exportExcelName } from '../../packages/douban-bookshelf/src/constant';
 
 import type { Book } from '../../packages/douban-bookshelf/src/types';
 
@@ -54,4 +58,23 @@ describe('getBookViewText test', () => {
   test('only id', () => {
     expect(util.getBookViewText(book2)).toBe(`id: 2`);
   });
+});
+
+test('exportExcel test', () => {
+  const projectRoot = getProjectRootAbsPath();
+  const excelPath = join(projectRoot, exportExcelName);
+
+  if (existsSync(excelPath)) {
+    unlinkSync(excelPath);
+  }
+  expect(existsSync(excelPath)).toBe(false);
+
+  const rows = [
+    { name: 'George Washington', birthday: '1732-02-22' },
+    { name: 'John Adams', birthday: '1735-10-19' },
+  ];
+  util.exportExcel(rows);
+  expect(existsSync(excelPath)).toBe(true);
+
+  unlinkSync(excelPath);
 });

@@ -3,11 +3,18 @@ import monkey, { cdn } from 'vite-plugin-monkey';
 import { merge } from 'lodash-es';
 import vue from '@vitejs/plugin-vue';
 
-import { version } from './package.json';
+import { version, dependencies } from './package.json';
 import { baseViteConfig, getBaseMonkeyConfig } from '../viteConfig';
 import { getDirname } from '../util';
 
 const dirName = getDirname(import.meta.url);
+
+function getXlsxCDN() {
+  const strList = dependencies.xlsx.split('/');
+  return `https://cdn.sheetjs.com/${
+    strList[strList.length - 2]
+  }/package/dist/xlsx.full.min.js`;
+}
 
 export default defineConfig({
   ...baseViteConfig,
@@ -33,6 +40,7 @@ export default defineConfig({
             'https://book.douban.com/series/*',
             'https://search.douban.com/book/subject_search',
           ],
+          require: [getXlsxCDN()],
         },
         build: {
           externalGlobals: {
