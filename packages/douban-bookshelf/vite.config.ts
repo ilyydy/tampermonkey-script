@@ -40,11 +40,11 @@ export default defineConfig({
             'https://book.douban.com/series/*',
             'https://search.douban.com/book/subject_search',
           ],
-          require: [getXlsxCDN()],
         },
         build: {
           externalGlobals: {
             vue: cdn.jsdelivr('Vue', 'dist/vue.global.prod.js'),
+            xlsx: ['XLSX', getXlsxCDN()],
           },
           externalResource: {
             'element-plus/dist/index.css': cdn.jsdelivr(),
