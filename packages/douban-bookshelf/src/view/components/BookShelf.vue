@@ -28,12 +28,20 @@
           >
         </div>
 
-        <div
-          class="book-list-container-body"
-          v-for="book in booksStore.books"
-          :key="book.id"
-        >
-          <BookItem :book="book" @select="selectBook"></BookItem>
+        <div class="book-list-container-body">
+          <div v-if="booksStore.books.length > 0">
+            <div
+              class="book-list-container-book-item"
+              v-for="book in booksStore.books"
+              :key="book.id"
+            >
+              <BookItem :book="book" @select="selectBook"></BookItem>
+            </div>
+          </div>
+
+          <div v-else class="book-list-container-empty">
+            <p>书架为空</p>
+          </div>
         </div>
       </div>
     </template>
@@ -87,6 +95,15 @@ function selectBook(book: Book) {
 }
 
 .book-list-container-body {
+  /* margin-bottom: 20px; */
+}
+
+.book-list-container-empty p {
+  font-size: 18px;
+  text-align: center;
+}
+
+.book-list-container-book-item {
   margin-bottom: 20px;
 }
 </style>
