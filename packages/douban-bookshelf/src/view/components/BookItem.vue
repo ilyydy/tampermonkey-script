@@ -1,7 +1,11 @@
 <template>
   <div>
-    <div class="book-field" v-for="item in fields" :key="item.key">
-      {{ BOOK_FIELD_MAP[item.key] }}:
+    <div
+      class="book-field"
+      v-for="item in briefBookItemFormatter"
+      :key="item.key"
+    >
+      {{ item.label }}:
       <span v-if="item.type === 'string'">{{
         item.getText ? item.getText(book) : book[item.key]
       }}</span>
@@ -15,7 +19,9 @@
     </div>
 
     <div class="book-button">
-      <ElButton round size="small" type="primary">详情</ElButton>
+      <ElButton round size="small" type="primary" @click="select"
+        >详情</ElButton
+      >
       <ElButton
         round
         size="small"
@@ -28,54 +34,29 @@
 </template>
 
 <script setup lang="ts">
-import { ElButton, ElCard } from 'element-plus';
-import { reactive } from 'vue';
+import { ElButton } from 'element-plus';
 
 import { useStore } from '../../store';
-import { BOOK_FIELD_MAP } from '../../constant';
+import { BOOK_FIELD_MAP, bookItemFormatter } from '../../constant';
 
 import type { Book, BookField } from '../../types';
 
-defineProps<{
+const props = defineProps<{
   book: Book;
 }>();
+const emit = defineEmits<{ (event: 'select', book: Book): void }>();
 
 const { booksStore } = useStore();
 
-interface PlainTextType {
-  key: BookField;
-  type: 'string';
-  getText?: (book: Book) => string;
-}
+const briefFields: BookField[] = ['id', 'title', 'authors', 'ISBN'];
 
-interface ButtonType {
-  key: BookField;
-  type: 'link';
-  getLink?: (book: Book) => string;
-}
+const briefBookItemFormatter = bookItemFormatter.filter((i) =>
+  briefFields.includes(i.key)
+);
 
-const fields: (ButtonType | PlainTextType)[] = reactive([
-  {
-    key: 'id',
-    type: 'link',
-    getLink: (book) => book.doubanUrl,
-  },
-  {
-    key: 'title',
-    type: 'string',
-    getText: (book) =>
-      book.subTitle ? `${book.title}-${book.subTitle}` : book.title,
-  },
-  {
-    key: 'authors',
-    type: 'string',
-    getText: (book) => book.authors.join(', '),
-  },
-  {
-    key: 'ISBN',
-    type: 'string',
-  },
-]);
+function select() {
+  emit('select', props.book);
+}
 </script>
 
 <style scoped>

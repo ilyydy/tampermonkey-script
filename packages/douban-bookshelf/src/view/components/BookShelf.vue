@@ -33,11 +33,17 @@
           v-for="book in booksStore.books"
           :key="book.id"
         >
-          <BookItem :book="book"></BookItem>
+          <BookItem :book="book" @select="selectBook"></BookItem>
         </div>
       </div>
     </template>
   </ElDrawer>
+
+  <BookDetail
+    :book="selectedBook"
+    :show="showDetail"
+    @close="showDetail = false"
+  ></BookDetail>
 </template>
 
 <script setup lang="ts">
@@ -47,11 +53,22 @@ import { ref } from 'vue';
 
 import { useStore } from '../../store';
 import BookItem from './BookItem.vue';
+import BookDetail from './BookDetail.vue';
 import { exportBookExcel } from '../../util';
+
+import type { Book, BookField } from '../../types';
 
 const { booksStore } = useStore();
 
 const showDrawer = ref(true);
+
+const selectedBook = ref<Book | undefined>(undefined);
+const showDetail = ref<boolean>(false);
+
+function selectBook(book: Book) {
+  selectedBook.value = book;
+  showDetail.value = true;
+}
 </script>
 
 <style scoped>
