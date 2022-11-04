@@ -45,19 +45,19 @@ export function info(msg: string) {
   return ElMessage.info({ message: msg, showClose: true, grouping: true });
 }
 
+if (import.meta.env.MODE === 'test') {
+  /**
+   * @see https://docs.sheetjs.com/docs/getting-started/installation/nodejs/#usage
+   */
+  XLSX.set_fs(fs);
+}
+
 export function exportExcel<T = any>(
   rows: T[][],
   filename = exportExcelName,
   aoa2SheetOpts?: AOA2SheetOpts,
   writingOptions?: WritingOptions
 ) {
-  if (import.meta.env.DEV) {
-    /**
-     * @see https://docs.sheetjs.com/docs/getting-started/installation/nodejs/#usage
-     */
-    XLSX.set_fs(fs);
-  }
-
   const worksheet = XLSX.utils.aoa_to_sheet(rows, aoa2SheetOpts);
   const workbook = XLSX.utils.book_new();
   XLSX.utils.book_append_sheet(workbook, worksheet);

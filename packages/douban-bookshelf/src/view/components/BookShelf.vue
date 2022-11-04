@@ -14,6 +14,13 @@
         <div class="book-list-container-header">
           <ElButton
             round
+            type="primary"
+            :disabled="booksStore.books.length === 0"
+            @click="() => exportBookExcel(booksStore.books)"
+            >导出</ElButton
+          >
+          <ElButton
+            round
             type="danger"
             :disabled="booksStore.books.length === 0"
             @click="booksStore.clearBook"
@@ -40,6 +47,7 @@ import { ref } from 'vue';
 
 import { useStore } from '../../store';
 import BookItem from './BookItem.vue';
+import { exportBookExcel } from '../../util';
 
 const { booksStore } = useStore();
 

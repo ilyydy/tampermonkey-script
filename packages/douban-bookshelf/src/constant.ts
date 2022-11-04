@@ -21,4 +21,4 @@ export const BOOK_FIELD_MAP: { [key in BookField]: string } = {
 
 export const defaultBookFields = Object.keys(BOOK_FIELD_MAP) as BookField[];
 
-export const exportExcelName = '书籍导出.xlsx';
+export const exportExcelName = '豆瓣书籍导出.xlsx';
