@@ -1,6 +1,6 @@
 import { useStore } from '../../store';
 import { getAlreadyReadButton } from '../../parser/subject';
-import { copyBook, warning, success } from '../../util';
+import { copyBookWithTip, warning, success } from '../../util';
 
 import type { Book } from '../../types';
 
@@ -33,12 +33,7 @@ export function useInitBtns(doc: Document, book: Book) {
   }
 
   const copyBtn = createBtn(alreadyReadButton, COPY, async () => {
-    try {
-      await copyBook(book);
-      success('复制成功');
-    } catch (error: any) {
-      warning(error.msg);
-    }
+    await copyBookWithTip(book);
   });
   const { booksStore } = useStore();
   const addBtn = createBtn(alreadyReadButton, ADD_SHELF, () => {

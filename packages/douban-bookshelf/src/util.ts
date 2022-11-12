@@ -27,6 +27,15 @@ export async function copyBook(book: Book, fields = defaultBookFields) {
   await navigator.clipboard.writeText(text);
 }
 
+export async function copyBookWithTip(book: Book, fields = defaultBookFields) {
+  try {
+    await copyBook(book);
+    success('复制成功');
+  } catch (error: any) {
+    warning(error.msg);
+  }
+}
+
 export function success(msg: string) {
   return ElMessage.success({ message: msg, showClose: true, grouping: true });
 }

@@ -1,18 +1,35 @@
 <template>
-  <div>
-    <BookFormatter :book="book" :fields="briefFields"> </BookFormatter>
+  <div class="item">
+    <div>
+      <BookFormatter :book="book" :fields="briefFields"> </BookFormatter>
+    </div>
 
-    <div class="book-button">
-      <ElButton round size="small" type="primary" @click="select"
-        >详情</ElButton
-      >
-      <ElButton
-        round
-        size="small"
-        type="danger"
-        @click="booksStore.removeBook(book.id)"
-        >移除</ElButton
-      >
+    <div class="item-button">
+      <div>
+        <ElButton round size="small" type="primary" @click="select"
+          >详情</ElButton
+        >
+      </div>
+
+      <div>
+        <ElButton
+          round
+          size="small"
+          type="primary"
+          @click="() => copyBookWithTip(book)"
+          >复制</ElButton
+        >
+      </div>
+
+      <div>
+        <ElButton
+          round
+          size="small"
+          type="danger"
+          @click="booksStore.removeBook(book.id)"
+          >移除</ElButton
+        >
+      </div>
     </div>
   </div>
 </template>
@@ -22,6 +39,7 @@ import { ElButton } from 'element-plus';
 
 import BookFormatter from './BookFormatter.vue';
 import { useStore } from '../../store';
+import { copyBookWithTip } from '../../util';
 
 import type { Book, BookField } from '../../types';
 
@@ -40,7 +58,12 @@ function select() {
 </script>
 
 <style scoped>
-.book-button {
-  margin-top: 10px;
+.item {
+  display: grid;
+  grid-template-columns: 80% 20%;
+}
+
+.item-button {
+  display: grid;
 }
 </style>
