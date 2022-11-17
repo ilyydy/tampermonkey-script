@@ -25,7 +25,7 @@ importers:
       tsx: 3.12.1
       typescript: 4.8.4
       vite: 3.2.3
-      vite-plugin-monkey: 2.9.2
+      vite-plugin-monkey: 2.9.3
       vitest: 0.25.2
       vue: 3.2.45
       vue-tsc: 1.0.9
@@ -53,7 +53,7 @@ importers:
       tsx: 3.12.1
       typescript: 4.8.4
       vite: 3.2.3_@types+node@18.11.9
-      vite-plugin-monkey: 2.9.2_vite@3.2.3
+      vite-plugin-monkey: 2.9.3_vite@3.2.3
       vitest: 0.25.2_happy-dom@7.7.0
       vue-tsc: 1.0.9_typescript@4.8.4
 
@@ -4158,8 +4158,8 @@ packages:
       spdx-expression-parse: 3.0.1
     dev: true
 
-  /vite-plugin-monkey/2.9.2_vite@3.2.3:
-    resolution: {integrity: sha512-bloQ/zuseE5XOxz5GNr4B3+LnCKVPHRj67d/PZdWmWq889CFqpGkx7wqK+Levr+C+V8DqJZMFFSXiyIvnesI0A==}
+  /vite-plugin-monkey/2.9.3_vite@3.2.3:
+    resolution: {integrity: sha512-khJBgFeV4SLS+K8xnzgnnRuRreTM5ZrL/qn00qT/5cVtFOic1ukpLICSAm8QDREiwWjuoY2jefJeDoSrIvgInw==}
     engines: {node: ^14.18 || >= 16, pnpm: '>=6'}
     peerDependencies:
       vite: ^2.0.0 || ^3.0.0
