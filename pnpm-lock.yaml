@@ -10,7 +10,7 @@ importers:
       '@types/lodash-es': 4.17.6
       '@types/node': 18.11.9
       '@vitejs/plugin-vue': 3.2.0
-      '@vitest/coverage-c8': 0.25.2
+      '@vitest/coverage-c8': 0.25.3
       '@vue/eslint-config-prettier': 7.0.0
       '@vue/eslint-config-typescript': 11.0.2
       conventional-changelog-cli: 2.2.2
@@ -26,7 +26,7 @@ importers:
       typescript: 4.9.3
       vite: 3.2.4
       vite-plugin-monkey: 2.9.4
-      vitest: 0.25.2
+      vitest: 0.25.3
       vue: 3.2.45
       vue-tsc: 1.0.9
     dependencies:
@@ -38,7 +38,7 @@ importers:
       '@types/lodash-es': 4.17.6
       '@types/node': 18.11.9
       '@vitejs/plugin-vue': 3.2.0_vite@3.2.4+vue@3.2.45
-      '@vitest/coverage-c8': 0.25.2_happy-dom@7.7.0
+      '@vitest/coverage-c8': 0.25.3_happy-dom@7.7.0
       '@vue/eslint-config-prettier': 7.0.0_bqvntwytoepwmeyeh2xeb7vzue
       '@vue/eslint-config-typescript': 11.0.2_vf5i6yh7tubwt4lqvaz2kfrjpa
       conventional-changelog-cli: 2.2.2
@@ -54,7 +54,7 @@ importers:
       typescript: 4.9.3
       vite: 3.2.4_@types+node@18.11.9
       vite-plugin-monkey: 2.9.4_vite@3.2.4
-      vitest: 0.25.2_happy-dom@7.7.0
+      vitest: 0.25.3_happy-dom@7.7.0
       vue-tsc: 1.0.9_typescript@4.9.3
 
   packages/csdn:
@@ -63,13 +63,13 @@ importers:
       tsx: 3.12.1
       typescript: 4.9.3
       vite: 3.2.4
-      vitest: 0.25.2
+      vitest: 0.25.3
     devDependencies:
       conventional-changelog-cli: 2.2.2
       tsx: 3.12.1
       typescript: 4.9.3
       vite: 3.2.4
-      vitest: 0.25.2
+      vitest: 0.25.3
 
 packages:
 
@@ -194,29 +194,6 @@ packages:
       '@commitlint/types': 17.0.0
     dev: true
 
-  /@commitlint/load/17.2.0:
-    resolution: {integrity: sha512-HDD57qSqNrk399R4TIjw31AWBG8dBjNj1MrDKZKmC/wvimtnIFlqzcu1+sxfXIOHj/+M6tcMWDtvknGUd7SU+g==}
-    engines: {node: '>=v14'}
-    requiresBuild: true
-    dependencies:
-      '@commitlint/config-validator': 17.1.0
-      '@commitlint/execute-rule': 17.0.0
-      '@commitlint/resolve-extends': 17.1.0
-      '@commitlint/types': 17.0.0
-      '@types/node': 14.18.32
-      chalk: 4.1.2
-      cosmiconfig: 7.0.1
-      cosmiconfig-typescript-loader: 4.1.1_d2u2at6cw42kvwhpnxh6j77nj4
-      lodash: 4.17.21
-      resolve-from: 5.0.0
-      ts-node: 10.9.1_5iiwcd3sc4kyglfvjmrogmdfsy
-      typescript: 4.9.3
-    transitivePeerDependencies:
-      - '@swc/core'
-      - '@swc/wasm'
-    dev: true
-    optional: true
-
   /@commitlint/load/17.3.0:
     resolution: {integrity: sha512-u/pV6rCAJrCUN+HylBHLzZ4qj1Ew3+eN9GBPhNi9otGxtOfA8b+8nJSxaNbcC23Ins/kcpjGf9zPSVW7628Umw==}
     engines: {node: '>=v14'}
@@ -264,19 +241,6 @@ packages:
       git-raw-commits: 2.0.11
       minimist: 1.2.7
     dev: true
-
-  /@commitlint/resolve-extends/17.1.0:
-    resolution: {integrity: sha512-jqKm00LJ59T0O8O4bH4oMa4XyJVEOK4GzH8Qye9XKji+Q1FxhZznxMV/bDLyYkzbTodBt9sL0WLql8wMtRTbqQ==}
-    engines: {node: '>=v14'}
-    dependencies:
-      '@commitlint/config-validator': 17.1.0
-      '@commitlint/types': 17.0.0
-      import-fresh: 3.3.0
-      lodash: 4.17.21
-      resolve-from: 5.0.0
-      resolve-global: 1.0.0
-    dev: true
-    optional: true
 
   /@commitlint/resolve-extends/17.3.0:
     resolution: {integrity: sha512-Lf3JufJlc5yVEtJWC8o4IAZaB8FQAUaVlhlAHRACd0TTFizV2Lk2VH70et23KgvbQNf7kQzHs/2B4QZalBv6Cg==}
@@ -687,11 +651,11 @@ packages:
       vue: 3.2.45
     dev: true
 
-  /@vitest/coverage-c8/0.25.2_happy-dom@7.7.0:
-    resolution: {integrity: sha512-qKsiUJh3bjbB5Q229CbxEWCqiDBwvIrcZ9OOuQdMEC0pce3/LlTUK3+K3hd7WqAYEbbiqXfC5MVMKHZkV82PgA==}
+  /@vitest/coverage-c8/0.25.3_happy-dom@7.7.0:
+    resolution: {integrity: sha512-+tmrB3E7pZTSM+aWKzLk0FpyyaQOoRQf0594hHp+E3Kk0tiFONiEFYf7+9a1Z+C2ffU/0w6KvyBjpNPdashMrg==}
     dependencies:
       c8: 7.12.0
-      vitest: 0.25.2_happy-dom@7.7.0
+      vitest: 0.25.3_happy-dom@7.7.0
     transitivePeerDependencies:
       - '@edge-runtime/vm'
       - '@vitest/browser'
@@ -1531,7 +1495,7 @@ packages:
       longest: 2.0.1
       word-wrap: 1.2.3
     optionalDependencies:
-      '@commitlint/load': 17.2.0
+      '@commitlint/load': 17.3.0
     transitivePeerDependencies:
       - '@swc/core'
       - '@swc/wasm'
@@ -4319,8 +4283,8 @@ packages:
       fsevents: 2.3.2
     dev: true
 
-  /vitest/0.25.2:
-    resolution: {integrity: sha512-qqkzfzglEFbQY7IGkgSJkdOhoqHjwAao/OrphnHboeYHC5JzsVFoLCaB2lnAy8krhj7sbrFTVRApzpkTOeuDWQ==}
+  /vitest/0.25.3:
+    resolution: {integrity: sha512-/UzHfXIKsELZhL7OaM2xFlRF8HRZgAHtPctacvNK8H4vOcbJJAMEgbWNGSAK7Y9b1NBe5SeM7VTuz2RsTHFJJA==}
     engines: {node: '>=v14.16.0'}
     hasBin: true
     peerDependencies:
@@ -4364,8 +4328,8 @@ packages:
       - terser
     dev: true
 
-  /vitest/0.25.2_happy-dom@7.7.0:
-    resolution: {integrity: sha512-qqkzfzglEFbQY7IGkgSJkdOhoqHjwAao/OrphnHboeYHC5JzsVFoLCaB2lnAy8krhj7sbrFTVRApzpkTOeuDWQ==}
+  /vitest/0.25.3_happy-dom@7.7.0:
+    resolution: {integrity: sha512-/UzHfXIKsELZhL7OaM2xFlRF8HRZgAHtPctacvNK8H4vOcbJJAMEgbWNGSAK7Y9b1NBe5SeM7VTuz2RsTHFJJA==}
     engines: {node: '>=v14.16.0'}
     hasBin: true
     peerDependencies:
