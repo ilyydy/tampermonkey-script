@@ -2,7 +2,8 @@
   <ElDialog
     :model-value="show && !!book"
     title="书籍详情"
-    width="50%"
+    width="70%"
+    :style="{ 'max-height': '80vh' }"
     :before-close="handleClose"
   >
     <div v-if="!!book">

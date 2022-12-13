@@ -16,18 +16,32 @@ export const BOOK_FIELD_MAP: { [key in BookField]: string } = {
   scorePeopleCount: '评分人数',
   coverUrl: '封面图链接',
   doubanUrl: '豆瓣链接',
-  contentBrief: '摘要',
+  contentBrief: '内容简介',
 };
 
 export const defaultBookFields = Object.keys(BOOK_FIELD_MAP) as BookField[];
 
 export const exportExcelName = '豆瓣书籍导出.xlsx';
 
+export const excelFormatterMap = defaultBookFields.reduce((pre, field) => {
+  switch (field) {
+    case 'authors':
+    case 'translators':
+      pre[field] = (book: Book) => book[field].join(', ');
+      break;
+    default:
+      pre[field] = (book: Book) => book[field];
+      break;
+  }
+  return pre;
+}, {} as { [key in BookField]: (book: Book) => string | number });
+
 interface PlainTextType {
   key: BookField;
   label: string;
   type: 'string';
   getText?: (book: Book) => any;
+  styleObj?: Record<string, string>;
 }
 
 interface ButtonType {
@@ -35,9 +49,10 @@ interface ButtonType {
   label: string;
   type: 'link';
   getLink?: (book: Book) => string;
+  styleObj?: Record<string, string>;
 }
 
-const specialFormatter: (ButtonType | PlainTextType)[] = [
+const specialBookItemFormatters: (ButtonType | PlainTextType)[] = [
   {
     key: 'id',
     label: BOOK_FIELD_MAP.id,
@@ -68,11 +83,26 @@ const specialFormatter: (ButtonType | PlainTextType)[] = [
     type: 'string',
     getText: (book) => book.translators.join(', '),
   },
+  {
+    key: 'contentBrief',
+    label: BOOK_FIELD_MAP.contentBrief,
+    type: 'string',
+    getText: (book) => book.contentBrief,
+    styleObj: {
+      'line-height': '30px',
+      'white-space': 'pre-line',
+      'max-height': '300px',
+      'padding-right': '20px',
+      width: '98%',
+      display: 'inline-block',
+      overflow: 'auto',
+    },
+  },
 ];
 
-export const bookItemFormatter: (ButtonType | PlainTextType)[] =
+export const bookItemFormatters: (ButtonType | PlainTextType)[] =
   defaultBookFields.map((field) => {
-    const v = specialFormatter.find((i) => i.key === field);
+    const v = specialBookItemFormatters.find((i) => i.key === field);
     if (v) return v;
     return {
       key: field,

@@ -15,24 +15,41 @@
           <ElButton
             round
             type="primary"
-            :disabled="booksStore.books.length === 0"
-            @click="() => exportBookExcel(booksStore.books)"
+            :disabled="books.length === 0"
+            @click="() => exportBookExcel(books)"
             >导出</ElButton
           >
           <ElButton
             round
             type="danger"
-            :disabled="booksStore.books.length === 0"
+            :disabled="books.length === 0"
             @click="booksStore.clearBook"
             >清空</ElButton
           >
+
+          <ElSelect v-model="sortKey" class="book-list-container-header-select">
+            <ElOption
+              v-for="item in sortKeyOptions"
+              :key="item.value"
+              :label="item.label"
+              :value="item.value"
+            />
+          </ElSelect>
+
+          <ElSwitch
+            v-model="sortAsc"
+            class="book-list-container-header-switch"
+            inline-prompt
+            :active-icon="SortUp"
+            :inactive-icon="SortDown"
+          />
         </div>
 
         <div class="book-list-container-body">
-          <div v-if="booksStore.books.length > 0">
+          <div v-if="books.length > 0">
             <div
               class="book-list-container-book-item"
-              v-for="book in booksStore.books"
+              v-for="book in books"
               :key="book.id"
             >
               <BookItem :book="book" @select="selectBook"></BookItem>
@@ -55,20 +72,40 @@
 </template>
 
 <script setup lang="ts">
-import { ElButton, ElDrawer } from 'element-plus';
-import { ArrowLeft } from '@element-plus/icons-vue';
-import { ref } from 'vue';
+import { ElButton, ElDrawer, ElSelect, ElOption, ElSwitch } from 'element-plus';
+import { ArrowLeft, SortDown, SortUp } from '@element-plus/icons-vue';
+import { ref, computed } from 'vue';
 
 import { useStore } from '../../store';
 import BookItem from './BookItem.vue';
 import BookDetail from './BookDetail.vue';
 import { exportBookExcel } from '../../util';
 
-import type { Book, BookField } from '../../types';
+import type { Book, BookInStore, BookField } from '../../types';
+import type { Ref } from 'vue';
 
 const { booksStore } = useStore();
 
 const showDrawer = ref(true);
+
+const sortKey: Ref<keyof BookInStore> = ref('addTime');
+const sortKeyOptions: { value: keyof BookInStore; label: string }[] = [
+  { value: 'id', label: 'id' },
+  { value: 'title', label: '书名' },
+  { value: 'score', label: '评分' },
+  { value: 'addTime', label: '加入书架时间' },
+];
+const sortAsc: Ref<boolean> = ref(true);
+const books = computed(() => {
+  // TODO: 中文排序
+  return [...booksStore.books].sort((a, b) => {
+    const aValue = a[sortKey.value];
+    const bValue = b[sortKey.value];
+
+    if (Array.isArray(aValue) || Array.isArray(bValue)) return 0;
+    return aValue > bValue ? (sortAsc.value ? 1 : -1) : sortAsc.value ? -1 : 1;
+  });
+});
 
 const selectedBook = ref<Book | undefined>(undefined);
 const showDetail = ref<boolean>(false);
@@ -92,6 +129,15 @@ function selectBook(book: Book) {
 
 .book-list-container-header {
   margin-bottom: 20px;
+}
+
+.book-list-container-header-select {
+  margin-left: 10px;
+  width: 140px;
+}
+
+.book-list-container-header-switch {
+  margin-left: 10px;
 }
 
 .book-list-container-body {

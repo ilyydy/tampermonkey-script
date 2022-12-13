@@ -1,7 +1,12 @@
 <template>
   <div class="item">
     <div>
-      <BookFormatter :book="book" :fields="briefFields"> </BookFormatter>
+      <BookFormatter
+        :book="book"
+        :fields="briefFields"
+        :hide-empty-field="false"
+      >
+      </BookFormatter>
     </div>
 
     <div class="item-button">
@@ -50,7 +55,7 @@ const emit = defineEmits<{ (event: 'select', book: Book): void }>();
 
 const { booksStore } = useStore();
 
-const briefFields: BookField[] = ['id', 'title', 'authors', 'ISBN'];
+const briefFields: BookField[] = ['id', 'title', 'authors', 'score', 'ISBN'];
 
 function select() {
   emit('select', props.book);

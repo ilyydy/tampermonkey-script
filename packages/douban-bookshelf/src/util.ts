@@ -2,7 +2,12 @@ import { ElMessage } from 'element-plus';
 import XLSX from 'xlsx';
 import fs from 'node:fs';
 
-import { BOOK_FIELD_MAP, defaultBookFields, exportExcelName } from './constant';
+import {
+  BOOK_FIELD_MAP,
+  defaultBookFields,
+  exportExcelName,
+  excelFormatterMap,
+} from './constant';
 
 import type { Book } from './types';
 import type { AOA2SheetOpts, WritingOptions } from 'xlsx';
@@ -83,7 +88,9 @@ export function exportBookExcel(
   const data: any[] = [header];
 
   books.forEach((book) => {
-    const row = defaultBookFields.map((field) => book[field]);
+    const row = defaultBookFields.map((field) => {
+      return excelFormatterMap[field](book);
+    });
     data.push(row);
   });
 

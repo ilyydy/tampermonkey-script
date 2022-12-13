@@ -1,10 +1,10 @@
 import { reactive, watch } from 'vue';
 
-import type { Book } from '../types';
+import type { Book, BookInStore } from '../types';
 
 export const BOOK_SHELF_KEY = 'tampermonkey_douban_books';
 
-export let books: Book[];
+export let books: BookInStore[];
 
 export function useStore(force = false) {
   if (!books || force) {
@@ -27,7 +27,7 @@ export function hasBook(id: string) {
 
 export function addBook(book: Book) {
   if (!hasBook(book.id)) {
-    books.push(book);
+    books.push({ ...book, addTime: Date.now() });
     return { success: true, msg: '' };
   } else {
     return { success: false, msg: `《${book.title}》 已在书架中` };

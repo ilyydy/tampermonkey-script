@@ -17,4 +17,8 @@ export interface Book {
   contentBrief: string;
 }
 
+export interface BookInStore extends Book {
+  addTime: number;
+}
+
 export type BookField = keyof Book;
