@@ -3,13 +3,13 @@ import type { Book, BookField } from './types';
 export const BOOK_FIELD_MAP: { [key in BookField]: string } = {
   id: 'id',
   title: '书名',
-  subTitle: '子标题',
-  originName: '原书名',
+  subTitle: '副标题',
+  originName: '原作名',
   authors: '作者',
   translators: '译者',
   publishingHouse: '出版社',
   publishingTime: '出版时间',
-  seriesName: '系列名',
+  seriesName: '丛书',
   page: '页数',
   ISBN: 'ISBN',
   score: '评分',
@@ -57,17 +57,16 @@ const specialFormatter: (ButtonType | PlainTextType)[] = [
     getLink: (book) => book.coverUrl,
   },
   {
-    key: 'title',
-    label: BOOK_FIELD_MAP.title,
-    type: 'string',
-    getText: (book) =>
-      book.subTitle ? `${book.title}-${book.subTitle}` : book.title,
-  },
-  {
     key: 'authors',
     label: BOOK_FIELD_MAP.authors,
     type: 'string',
     getText: (book) => book.authors.join(', '),
+  },
+  {
+    key: 'translators',
+    label: BOOK_FIELD_MAP.translators,
+    type: 'string',
+    getText: (book) => book.translators.join(', '),
   },
 ];
 

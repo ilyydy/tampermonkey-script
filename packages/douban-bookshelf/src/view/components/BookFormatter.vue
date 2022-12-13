@@ -1,16 +1,23 @@
 <template>
-  <div class="book-field" v-for="item in bookFormatter" :key="item.key">
-    {{ item.label }}:
-    <span v-if="item.type === 'string'">{{
-      item.getText ? item.getText(book) : book[item.key]
-    }}</span>
+  <div class="book-field" v-for="item in bookItemFormatter" :key="item.key">
+    <div
+      v-show="
+        props.fields.includes(item.key) &&
+        (!props.hideEmptyField || !!props.book[item.key])
+      "
+    >
+      {{ item.label }}:
+      <span v-if="item.type === 'string'">{{
+        item.getText ? item.getText(book) : book[item.key]
+      }}</span>
 
-    <a
-      v-else-if="item.type === 'link'"
-      :href="item.getLink ? item.getLink(book) : `${book[item.key]}`"
-      target="_blank"
-      >{{ book[item.key] }}
-    </a>
+      <a
+        v-else-if="item.type === 'link'"
+        :href="item.getLink ? item.getLink(book) : `${book[item.key]}`"
+        target="_blank"
+        >{{ book[item.key] }}
+      </a>
+    </div>
   </div>
 </template>
 
@@ -19,13 +26,13 @@ import { defaultBookFields, bookItemFormatter } from '../../constant';
 
 import type { Book, BookField } from '../../types';
 
-const props = defineProps<{
-  book: Book;
-  fields?: BookField[];
-}>();
-
-const bookFormatter = bookItemFormatter.filter((i) =>
-  (props.fields ?? defaultBookFields).includes(i.key)
+const props = withDefaults(
+  defineProps<{
+    book: Book;
+    fields?: BookField[];
+    hideEmptyField?: boolean;
+  }>(),
+  { fields: () => defaultBookFields, hideEmptyField: true }
 );
 </script>
 
