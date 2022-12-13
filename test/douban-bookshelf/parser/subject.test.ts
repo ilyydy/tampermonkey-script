@@ -192,3 +192,17 @@ test('getAlreadyReadButton test', () => {
   const btnDing = subjectParser.getAlreadyReadButton(docDing as any);
   expect(btnDing?.getAttribute('name')?.endsWith('collect')).toBe(true);
 });
+
+test('getLasButton test', () => {
+  const btnAlice = subjectParser.getLasButton(docAlice as any);
+  expect(btnAlice?.getAttribute('name')?.endsWith('collect')).toBe(true);
+
+  const btnMySkirt = subjectParser.getLasButton(docMySkirt as any);
+  expect(btnMySkirt?.getAttribute('name')?.endsWith('collect')).toBe(true);
+
+  const btnUrlSer = subjectParser.getLasButton(docSer as any);
+  expect(btnUrlSer?.getAttribute('name')?.endsWith('collect')).toBe(true);
+
+  const btnDing = subjectParser.getLasButton(docDing as any);
+  expect(btnDing?.getAttribute('name')?.endsWith('collect')).toBe(true);
+});

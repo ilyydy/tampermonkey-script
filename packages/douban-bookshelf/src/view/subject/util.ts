@@ -1,5 +1,5 @@
 import { useStore } from '../../store';
-import { getAlreadyReadButton } from '../../parser/subject';
+import { getAlreadyReadButton, getLasButton } from '../../parser/subject';
 import { copyBookWithTip, warning, success } from '../../util';
 
 import type { Book } from '../../types';
@@ -26,7 +26,20 @@ export const COPY = '复制';
 export const ADD_SHELF = '加入书架';
 
 export function useInitBtns(doc: Document, book: Book) {
-  const alreadyReadButton = getAlreadyReadButton(doc);
+  const lastButton = getLasButton(doc);
+  if (!lastButton) {
+    warning(`定位'读过'按钮失败`);
+    return;
+  }
+
+  const input = lastButton.querySelector('input');
+  if (input?.value === ADD_SHELF) {
+    // 已经添加过
+    return;
+  }
+
+  const alreadyReadButton =
+    input?.value === '读过' ? lastButton : getAlreadyReadButton(doc);
   if (!alreadyReadButton) {
     warning(`定位'读过'按钮失败`);
     return;
