@@ -28,15 +28,33 @@ test('addBook test', async () => {
   const r1 = booksStore.addBook(book2);
   expect(r1.success).toBe(true);
   const expected = [book1, book2];
-  expect(booksStore.books).toEqual(expected);
+  expect(
+    booksStore.books.map((i) => {
+      const copy = { ...i };
+      delete (copy as any).addTime;
+      return copy;
+    })
+  ).toEqual(expected);
 
   const r2 = booksStore.addBook(book2);
   expect(r2.success).toBe(false);
-  expect(booksStore.books).toEqual(expected);
+  expect(
+    booksStore.books.map((i) => {
+      const copy = { ...i };
+      delete (copy as any).addTime;
+      return copy;
+    })
+  ).toEqual(expected);
   await nextTick();
-  expect(localStorage.getItem(booksStore.BOOK_SHELF_KEY)).toEqual(
-    JSON.stringify(expected)
-  );
+  expect(
+    JSON.parse(localStorage.getItem(booksStore.BOOK_SHELF_KEY) as string).map(
+      (i) => {
+        const copy = { ...i };
+        delete copy.addTime;
+        return copy;
+      }
+    )
+  ).toEqual(expected);
 });
 
 test('removeBook test', async () => {

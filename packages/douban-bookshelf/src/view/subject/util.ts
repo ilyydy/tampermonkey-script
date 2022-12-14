@@ -1,8 +1,10 @@
 import { useStore } from '../../store';
-import { getAlreadyReadButton, getLasButton } from '../../parser/subject';
+import {
+  getAlreadyReadButton,
+  getLasButton,
+  getBook,
+} from '../../parser/subject';
 import { copyBookWithTip, warning, success } from '../../util';
-
-import type { Book } from '../../types';
 
 export function createBtn(
   btn: Element,
@@ -25,7 +27,7 @@ export function createBtn(
 export const COPY = '复制';
 export const ADD_SHELF = '加入书架';
 
-export function useInitBtns(doc: Document, book: Book) {
+export function useInitBtns(doc: Document) {
   const lastButton = getLasButton(doc);
   if (!lastButton) {
     warning(`定位'读过'按钮失败`);
@@ -44,6 +46,8 @@ export function useInitBtns(doc: Document, book: Book) {
     warning(`定位'读过'按钮失败`);
     return;
   }
+
+  const book = getBook(doc);
 
   const copyBtn = createBtn(alreadyReadButton, COPY, async () => {
     await copyBookWithTip(book);

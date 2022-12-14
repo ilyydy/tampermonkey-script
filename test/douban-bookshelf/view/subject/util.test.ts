@@ -4,7 +4,7 @@ import { fileURLToPath } from 'node:url';
 import { createWindowFromFile } from '../../../util';
 import * as util from '../../../../packages/douban-bookshelf/src/view/subject/util';
 import { useStore } from '../../../../packages/douban-bookshelf/src/store/index';
-import { book1 } from '../../data';
+import { bookAlice } from '../../data';
 
 import type { Document } from 'happy-dom';
 
@@ -18,7 +18,7 @@ beforeAll(async () => {
 });
 
 test('useInitBtns test', async () => {
-  const btns = util.useInitBtns(docAlice as any, book1);
+  const btns = util.useInitBtns(docAlice as any);
   assert(btns);
   const { addBtn, copyBtn } = btns;
 
@@ -37,5 +37,7 @@ test('useInitBtns test', async () => {
 
   const { booksStore } = useStore();
   expect(booksStore.books.length).toBe(1);
-  expect(booksStore.books[0]).toEqual(book1);
+  const copy = { ...booksStore.books[0] };
+  delete (copy as any).addTime;
+  expect(copy).toEqual(bookAlice);
 });
