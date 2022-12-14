@@ -7,10 +7,12 @@ import { onMounted, ref } from 'vue';
 
 import BookShelf from './components/BookShelf.vue';
 import { init as subjectInit } from './subject/index';
+import { init as searchInit } from './search/index';
 
 onMounted(async () => {
   const map: { [index: string]: (doc: Document) => void } = {
     ['book.douban.com/subject']: subjectInit,
+    ['search.douban.com/book']: searchInit,
   };
 
   const url = new URL(document.URL);

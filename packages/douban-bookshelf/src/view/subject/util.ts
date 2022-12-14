@@ -7,21 +7,25 @@ import {
 import { copyBookWithTip, warning, success } from '../../util';
 
 export function createBtn(
-  btn: Element,
+  doc: Document,
   text: string,
   clickHandler: () => void | Promise<void>
 ) {
-  const copyBtn = btn.cloneNode(true) as Element;
-  const input = copyBtn?.querySelector('input');
-  if (input) {
-    input.value = text;
-  }
-  copyBtn.addEventListener('click', (e) => {
+  const btn = doc.createElement('a');
+  btn.classList.add('j', 'a_show_login', 'colbutt', 'll');
+  btn.href = '#';
+  btn.rel = 'nofollow';
+  const span = doc.createElement('span');
+  span.textContent = text;
+  span.style.fontSize = '13px';
+  btn.appendChild(span);
+
+  btn.addEventListener('click', (e) => {
     e.preventDefault();
     clickHandler();
   });
 
-  return copyBtn;
+  return btn;
 }
 
 export const COPY = '复制';
@@ -49,11 +53,11 @@ export function useInitBtns(doc: Document) {
 
   const book = getBook(doc);
 
-  const copyBtn = createBtn(alreadyReadButton, COPY, async () => {
+  const copyBtn = createBtn(doc, COPY, async () => {
     await copyBookWithTip(book);
   });
   const { booksStore } = useStore();
-  const addBtn = createBtn(alreadyReadButton, ADD_SHELF, () => {
+  const addBtn = createBtn(doc, ADD_SHELF, () => {
     const r = booksStore.addBook(book);
     if (!r.success) {
       warning(r.msg);
