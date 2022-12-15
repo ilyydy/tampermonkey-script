@@ -38,12 +38,13 @@ export function useInitBtns(doc: Document) {
     return;
   }
 
-  const input = lastButton.querySelector('input');
-  if (input?.value === ADD_SHELF) {
+  const span = lastButton.querySelector('span');
+  if (span?.textContent === ADD_SHELF) {
     // 已经添加过
     return;
   }
 
+  const input = span?.querySelector('input');
   const alreadyReadButton =
     input?.value === '读过' ? lastButton : getAlreadyReadButton(doc);
   if (!alreadyReadButton) {

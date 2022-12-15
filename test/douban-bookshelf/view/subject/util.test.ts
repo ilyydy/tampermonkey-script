@@ -26,12 +26,8 @@ test('useInitBtns test', async () => {
     docAlice.querySelectorAll('#interest_sect_level > a')
   );
   expect(aElements.length).toBe(5);
-  expect(aElements[3].querySelector('input')?.getAttribute('value')).toBe(
-    util.COPY
-  );
-  expect(aElements[4].querySelector('input')?.getAttribute('value')).toBe(
-    util.ADD_SHELF
-  );
+  expect(aElements[3].querySelector('span')?.textContent).toBe(util.COPY);
+  expect(aElements[4].querySelector('span')?.textContent).toBe(util.ADD_SHELF);
 
   addBtn.dispatchEvent(new Event('click'));
 
@@ -40,4 +36,12 @@ test('useInitBtns test', async () => {
   const copy = { ...booksStore.books[0] };
   delete (copy as any).addTime;
   expect(copy).toEqual(bookAlice);
+
+  const empty = util.useInitBtns(docAlice as any);
+  expect(empty).toBe(undefined);
+
+  const aElementsAgain = Array.from(
+    docAlice.querySelectorAll('#interest_sect_level > a')
+  );
+  expect(aElementsAgain.length).toBe(5);
 });
