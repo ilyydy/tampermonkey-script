@@ -79,7 +79,7 @@ import { ref, computed } from 'vue';
 import { useStore } from '../../store';
 import BookItem from './BookItem.vue';
 import BookDetail from './BookDetail.vue';
-import { exportBookExcel } from '../../util';
+import { exportBookExcel } from '../../common/book';
 
 import type { Book, BookInStore, BookField } from '../../types';
 import type { Ref } from 'vue';

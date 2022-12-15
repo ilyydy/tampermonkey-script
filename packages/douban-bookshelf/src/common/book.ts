@@ -1,4 +1,10 @@
-import type { Book, BookField } from './types';
+import XLSX from 'xlsx';
+import fs from 'node:fs';
+
+import { error, info, success, warning } from './message';
+
+import type { AOA2SheetOpts, WritingOptions } from 'xlsx';
+import type { Book, BookField } from '../types';
 
 export const BOOK_FIELD_MAP: { [key in BookField]: string } = {
   id: 'id',
@@ -111,3 +117,70 @@ export const bookItemFormatters: (ButtonType | PlainTextType)[] =
       getText: (book) => book[field],
     };
   });
+
+export function getBookViewText(book: Book, fields = defaultBookFields) {
+  const textList: string[] = [];
+
+  fields.forEach((i) => {
+    const v = book[i];
+    if (Array.isArray(v)) {
+      if (v.length > 0) textList.push(`${BOOK_FIELD_MAP[i]}: ${v.join(', ')}`);
+    } else if (v) {
+      textList.push(`${BOOK_FIELD_MAP[i]}: ${v}`);
+    }
+  });
+
+  return textList.join('\n');
+}
+
+export async function copyBook(book: Book, fields = defaultBookFields) {
+  const text = getBookViewText(book, fields);
+  await navigator.clipboard.writeText(text);
+}
+
+export async function copyBookWithTip(book: Book, fields = defaultBookFields) {
+  try {
+    await copyBook(book);
+    success('复制成功');
+  } catch (err: any) {
+    error(err.msg);
+  }
+}
+
+if (import.meta.env.MODE === 'test') {
+  /**
+   * @see https://docs.sheetjs.com/docs/getting-started/installation/nodejs/#usage
+   */
+  XLSX.set_fs(fs);
+}
+
+export function exportExcel<T = any>(
+  rows: T[][],
+  filename = exportExcelName,
+  aoa2SheetOpts?: AOA2SheetOpts,
+  writingOptions?: WritingOptions
+) {
+  const worksheet = XLSX.utils.aoa_to_sheet(rows, aoa2SheetOpts);
+  const workbook = XLSX.utils.book_new();
+  XLSX.utils.book_append_sheet(workbook, worksheet);
+  XLSX.writeFile(workbook, filename, writingOptions);
+}
+
+export function exportBookExcel(
+  books: Book[],
+  filename = exportExcelName,
+  aoa2SheetOpts?: AOA2SheetOpts,
+  writingOptions?: WritingOptions
+) {
+  const header = defaultBookFields.map((field) => BOOK_FIELD_MAP[field]);
+  const data: any[] = [header];
+
+  books.forEach((book) => {
+    const row = defaultBookFields.map((field) => {
+      return excelFormatterMap[field](book);
+    });
+    data.push(row);
+  });
+
+  exportExcel(data, filename, aoa2SheetOpts, writingOptions);
+}

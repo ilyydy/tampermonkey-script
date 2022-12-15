@@ -13,3 +13,10 @@ export async function createWindowFromFile(htmlPath: string) {
   });
   return createWindowFromHtml(html);
 }
+
+export async function untilEventFired(obj: Node, event: string) {
+  const p = new Promise<void>((res) => {
+    obj.addEventListener(event, () => res(), { once: true });
+  });
+  await p;
+}

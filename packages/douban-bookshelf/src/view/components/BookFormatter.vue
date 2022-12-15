@@ -18,7 +18,7 @@
 
 <script setup lang="ts">
 import { computed } from 'vue';
-import { defaultBookFields, bookItemFormatters } from '../../constant';
+import { defaultBookFields, bookItemFormatters } from '../../common/book';
 
 import type { Book, BookField } from '../../types';
 

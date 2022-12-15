@@ -44,7 +44,7 @@ import { ElButton } from 'element-plus';
 
 import BookFormatter from './BookFormatter.vue';
 import { useStore } from '../../store';
-import { copyBookWithTip } from '../../util';
+import { copyBookWithTip } from '../../common/book';
 
 import type { Book, BookField } from '../../types';
 
