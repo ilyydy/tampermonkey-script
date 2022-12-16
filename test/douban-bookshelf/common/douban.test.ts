@@ -18,7 +18,7 @@ beforeAll(async () => {
   docAlice = windowAlice.document;
 });
 
-test.only('createCopyBtn test', async () => {
+test('createCopyBtn test', async () => {
   const copyBtn = douban.createCopyBtn(docAlice as any, getBook);
   copyBtn.dispatchEvent(new Event('click'));
 
