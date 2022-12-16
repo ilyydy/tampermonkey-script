@@ -68,6 +68,9 @@ new-script() {
     template="template-$2"
   fi
 
+  cur_dir=$(pwd)
+  cd "$PROJECT_ROOT_DIR" 2>/dev/null || exit
+
   if [ -d "$PACKAGES_DIR"/"$name" ]; then
     echo "script dir $name already exists."
   else
@@ -77,33 +80,47 @@ new-script() {
       pnpm -F "$name" i &&
       echo "create script dir $name done"
   fi
+
+  cd "${cur_dir}" || exit
 }
 
 reload-dev() {
   # shellcheck source=/dev/null
-  source dev.sh
+  source "$PROJECT_ROOT_DIR"/dev.sh
 }
 
 _packages_autotab() {
-  local cur=${COMP_WORDS[COMP_CWORD]}
+  cur_dir=$(pwd)
+
+  _get_comp_words_by_ref -n : cur
 
   if [ "${#COMP_WORDS[@]}" -eq 2 ]; then
-    cd "$PROJECT_ROOT_DIR"/packages && _filedir -d; cd ..
-  else
-    return 0
+    cd "$PROJECT_ROOT_DIR"/packages 2>/dev/null && _filedir -d
+    cd "${cur_dir}" || exit
   fi
 }
 
 _test_autotab() {
-  # shellcheck disable=SC2034
-  local cur=${COMP_WORDS[COMP_CWORD]}
+  cur_dir=$(pwd)
+
+  _get_comp_words_by_ref -n : cur
 
   if [ "${#COMP_WORDS[@]}" -eq 2 ]; then
-    cd "$PROJECT_ROOT_DIR"/test && _filedir 'test.ts'; cd ..
-  else
-    return 0
+    cd "$PROJECT_ROOT_DIR"/test 2>/dev/null && _filedir 'test.ts'
+
+    for ((i = 0; i < ${#COMPREPLY[@]}; i++)); do
+      # 为目录时追加 /
+      # 如果已经在 test 目录则会由补全自动追加，不需要额外处理
+      if [ -d "${COMPREPLY[$i]}" ] && [ "$PROJECT_ROOT_DIR/test" != "${cur_dir}" ]; then
+        COMPREPLY["$i"]="${COMPREPLY[$i]}/"
+      else
+        COMPREPLY["$i"]="${COMPREPLY[$i]}"
+      fi
+    done
+
+    cd "${cur_dir}" || exit
   fi
 }
 
 complete -X 'template*' -F _packages_autotab lint dev build type-check changelog
-complete -F _test_autotab vtest vcoverage
+complete -o filenames -o nospace -o bashdefault -F _test_autotab vtest vcoverage
