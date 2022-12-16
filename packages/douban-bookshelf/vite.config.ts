@@ -36,8 +36,6 @@ export default defineConfig({
           icon: 'https://img3.doubanio.com/favicon.ico',
           match: [
             'http*://*book.douban.com/*',
-            'http*://book.douban.com/subject/*',
-            'http*://book.douban.com/series/*',
             'http*://search.douban.com/book/*',
           ],
         },
