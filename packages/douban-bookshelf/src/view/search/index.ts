@@ -1,7 +1,6 @@
-import { useStore } from '../../store';
-import { warning, success } from '../../common/message';
 import {
-  ADD_SHELF,
+  ADD_SHELF_ID,
+  COPY_ID,
   createCopyBtn,
   createAddBtn,
   getBookByUrl,
@@ -9,30 +8,16 @@ import {
 import { getBookItemList } from './parser';
 
 import type { Book } from '../../types';
-import { el } from 'element-plus/es/locale';
 
 export function useInitBtns(doc: Document) {
+  const btn = doc.getElementById(`${COPY_ID}-0`);
+  if (btn) {
+    // 已经添加过
+    return;
+  }
+
   const list = getBookItemList(doc);
-
-  list.forEach(({ element, url }) => {
-    // const lastButton = getLasButton(doc);
-    // if (!lastButton) {
-    //   warning(`定位'读过'按钮失败`);
-    //   return;
-    // }
-    // const span = lastButton.querySelector('span');
-    // if (span?.textContent === ADD_SHELF) {
-    //   // 已经添加过
-    //   return;
-    // }
-
-    // const input = span?.querySelector('input');
-    // const alreadyReadButton =
-    //   input?.value === '读过' ? lastButton : getAlreadyReadButton(doc);
-    // if (!alreadyReadButton) {
-    //   warning(`定位'读过'按钮失败`);
-    //   return;
-    // }
+  list.forEach(({ element, url }, idx) => {
     let bookCache: Book | undefined = undefined;
     const getBook = async () => {
       if (bookCache) return bookCache;
@@ -45,11 +30,14 @@ export function useInitBtns(doc: Document) {
       return book;
     };
 
-    const copyBtn = createCopyBtn(doc, getBook);
-    const addBtn = createAddBtn(doc, getBook);
+    const style: Partial<CSSStyleDeclaration> = {
+      marginTop: '7px',
+    };
+    const copyBtn = createCopyBtn(doc, getBook, `${COPY_ID}-${idx}`, style);
+    const addBtn = createAddBtn(doc, getBook, `${ADD_SHELF_ID}-${idx}`, style);
 
-    // alreadyReadButton.after(copyBtn);
-    // copyBtn.after(addBtn);
+    element.querySelector('.detail')?.appendChild(copyBtn);
+    copyBtn.after(addBtn);
   });
 }
 

@@ -38,7 +38,7 @@ export default defineConfig({
             'http*://*book.douban.com/*',
             'http*://book.douban.com/subject/*',
             'http*://book.douban.com/series/*',
-            'http*://search.douban.com/book/subject_search',
+            'http*://search.douban.com/book/*',
           ],
         },
         build: {
