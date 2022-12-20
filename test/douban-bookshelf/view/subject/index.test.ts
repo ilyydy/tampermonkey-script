@@ -21,19 +21,17 @@ test('useInitBtns test', async () => {
   expect(btns).not.toBe(undefined);
 
   const aElements = Array.from(
-    docAlice.querySelectorAll('#interest_sect_level > a')
+    docAlice.getElementsByClassName(douban.IDENTIFY_CLASS)
   );
-  expect(aElements.length).toBe(5);
-  expect(aElements[3].querySelector('span')?.textContent).toBe(douban.COPY);
-  expect(aElements[4].querySelector('span')?.textContent).toBe(
-    douban.ADD_SHELF
-  );
+  expect(aElements.length).toBe(2);
+  expect(aElements[0].textContent).toBe(douban.COPY);
+  expect(aElements[1].textContent).toBe(douban.ADD_SHELF);
 
   const empty = useInitBtns(docAlice as any);
   expect(empty).toBe(undefined);
 
   const aElementsAgain = Array.from(
-    docAlice.querySelectorAll('#interest_sect_level > a')
+    docAlice.getElementsByClassName(douban.IDENTIFY_CLASS)
   );
-  expect(aElementsAgain.length).toBe(5);
+  expect(aElementsAgain.length).toBe(2);
 });
