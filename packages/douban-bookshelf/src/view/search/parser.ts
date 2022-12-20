@@ -16,3 +16,7 @@ export function getBookItemList(searchDoc: Document) {
     [] as { element: Element; url: string }[]
   );
 }
+
+export function getBookName(BookItem: Element) {
+  return BookItem.querySelector('.detail .title')?.querySelector('a')?.text;
+}

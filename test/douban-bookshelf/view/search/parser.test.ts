@@ -28,3 +28,11 @@ test('getBookItemList test', () => {
   const bookItemListAd = searchParser.getBookItemList(docAd as any);
   expect(bookItemListAd.length).toEqual(2);
 });
+
+test('getBookName test', () => {
+  const bookItemListQing = searchParser.getBookItemList(docQing as any);
+  expect(bookItemListQing.length).toEqual(15);
+
+  const name = searchParser.getBookName(bookItemListQing[0].element);
+  expect(name).toEqual('给青年人的哲学十二讲 : 尤里卡文库 II');
+});

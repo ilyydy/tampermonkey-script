@@ -1,8 +1,11 @@
 import { useStore } from '../store';
+import { GM_Fetch } from './fetch';
 import { copyBookWithTip } from './book';
 import { warning, success } from './message';
 
 import type { Book } from '../types';
+
+export const IDENTIFY_CLASS = 'douban_shelf_button';
 
 export function createBtn(
   doc: Document,
@@ -23,6 +26,7 @@ export function createBtn(
   }
 
   const span = doc.createElement('span');
+  span.classList.add(IDENTIFY_CLASS);
   span.textContent = text;
   span.style.fontSize = '13px';
   btn.appendChild(span);
@@ -95,11 +99,16 @@ export function createAddBtn(
   return btn;
 }
 
-export async function getBookById(id: string) {
-  return getBookByUrl(`https://book.douban.com/subject/${id}`);
+export async function getBookPageHtmlById(id: string) {
+  return getBookPageHtmlByUrl(`https://book.douban.com/subject/${id}`);
 }
 
-export async function getBookByUrl(url: string) {
-  // TODO:
-  return {} as Book;
+export async function getBookPageHtmlByUrl(url: string) {
+  const response = await GM_Fetch({ url });
+  if (response.status !== 200) {
+    return null;
+  }
+
+  const text = await response.text();
+  return text;
 }

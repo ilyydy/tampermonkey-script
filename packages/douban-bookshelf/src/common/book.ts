@@ -1,5 +1,6 @@
 import XLSX from 'xlsx';
 import fs from 'node:fs';
+import { GM_setClipboard } from 'vite-plugin-monkey/dist/client';
 
 import { error, info, success, warning } from './message';
 
@@ -135,7 +136,7 @@ export function getBookViewText(book: Book, fields = defaultBookFields) {
 
 export async function copyBook(book: Book, fields = defaultBookFields) {
   const text = getBookViewText(book, fields);
-  await navigator.clipboard.writeText(text);
+  GM_setClipboard(text, 'text');
 }
 
 export async function copyBookWithTip(book: Book, fields = defaultBookFields) {

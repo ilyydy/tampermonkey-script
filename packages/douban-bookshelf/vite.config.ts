@@ -38,6 +38,7 @@ export default defineConfig({
             'http*://*book.douban.com/*',
             'http*://search.douban.com/book/*',
           ],
+          connect: ['book.douban.com'],
         },
         build: {
           externalGlobals: {

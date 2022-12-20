@@ -3,9 +3,10 @@ import {
   COPY_ID,
   createCopyBtn,
   createAddBtn,
-  getBookByUrl,
+  getBookPageHtmlByUrl,
 } from '../../common/douban';
-import { getBookItemList } from './parser';
+import { getBook as getBookFromSubject } from '../subject/parser';
+import { getBookItemList, getBookName } from './parser';
 
 import type { Book } from '../../types';
 
@@ -13,7 +14,7 @@ export function useInitBtns(doc: Document) {
   const btn = doc.getElementById(`${COPY_ID}-0`);
   if (btn) {
     // 已经添加过
-    return;
+    return false;
   }
 
   const list = getBookItemList(doc);
@@ -22,11 +23,16 @@ export function useInitBtns(doc: Document) {
     const getBook = async () => {
       if (bookCache) return bookCache;
 
-      const book = await getBookByUrl(url);
-      if (book) {
-        bookCache = book;
+      const html = await getBookPageHtmlByUrl(url);
+      if (!html) {
+        const bookName = getBookName(element);
+        throw new Error(`获取《${bookName}》页面失败`);
       }
 
+      const parser = new DOMParser();
+      const htmlDoc = parser.parseFromString(html, 'text/html');
+      const book = getBookFromSubject(htmlDoc);
+      bookCache = book;
       return book;
     };
 
@@ -39,6 +45,7 @@ export function useInitBtns(doc: Document) {
     element.querySelector('.detail')?.appendChild(copyBtn);
     copyBtn.after(addBtn);
   });
+  return true;
 }
 
 export function init(doc: Document) {
