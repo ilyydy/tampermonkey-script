@@ -6,7 +6,7 @@ import {
   getBookPageHtmlByUrl,
 } from '../../common/douban';
 import { getBook as getBookFromSubject } from '../subject/parser';
-import { getBookItemList, getBookName } from './parser';
+import { getBookItemList } from './parser';
 
 import type { Book } from '../../types';
 
@@ -18,15 +18,14 @@ export function useInitBtns(doc: Document) {
   }
 
   const list = getBookItemList(doc);
-  list.forEach(({ element, url }, idx) => {
+  list.forEach(({ element, url, name }, idx) => {
     let bookCache: Book | undefined = undefined;
     const getBook = async () => {
       if (bookCache) return bookCache;
 
       const html = await getBookPageHtmlByUrl(url);
       if (!html) {
-        const bookName = getBookName(element);
-        throw new Error(`获取《${bookName}》页面失败`);
+        throw new Error(`获取《${name}》页面失败`);
       }
 
       const parser = new DOMParser();

@@ -6,17 +6,17 @@ export function getBookItemList(searchDoc: Document) {
     (list, cur) => {
       const aEle = cur.querySelector('a');
       if (aEle?.href?.startsWith('https://book.douban.com/subject/')) {
+        const name =
+          cur.querySelector('.detail .title')?.querySelector('a')
+            ?.textContent ?? '';
         list.push({
           element: cur,
           url: aEle?.href,
+          name,
         });
       }
       return list;
     },
-    [] as { element: Element; url: string }[]
+    [] as { element: Element; url: string; name: string }[]
   );
-}
-
-export function getBookName(BookItem: Element) {
-  return BookItem.querySelector('.detail .title')?.querySelector('a')?.text;
 }
