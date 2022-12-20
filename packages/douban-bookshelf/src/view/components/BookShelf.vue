@@ -27,7 +27,7 @@
             >清空</ElButton
           >
 
-          <ElSelect v-model="sortKey" class="book-list-container-header-select">
+          <!-- <ElSelect v-model="sortKey" class="book-list-container-header-select">
             <ElOption
               v-for="item in sortKeyOptions"
               :key="item.value"
@@ -41,7 +41,7 @@
             class="book-list-container-header-switch"
             inline-prompt
             :active-icon="SortUp"
-            :inactive-icon="SortDown"
+            :inactive-icon="SortDown" -->
           />
         </div>
 
@@ -86,7 +86,7 @@ import type { Ref } from 'vue';
 
 const { booksStore } = useStore();
 
-const showDrawer = ref(true);
+const showDrawer = ref(false);
 
 const sortKey: Ref<keyof BookInStore> = ref('addTime');
 const sortKeyOptions: { value: keyof BookInStore; label: string }[] = [

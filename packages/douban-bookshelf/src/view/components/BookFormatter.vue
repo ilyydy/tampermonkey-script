@@ -33,10 +33,12 @@ const props = withDefaults(
 
 const bookFormatter = computed(() =>
   bookItemFormatters.filter((i) => {
-    return (
-      props.fields.includes(i.key) &&
-      (!props.hideEmptyField || !!props.book[i.key])
-    );
+    if (!props.fields.includes(i.key)) return false;
+    if (!props.hideEmptyField) return true;
+
+    const v = props.book[i.key];
+    if (Array.isArray(v)) return v.length > 0;
+    return !!props.book[i.key];
   })
 );
 </script>
