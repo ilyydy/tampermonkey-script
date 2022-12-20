@@ -1,4 +1,5 @@
 import { reactive, watch } from 'vue';
+import { GM_setValue, GM_getValue } from 'vite-plugin-monkey/dist/client';
 
 import type { Book, BookInStore } from '../types';
 
@@ -8,10 +9,19 @@ export let books: BookInStore[];
 
 export function useStore(force = false) {
   if (!books || force) {
-    books = reactive(JSON.parse(localStorage.getItem(BOOK_SHELF_KEY) ?? '[]'));
-    watch(books, (newValue) => {
-      localStorage.setItem(BOOK_SHELF_KEY, JSON.stringify(newValue));
-    });
+    if (import.meta.env.MODE === 'test') {
+      books = reactive(
+        JSON.parse(localStorage.getItem(BOOK_SHELF_KEY) ?? '[]')
+      );
+      watch(books, (newValue) => {
+        localStorage.setItem(BOOK_SHELF_KEY, JSON.stringify(newValue));
+      });
+    } else {
+      books = reactive(JSON.parse(GM_getValue(BOOK_SHELF_KEY, '[]')));
+      watch(books, (newValue) => {
+        GM_setValue(BOOK_SHELF_KEY, JSON.stringify(newValue));
+      });
+    }
   }
 
   return books;
