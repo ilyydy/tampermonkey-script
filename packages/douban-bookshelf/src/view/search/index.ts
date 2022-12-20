@@ -5,6 +5,7 @@ import {
   createAddBtn,
   getBookPageHtmlByUrl,
 } from '../../common/douban';
+import { useStore } from '../../store';
 import { getBook as getBookFromSubject } from '../subject/parser';
 import { getBookItemList } from './parser';
 
@@ -17,11 +18,21 @@ export function useInitBtns(doc: Document) {
     return false;
   }
 
+  const { booksStore } = useStore();
   const list = getBookItemList(doc);
-  list.forEach(({ element, url, name }, idx) => {
+  list.forEach(({ element, url, name, id }, idx) => {
     let bookCache: Book | undefined = undefined;
     const getBook = async () => {
       if (bookCache) return bookCache;
+
+      const bookInStore = booksStore.getBook(id);
+      if (bookInStore) {
+        bookCache = {
+          ...bookInStore,
+        };
+        delete (bookCache as any).addTime;
+        return bookCache;
+      }
 
       const html = await getBookPageHtmlByUrl(url);
       if (!html) {

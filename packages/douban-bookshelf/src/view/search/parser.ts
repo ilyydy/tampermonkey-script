@@ -9,14 +9,21 @@ export function getBookItemList(searchDoc: Document) {
         const name =
           cur.querySelector('.detail .title')?.querySelector('a')
             ?.textContent ?? '';
+
+        const id =
+          aEle?.href
+            ?.split('https://book.douban.com/subject/')[1]
+            ?.split('/')[0] ?? '';
+
         list.push({
           element: cur,
           url: aEle?.href,
+          id,
           name,
         });
       }
       return list;
     },
-    [] as { element: Element; url: string; name: string }[]
+    [] as { element: Element; url: string; id: string; name: string }[]
   );
 }

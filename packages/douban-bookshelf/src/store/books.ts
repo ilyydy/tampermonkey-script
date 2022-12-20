@@ -31,6 +31,10 @@ export function getBookIdx(id: string) {
   return books.findIndex((i) => i.id === id);
 }
 
+export function getBook(id: string) {
+  return books.find((i) => i.id === id);
+}
+
 export function hasBook(id: string) {
   return getBookIdx(id) !== -1;
 }
