@@ -41,8 +41,8 @@
             class="book-list-container-header-switch"
             inline-prompt
             :active-icon="SortUp"
-            :inactive-icon="SortDown" -->
-          />
+            :inactive-icon="SortDown"
+          /> -->
         </div>
 
         <div class="book-list-container-body">
