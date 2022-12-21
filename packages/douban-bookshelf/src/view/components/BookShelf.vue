@@ -12,7 +12,7 @@
     <template #default>
       <div class="book-list-container">
         <div class="book-list-container-header">
-          <ElDropdown>
+          <ElDropdown :disabled="books.length === 0">
             <ElButton type="primary" round :disabled="books.length === 0">
               导出<ElIcon class="el-icon--right"> <ArrowDown /> </ElIcon>
             </ElButton>
