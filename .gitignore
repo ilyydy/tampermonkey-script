@@ -117,3 +117,5 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+*.xlsx

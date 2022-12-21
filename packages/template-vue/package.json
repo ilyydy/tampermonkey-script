@@ -7,19 +7,23 @@
     "dev": "vite",
     "build": "pnpm type-check && pnpm build-only",
     "build-only": "vite build",
-    "type-check": "tsc --noEmit",
+    "type-check": "vue-tsc --noEmit",
     "coverage": "vitest run --coverage",
     "changelog": "conventional-changelog -p angular -r 0 -t TODO@ --commit-path $PWD --pkg package.json -i CHANGELOG.md -s",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix",
     "lint:check": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts"
   },
   "packageManager": "^pnpm@7.13.4",
-  "dependencies": {},
+  "dependencies": {
+    "vue": "3.2.41"
+  },
   "devDependencies": {
+    "@vitejs/plugin-vue": "4.0.0",
     "conventional-changelog-cli": "2.2.2",
     "tsx": "3.12.1",
     "typescript": "4.9.4",
     "vite": "4.0.2",
-    "vitest": "0.25.8"
+    "vitest": "0.25.8",
+    "vue-tsc": "1.0.13"
   }
 }

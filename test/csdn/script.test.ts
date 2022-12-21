@@ -1,7 +1,7 @@
 import { describe, expect, test, vi } from 'vitest';
-import { Window } from 'happy-dom';
 
 import run from '../../packages/csdn/src/script';
+import { createWindowFromHtml } from '../util';
 
 test('csdn test', () => {
   const html = `
@@ -12,9 +12,8 @@ test('csdn test', () => {
 </pre>
 `;
 
-  const window = new Window();
+  const window = createWindowFromHtml(html);
   const document = window.document;
-  document.body.innerHTML = html;
   run(document as any);
 
   expect(document.body.innerHTML.split('user-select: auto').length - 1).toBe(2);
