@@ -41,7 +41,7 @@ jobs:
 
           echo $pkgName
           echo "pkgName=$pkgName" >> $GITHUB_ENV
-      - run: pnpm build ${{ env.pkgName }}
+      - run: pnpm -F ${{ env.pkgName }} build
       - name: push to branch
         uses: JamesIves/github-pages-deploy-action@releases/v3
         with:
