@@ -29,7 +29,6 @@ jobs:
           node-version: ${{ matrix.node-version }}
           cache: "pnpm"
       - run: pnpm i --frozen-lockfile
-      - run: pnpm build
       - name: get pkgName
         run: |
           if [[ $GITHUB_REF_NAME =~ ^v.+ ]]; then
@@ -42,6 +41,7 @@ jobs:
 
           echo $pkgName
           echo "pkgName=$pkgName" >> $GITHUB_ENV
+      - run: pnpm build ${{ env.pkgName }}
       - name: push to branch
         uses: JamesIves/github-pages-deploy-action@releases/v3
         with:
