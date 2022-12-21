@@ -4,6 +4,10 @@ PROJECT_ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" &>/dev/null && pwd)"
 
 PACKAGES_DIR="./packages"
 
+add() {
+  pnpm -F "$1" add "$2"
+}
+
 lint() {
   if [ -z "$1" ]; then
     pnpm -r --parallel lint
@@ -122,5 +126,5 @@ _test_autotab() {
   fi
 }
 
-complete -X 'template*' -F _packages_autotab lint dev build type-check changelog
+complete -X 'template*' -F _packages_autotab lint dev build type-check changelog add
 complete -o filenames -o nospace -o bashdefault -F _test_autotab vtest vcoverage
