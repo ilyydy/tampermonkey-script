@@ -12,20 +12,30 @@
     <template #default>
       <div class="book-list-container">
         <div class="book-list-container-header">
+          <ElDropdown>
+            <ElButton type="primary" round :disabled="books.length === 0">
+              导出<ElIcon class="el-icon--right"> <ArrowDown /> </ElIcon>
+            </ElButton>
+            <template #dropdown>
+              <ElDropdownMenu>
+                <ElDropdownItem @click="() => exportBookXlsx(books)"
+                  >excel
+                </ElDropdownItem>
+                <ElDropdownItem @click="() => exportBookCsv(books)"
+                  >csv
+                </ElDropdownItem>
+              </ElDropdownMenu>
+            </template>
+          </ElDropdown>
+
           <ElButton
-            round
-            type="primary"
-            :disabled="books.length === 0"
-            @click="() => exportBookExcel(books)"
-            >导出</ElButton
-          >
-          <ElButton
+            class="book-list-container-header-item"
             round
             type="danger"
             :disabled="books.length === 0"
             @click="booksStore.clearBook"
-            >清空</ElButton
-          >
+            >清空
+          </ElButton>
 
           <!-- <ElSelect v-model="sortKey" class="book-list-container-header-select">
             <ElOption
@@ -38,7 +48,7 @@
 
           <ElSwitch
             v-model="sortAsc"
-            class="book-list-container-header-switch"
+            class="book-list-container-header-item"
             inline-prompt
             :active-icon="SortUp"
             :inactive-icon="SortDown"
@@ -72,14 +82,29 @@
 </template>
 
 <script setup lang="ts">
-import { ElButton, ElDrawer, ElSelect, ElOption, ElSwitch } from 'element-plus';
-import { ArrowLeft, SortDown, SortUp } from '@element-plus/icons-vue';
+import {
+  ElButton,
+  ElDrawer,
+  ElDropdownMenu,
+  ElDropdown,
+  ElDropdownItem,
+  ElIcon,
+  ElSelect,
+  ElOption,
+  ElSwitch,
+} from 'element-plus';
+import {
+  ArrowLeft,
+  ArrowDown,
+  SortDown,
+  SortUp,
+} from '@element-plus/icons-vue';
 import { ref, computed } from 'vue';
 
 import { useStore } from '../../store';
 import BookItem from './BookItem.vue';
 import BookDetail from './BookDetail.vue';
-import { exportBookExcel } from '../../common/book';
+import { exportBookCsv, exportBookXlsx } from '../../common/book';
 
 import type { Book, BookInStore, BookField } from '../../types';
 import type { Ref } from 'vue';
@@ -136,7 +161,7 @@ function selectBook(book: Book) {
   width: 140px;
 }
 
-.book-list-container-header-switch {
+.book-list-container-header-item {
   margin-left: 10px;
 }
 

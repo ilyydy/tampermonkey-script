@@ -1,10 +1,11 @@
-import XLSX from 'xlsx';
-import fs from 'node:fs';
 import { GM_setClipboard } from 'vite-plugin-monkey/dist/client';
 
 import { error, info, success, warning } from './message';
+import { exportCsv } from './csv';
+import { exportXlsx } from './xlsx';
 
 import type { AOA2SheetOpts, WritingOptions } from 'xlsx';
+import type { Options } from 'csv-stringify';
 import type { Book, BookField } from '../types';
 
 export const BOOK_FIELD_MAP: { [key in BookField]: string } = {
@@ -27,8 +28,6 @@ export const BOOK_FIELD_MAP: { [key in BookField]: string } = {
 };
 
 export const defaultBookFields = Object.keys(BOOK_FIELD_MAP) as BookField[];
-
-export const exportExcelName = '豆瓣书籍导出.xlsx';
 
 export const excelFormatterMap = defaultBookFields.reduce((pre, field) => {
   switch (field) {
@@ -148,28 +147,33 @@ export async function copyBookWithTip(book: Book, fields = defaultBookFields) {
   }
 }
 
-if (import.meta.env.MODE === 'test') {
-  /**
-   * @see https://docs.sheetjs.com/docs/getting-started/installation/nodejs/#usage
-   */
-  XLSX.set_fs(fs);
-}
+export const exportName = '豆瓣书籍导出';
 
-export function exportExcel<T = any>(
-  rows: T[][],
-  filename = exportExcelName,
-  aoa2SheetOpts?: AOA2SheetOpts,
-  writingOptions?: WritingOptions
-) {
-  const worksheet = XLSX.utils.aoa_to_sheet(rows, aoa2SheetOpts);
-  const workbook = XLSX.utils.book_new();
-  XLSX.utils.book_append_sheet(workbook, worksheet);
-  XLSX.writeFile(workbook, filename, writingOptions);
-}
+export const exportCsvName = '豆瓣书籍导出.csv';
 
-export function exportBookExcel(
+export function exportBookCsv(
   books: Book[],
-  filename = exportExcelName,
+  filename = exportCsvName,
+  options: Options = { bom: true }
+) {
+  const header = defaultBookFields.map((field) => BOOK_FIELD_MAP[field]);
+  const data: any[] = [header];
+
+  books.forEach((book) => {
+    const row = defaultBookFields.map((field) => {
+      return excelFormatterMap[field](book);
+    });
+    data.push(row);
+  });
+
+  exportCsv(data, filename, options);
+}
+
+export const exportXlsxName = '豆瓣书籍导出.xlsx';
+
+export function exportBookXlsx(
+  books: Book[],
+  filename = exportXlsxName,
   aoa2SheetOpts?: AOA2SheetOpts,
   writingOptions?: WritingOptions
 ) {
@@ -183,5 +187,5 @@ export function exportBookExcel(
     data.push(row);
   });
 
-  exportExcel(data, filename, aoa2SheetOpts, writingOptions);
+  exportXlsx(data, filename, aoa2SheetOpts, writingOptions);
 }

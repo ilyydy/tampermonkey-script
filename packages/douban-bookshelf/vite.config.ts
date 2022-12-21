@@ -1,5 +1,5 @@
 import { defineConfig } from 'vite';
-import monkey, { cdn } from 'vite-plugin-monkey';
+import monkey, { cdn, util } from 'vite-plugin-monkey';
 import { merge } from 'lodash-es';
 import vue from '@vitejs/plugin-vue';
 
@@ -8,13 +8,6 @@ import { baseViteConfig, getBaseMonkeyConfig } from '../viteConfig';
 import { getDirname } from '../util';
 
 const dirName = getDirname(import.meta.url);
-
-function getXlsxCDN() {
-  const strList = dependencies.xlsx.split('/');
-  return `https://cdn.sheetjs.com/${
-    strList[strList.length - 2]
-  }/package/dist/xlsx.full.min.js`;
-}
 
 export default defineConfig({
   ...baseViteConfig,
@@ -42,8 +35,21 @@ export default defineConfig({
         },
         build: {
           externalGlobals: {
-            vue: cdn.jsdelivr('Vue', 'dist/vue.global.prod.js'),
-            xlsx: ['XLSX', getXlsxCDN()],
+            vue: cdn.jsdelivr('Vue', 'dist/vue.global.prod.js').concat(
+              await util.fn2dataUrl(() => {
+                // @ts-ignore
+                window.Vue = Vue;
+              })
+            ),
+            'element-plus': cdn.jsdelivr(
+              'ElementPlus',
+              'dist/index.full.min.js'
+            ),
+            xlsx: cdn.jsdelivr('XLSX', 'dist/xlsx.full.min.js'),
+            'csv-stringify/browser/esm/sync': cdn.jsdelivr(
+              'csv_stringify_sync',
+              'dist/iife/sync.js'
+            ),
           },
           externalResource: {
             'element-plus/dist/index.css': cdn.jsdelivr(),

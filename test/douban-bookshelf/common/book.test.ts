@@ -4,12 +4,13 @@ import { unlinkSync, existsSync } from 'node:fs';
 
 import {
   getBookViewText,
-  exportExcel,
-  exportBookExcel,
+  exportBookCsv,
+  exportCsvName,
+  exportBookXlsx,
+  exportXlsxName,
   copyBook,
 } from '../../../packages/douban-bookshelf/src/common/book';
 import { getProjectRootAbsPath } from '../../../packages/util';
-import { exportExcelName } from '../../../packages/douban-bookshelf/src/common/book';
 import { book1, book2 } from '../data';
 
 import type { Book } from '../../../packages/douban-bookshelf/src/types';
@@ -30,29 +31,9 @@ describe('getBookViewText test', () => {
 //   const text = await navigator.clipboard.readText();
 // });
 
-test('exportExcel test', () => {
+test('exportBookCsv test', () => {
   const projectRoot = getProjectRootAbsPath();
-  const excelPath = join(projectRoot, exportExcelName);
-
-  if (existsSync(excelPath)) {
-    unlinkSync(excelPath);
-  }
-  expect(existsSync(excelPath)).toBe(false);
-
-  const rows = [
-    ['name', 'birthday'],
-    ['George Washington', '1732-02-22'],
-    ['John Adams', '1735-10-19'],
-  ];
-  exportExcel(rows);
-  expect(existsSync(excelPath)).toBe(true);
-
-  // unlinkSync(excelPath);
-});
-
-test('exportBookExcel test', () => {
-  const projectRoot = getProjectRootAbsPath();
-  const excelPath = join(projectRoot, exportExcelName);
+  const excelPath = join(projectRoot, exportCsvName);
 
   if (existsSync(excelPath)) {
     unlinkSync(excelPath);
@@ -60,7 +41,23 @@ test('exportBookExcel test', () => {
   expect(existsSync(excelPath)).toBe(false);
 
   const books: Book[] = [book1, book2];
-  exportBookExcel(books);
+  exportBookCsv(books);
+  expect(existsSync(excelPath)).toBe(true);
+
+  // unlinkSync(excelPath);
+});
+
+test('exportBookXlsx test', () => {
+  const projectRoot = getProjectRootAbsPath();
+  const excelPath = join(projectRoot, exportXlsxName);
+
+  if (existsSync(excelPath)) {
+    unlinkSync(excelPath);
+  }
+  expect(existsSync(excelPath)).toBe(false);
+
+  const books: Book[] = [book1, book2];
+  exportBookXlsx(books);
   expect(existsSync(excelPath)).toBe(true);
 
   // unlinkSync(excelPath);
