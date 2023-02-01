@@ -41,7 +41,7 @@
     "lodash-es": "4.17.21",
     "prettier": "2.8.3",
     "tsx": "3.12.2",
-    "typescript": "4.9.4",
+    "typescript": "4.9.5",
     "vite": "4.0.4",
     "vite-plugin-monkey": "2.11.1",
     "vitest": "0.28.3",
