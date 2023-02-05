@@ -12,10 +12,12 @@ export function createBtn(
   id: string,
   text: string,
   clickHandler: () => void | Promise<void>,
-  style?: Partial<CSSStyleDeclaration>
+  style?: Partial<CSSStyleDeclaration>,
+  classList?: string[]
 ) {
   const btn = doc.createElement('a');
-  btn.classList.add('j', 'a_show_login', 'colbutt', 'll');
+  const clsList = classList || ['j', 'a_show_login', 'colbutt', 'll'];
+  btn.classList.add(...clsList);
   btn.id = id;
   btn.href = '#';
   btn.rel = 'nofollow';
@@ -48,7 +50,8 @@ export function createCopyBtn(
   doc: Document,
   getBook: (doc: Document) => Promise<Book | undefined> | Book | undefined,
   id = COPY_ID,
-  style?: Partial<CSSStyleDeclaration>
+  style?: Partial<CSSStyleDeclaration>,
+  classList?: string[]
 ) {
   const btn = createBtn(
     doc,
@@ -65,7 +68,8 @@ export function createCopyBtn(
         throw error;
       }
     },
-    style
+    style,
+    classList
   );
 
   return btn;
@@ -75,7 +79,8 @@ export function createAddBtn(
   doc: Document,
   getBook: (doc: Document) => Promise<Book> | Book,
   id = ADD_SHELF_ID,
-  style?: Partial<CSSStyleDeclaration>
+  style?: Partial<CSSStyleDeclaration>,
+  classList?: string[]
 ) {
   const btn = createBtn(
     doc,
@@ -93,7 +98,8 @@ export function createAddBtn(
         success('加入成功');
       }
     },
-    style
+    style,
+    classList
   );
 
   return btn;

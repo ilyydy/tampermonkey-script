@@ -51,6 +51,12 @@ export const DOU_DAN_PAGE = {
     ),
     url: 'https://book.douban.com/works/1096137',
   },
+  pressHuNan: {
+    htmlPath: fileURLToPath(
+      new URL('./douban-bookshelf/html/pressHuNan.html', import.meta.url)
+    ),
+    url: 'https://book.douban.com/press/2146/',
+  },
 };
 
 export function createWindowFromHtml(html: string) {
