@@ -14,10 +14,9 @@ const excludeUrls = [
 ];
 
 export function useInitBtns(doc: Document) {
-  for (const i of excludeUrls) {
-    if (i.test(doc.URL)) {
-      return;
-    }
+  // 排除一些子页面
+  if (!/\/subject\/\d+\/?$/.test(new URL(doc.URL).pathname)) {
+    return;
   }
 
   const lastButton = getLasButton(doc);
