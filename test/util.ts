@@ -45,6 +45,24 @@ export const DOU_DAN_PAGE = {
     ),
     url: 'https://book.douban.com/subject/19053330/',
   },
+  workAlice: {
+    htmlPath: fileURLToPath(
+      new URL('./douban-bookshelf/html/workAlice.html', import.meta.url)
+    ),
+    url: 'https://book.douban.com/works/1096137',
+  },
+  pressHuNan: {
+    htmlPath: fileURLToPath(
+      new URL('./douban-bookshelf/html/pressHuNan.html', import.meta.url)
+    ),
+    url: 'https://book.douban.com/press/2146/',
+  },
+  authorBookLewis: {
+    htmlPath: fileURLToPath(
+      new URL('./douban-bookshelf/html/authorBookLewis.html', import.meta.url)
+    ),
+    url: 'https://book.douban.com/author/4535759/books?sortby=collect&format=pic',
+  },
 };
 
 export function createWindowFromHtml(html: string) {

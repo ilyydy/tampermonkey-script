@@ -1,5 +1,4 @@
 import { describe, expect, test, beforeAll, vi } from 'vitest';
-import { fileURLToPath } from 'node:url';
 
 import * as seriesParser from '../../../../packages/douban-bookshelf/src/view/series/parser';
 import { createWindowFromFileAndUrl, DOU_DAN_PAGE } from '../../../util';

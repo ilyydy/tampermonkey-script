@@ -4,7 +4,7 @@
 
 ## Features
 
-- 豆瓣书籍页面、搜索页面、系列页面增加“复制”和“加入书架”按钮，“复制”按钮将书籍信息复制到剪贴板，“加入书架”按钮将书籍加入书架
+- 豆瓣书籍页面、搜索页面、系列页面、出版社页面、全部版本页面、作者作品页面增加“复制”和“加入书架”按钮，“复制”按钮将书籍信息复制到剪贴板，“加入书架”按钮将书籍加入书架
 
   ![书籍页面](https://gcore.jsdelivr.net/gh/ilyydy/tampermonkey-script/packages/douban-bookshelf/doc/subject.png)
   ![搜索页面](https://gcore.jsdelivr.net/gh/ilyydy/tampermonkey-script/packages/douban-bookshelf/doc/search.png)

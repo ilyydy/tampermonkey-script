@@ -1,5 +1,4 @@
 import { beforeAll, beforeEach, assert, expect, test, vi } from 'vitest';
-import { fileURLToPath } from 'node:url';
 
 import { createWindowFromFileAndUrl, DOU_DAN_PAGE } from '../../../util';
 import * as douban from '../../../../packages/douban-bookshelf/src/common/douban';
