@@ -53,9 +53,15 @@ export const DOU_DAN_PAGE = {
   },
   pressHuNan: {
     htmlPath: fileURLToPath(
-      new URL('./douban-bookshelf/html/pressHuNan.html', import.meta.url)
+      new URL('./douban-bookshelf/html/authorBookLewis.html', import.meta.url)
     ),
     url: 'https://book.douban.com/press/2146/',
+  },
+  authorBookLewis: {
+    htmlPath: fileURLToPath(
+      new URL('./douban-bookshelf/html/pressHuNan.html', import.meta.url)
+    ),
+    url: 'https://book.douban.com/author/4535759/books?sortby=collect&format=pic',
   },
 };
 
