@@ -51,13 +51,23 @@ export function useInitBtns(doc: Document) {
       return book;
     };
 
-    const style: Partial<CSSStyleDeclaration> = {
-      marginTop: '7px',
-    };
-    const copyBtn = createCopyBtn(doc, getBook, `${COPY_ID}-${idx}`, style);
-    const addBtn = createAddBtn(doc, getBook, `${ADD_SHELF_ID}-${idx}`, style);
+    const classList = ['j', 'll', 'colbutt', 'a_add2cart', 'add2cart'];
+    const copyBtn = createCopyBtn(
+      doc,
+      getBook,
+      `${COPY_ID}-${idx}`,
+      undefined,
+      classList
+    );
+    const addBtn = createAddBtn(
+      doc,
+      getBook,
+      `${ADD_SHELF_ID}-${idx}`,
+      undefined,
+      classList
+    );
 
-    element.querySelector('.about')?.after(copyBtn);
+    element.querySelector('.rr')?.appendChild(copyBtn);
     copyBtn.after(addBtn);
   });
   return true;
