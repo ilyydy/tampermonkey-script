@@ -2,7 +2,24 @@ import { getAlreadyReadButton, getLasButton, getBook } from './parser';
 import { warning, success } from '../../common/message';
 import { ADD_SHELF, createCopyBtn, createAddBtn } from '../../common/douban';
 
+const excludeUrls = [
+  /https?:\/\/book.douban.com\/subject\/\d+\/comments/, // 短评
+  /https?:\/\/book.douban.com\/subject\/\d+\/reviews/, // 书评
+  /https?:\/\/book.douban.com\/subject\/\d+\/annotation/, // 读书笔记
+  /https?:\/\/book.douban.com\/subject\/\d+\/discussion/, // 论坛
+  /https?:\/\/book.douban.com\/subject\/\d+\/blockquotes/, // 原文摘录
+  /https?:\/\/book.douban.com\/subject\/\d+\/doulists/, // 书单
+  /https?:\/\/book.douban.com\/subject\/\d+\/new_review/, // 写书评
+  /https?:\/\/book.douban.com\/subject\/\d+\/+offers/, // 转让
+];
+
 export function useInitBtns(doc: Document) {
+  for (const i of excludeUrls) {
+    if (i.test(doc.URL)) {
+      return;
+    }
+  }
+
   const lastButton = getLasButton(doc);
   if (!lastButton) {
     warning(`定位'读过'按钮失败`);
