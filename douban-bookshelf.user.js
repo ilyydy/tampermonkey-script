@@ -2,7 +2,7 @@
 // @name               豆瓣读书书架
 // @name:zh            豆瓣读书书架
 // @namespace          https://github.com/ilyydy/tampermonkey-script
-// @version            0.0.3
+// @version            0.0.4
 // @author             ilyydy
 // @description        无需登录，快速选择书籍加入书架，复制导出书籍信息
 // @description:zh     无需登录，快速选择书籍加入书架，复制导出书籍信息
@@ -14,7 +14,7 @@
 // @updateURL          https://github.com/ilyydy/tampermonkey-script/raw/douban-bookshelf/douban-bookshelf.meta.js
 // @match              http*://*book.douban.com/*
 // @match              http*://search.douban.com/book/*
-// @require            https://cdn.jsdelivr.net/npm/vue@3.2.45/dist/vue.global.prod.js
+// @require            https://cdn.jsdelivr.net/npm/vue@3.2.47/dist/vue.global.prod.js
 // @require            data:application/javascript,window.Vue%3DVue%3B
 // @require            https://cdn.jsdelivr.net/npm/element-plus@2.2.19/dist/index.full.min.js
 // @require            https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js
@@ -54,6 +54,7 @@
     return o.innerText = t, document.head.append(o), t;
   };
   cssLoader("element-plus/dist/index.css");
+  /*! Element Plus Icons Vue v2.0.10 */
   var export_helper_default = (sfc, props) => {
     let target = sfc.__vccOpts || sfc;
     for (let [key, val] of props)
@@ -140,16 +141,16 @@
   const booksStore = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
     __proto__: null,
     BOOK_SHELF_KEY,
+    addBook,
     get books() {
       return books;
     },
-    useStore: useStore$1,
-    getBookIdx,
+    clearBook,
     getBook: getBook$1,
+    getBookIdx,
     hasBook,
-    addBook,
     removeBook,
-    clearBook
+    useStore: useStore$1
   }, Symbol.toStringTag, { value: "Module" }));
   function useStore(force = false) {
     useStore$1(force);
@@ -811,9 +812,10 @@ ${text}`;
     });
   }
   const IDENTIFY_CLASS = "douban_shelf_button";
-  function createBtn(doc, id, text, clickHandler, style) {
+  function createBtn(doc, id, text, clickHandler, style, classList) {
     const btn = doc.createElement("a");
-    btn.classList.add("j", "a_show_login", "colbutt", "ll");
+    const clsList = classList || ["j", "a_show_login", "colbutt", "ll"];
+    btn.classList.add(...clsList);
     btn.id = id;
     btn.href = "#";
     btn.rel = "nofollow";
@@ -837,7 +839,7 @@ ${text}`;
   const ADD_SHELF_ID = "douban-book-add-shelf";
   const COPY = "复制";
   const ADD_SHELF = "加入书架";
-  function createCopyBtn(doc, getBook2, id = COPY_ID, style) {
+  function createCopyBtn(doc, getBook2, id = COPY_ID, style, classList) {
     const btn = createBtn(
       doc,
       id,
@@ -854,11 +856,12 @@ ${text}`;
           throw error2;
         }
       },
-      style
+      style,
+      classList
     );
     return btn;
   }
-  function createAddBtn(doc, getBook2, id = ADD_SHELF_ID, style) {
+  function createAddBtn(doc, getBook2, id = ADD_SHELF_ID, style, classList) {
     const btn = createBtn(
       doc,
       id,
@@ -875,7 +878,8 @@ ${text}`;
           success("加入成功");
         }
       },
-      style
+      style,
+      classList
     );
     return btn;
   }
@@ -887,7 +891,10 @@ ${text}`;
     const text = await response.text();
     return text;
   }
-  function useInitBtns$2(doc) {
+  function useInitBtns$5(doc) {
+    if (!/\/subject\/\d+\/?$/.test(new URL(doc.URL).pathname)) {
+      return;
+    }
     const lastButton = getLasButton(doc);
     if (!lastButton) {
       warning(`定位'读过'按钮失败`);
@@ -909,10 +916,10 @@ ${text}`;
     copyBtn.after(addBtn);
     return { copyBtn, addBtn };
   }
-  function init$2(doc) {
-    useInitBtns$2(doc);
+  function init$5(doc) {
+    useInitBtns$5(doc);
   }
-  function getBookItemList$1(searchDoc) {
+  function getBookItemList$4(searchDoc) {
     const rootEle = searchDoc.querySelector("#wrapper #root");
     if (!rootEle)
       return [];
@@ -935,13 +942,13 @@ ${text}`;
       []
     );
   }
-  function useInitBtns$1(doc) {
+  function useInitBtns$4(doc) {
     const btn = doc.getElementById(`${COPY_ID}-0`);
     if (btn) {
       return false;
     }
     const { booksStore: booksStore2 } = useStore();
-    const list = getBookItemList$1(doc);
+    const list = getBookItemList$4(doc);
     list.forEach(({ element, url, name, id }, idx) => {
       var _a;
       let bookCache = void 0;
@@ -976,10 +983,10 @@ ${text}`;
     });
     return true;
   }
-  function init$1(doc) {
-    useInitBtns$1(doc);
+  function init$4(doc) {
+    useInitBtns$4(doc);
   }
-  function getBookItemList(seriesDoc) {
+  function getBookItemList$3(seriesDoc) {
     return Array.from(
       seriesDoc.querySelectorAll("#content .subject-item")
     ).reduce((list, cur) => {
@@ -997,13 +1004,16 @@ ${text}`;
       return list;
     }, []);
   }
-  function useInitBtns(doc) {
+  function useInitBtns$3(doc) {
+    if (!/\/series\/\d+\/?$/.test(new URL(doc.URL).pathname)) {
+      return false;
+    }
     const btn = doc.getElementById(`${COPY_ID}-0`);
     if (btn) {
       return false;
     }
     const { booksStore: booksStore2 } = useStore();
-    const list = getBookItemList(doc);
+    const list = getBookItemList$3(doc);
     list.forEach(({ element, url, name, id }, idx) => {
       var _a;
       let bookCache = void 0;
@@ -1038,6 +1048,232 @@ ${text}`;
     });
     return true;
   }
+  function init$3(doc) {
+    useInitBtns$3(doc);
+  }
+  function getBookItemList$2(seriesDoc) {
+    return Array.from(seriesDoc.querySelectorAll("#content .bkdesc")).reduce(
+      (list, cur) => {
+        var _a, _b, _c;
+        const aEle = cur == null ? void 0 : cur.querySelector("a");
+        if ((_a = aEle == null ? void 0 : aEle.href) == null ? void 0 : _a.startsWith("https://book.douban.com/subject/")) {
+          const id = ((_c = (_b = aEle == null ? void 0 : aEle.href) == null ? void 0 : _b.split("https://book.douban.com/subject/")[1]) == null ? void 0 : _c.split("/")[0]) ?? "";
+          list.push({
+            element: cur,
+            url: aEle == null ? void 0 : aEle.href,
+            id,
+            name: (aEle == null ? void 0 : aEle.textContent) ?? ""
+          });
+        }
+        return list;
+      },
+      []
+    );
+  }
+  function useInitBtns$2(doc) {
+    if (!/\/works\/\d+\/?$/.test(new URL(doc.URL).pathname)) {
+      return false;
+    }
+    const btn = doc.getElementById(`${COPY_ID}-0`);
+    if (btn) {
+      return false;
+    }
+    const { booksStore: booksStore2 } = useStore();
+    const list = getBookItemList$2(doc);
+    list.forEach(({ element, url, name, id }, idx) => {
+      var _a;
+      let bookCache = void 0;
+      const getBook$12 = async () => {
+        if (bookCache)
+          return bookCache;
+        const bookInStore = booksStore2.getBook(id);
+        if (bookInStore) {
+          bookCache = {
+            ...bookInStore
+          };
+          delete bookCache.addTime;
+          return bookCache;
+        }
+        const html = await getBookPageHtmlByUrl(url);
+        if (!html) {
+          throw new Error(`获取《${name}》页面失败`);
+        }
+        const parser = new DOMParser();
+        const htmlDoc = parser.parseFromString(html, "text/html");
+        const book = getBook(htmlDoc);
+        bookCache = book;
+        return book;
+      };
+      const classList = ["j", "ll", "colbutt", "a_add2cart", "add2cart"];
+      const copyBtn = createCopyBtn(
+        doc,
+        getBook$12,
+        `${COPY_ID}-${idx}`,
+        void 0,
+        classList
+      );
+      const addBtn = createAddBtn(
+        doc,
+        getBook$12,
+        `${ADD_SHELF_ID}-${idx}`,
+        void 0,
+        classList
+      );
+      (_a = element.querySelector(".rr")) == null ? void 0 : _a.appendChild(copyBtn);
+      copyBtn.after(addBtn);
+    });
+    return true;
+  }
+  function init$2(doc) {
+    useInitBtns$2(doc);
+  }
+  function getBookItemList$1(seriesDoc) {
+    return Array.from(
+      seriesDoc.querySelectorAll("#content .subject-item")
+    ).reduce((list, cur) => {
+      var _a, _b, _c, _d;
+      const aEle = (_a = cur.querySelector(".info")) == null ? void 0 : _a.querySelector("a");
+      if ((_b = aEle == null ? void 0 : aEle.href) == null ? void 0 : _b.startsWith("https://book.douban.com/subject/")) {
+        const id = ((_d = (_c = aEle == null ? void 0 : aEle.href) == null ? void 0 : _c.split("https://book.douban.com/subject/")[1]) == null ? void 0 : _d.split("/")[0]) ?? "";
+        list.push({
+          element: cur,
+          url: aEle == null ? void 0 : aEle.href,
+          id,
+          name: (aEle == null ? void 0 : aEle.textContent) ?? ""
+        });
+      }
+      return list;
+    }, []);
+  }
+  function useInitBtns$1(doc) {
+    if (!/\/press\/\d+\/?$/.test(new URL(doc.URL).pathname)) {
+      return false;
+    }
+    const btn = doc.getElementById(`${COPY_ID}-0`);
+    if (btn) {
+      return false;
+    }
+    const { booksStore: booksStore2 } = useStore();
+    const list = getBookItemList$1(doc);
+    list.forEach(({ element, url, name, id }, idx) => {
+      var _a;
+      let bookCache = void 0;
+      const getBook$12 = async () => {
+        if (bookCache)
+          return bookCache;
+        const bookInStore = booksStore2.getBook(id);
+        if (bookInStore) {
+          bookCache = {
+            ...bookInStore
+          };
+          delete bookCache.addTime;
+          return bookCache;
+        }
+        const html = await getBookPageHtmlByUrl(url);
+        if (!html) {
+          throw new Error(`获取《${name}》页面失败`);
+        }
+        const parser = new DOMParser();
+        const htmlDoc = parser.parseFromString(html, "text/html");
+        const book = getBook(htmlDoc);
+        bookCache = book;
+        return book;
+      };
+      const style = {
+        marginTop: "7px"
+      };
+      const classList = ["j", "a_collect_btn"];
+      const copyBtn = createCopyBtn(
+        doc,
+        getBook$12,
+        `${COPY_ID}-${idx}`,
+        style,
+        classList
+      );
+      const addBtn = createAddBtn(
+        doc,
+        getBook$12,
+        `${ADD_SHELF_ID}-${idx}`,
+        style,
+        classList
+      );
+      (_a = element.querySelector(".ft .collect-info")) == null ? void 0 : _a.appendChild(copyBtn);
+      copyBtn.after(addBtn);
+    });
+    return true;
+  }
+  function init$1(doc) {
+    useInitBtns$1(doc);
+  }
+  function getBookItemList(seriesDoc) {
+    return Array.from(seriesDoc.querySelectorAll("#content li")).reduce(
+      (list, cur) => {
+        var _a, _b, _c;
+        const aEle = cur == null ? void 0 : cur.querySelector("a");
+        if ((_a = aEle == null ? void 0 : aEle.href) == null ? void 0 : _a.startsWith("https://book.douban.com/subject/")) {
+          const id = ((_c = (_b = aEle == null ? void 0 : aEle.href) == null ? void 0 : _b.split("https://book.douban.com/subject/")[1]) == null ? void 0 : _c.split("/")[0]) ?? "";
+          list.push({
+            element: cur,
+            url: aEle == null ? void 0 : aEle.href,
+            id,
+            name: (aEle == null ? void 0 : aEle.textContent) ?? ""
+          });
+        }
+        return list;
+      },
+      []
+    );
+  }
+  function useInitBtns(doc) {
+    if (!/\/author\/\d+\/books\/?$/.test(new URL(doc.URL).pathname)) {
+      return false;
+    }
+    const btn = doc.getElementById(`${COPY_ID}-0`);
+    if (btn) {
+      return false;
+    }
+    const { booksStore: booksStore2 } = useStore();
+    const list = getBookItemList(doc);
+    list.forEach(({ element, url, name, id }, idx) => {
+      var _a;
+      let bookCache = void 0;
+      const getBook$12 = async () => {
+        if (bookCache)
+          return bookCache;
+        const bookInStore = booksStore2.getBook(id);
+        if (bookInStore) {
+          bookCache = {
+            ...bookInStore
+          };
+          delete bookCache.addTime;
+          return bookCache;
+        }
+        const html = await getBookPageHtmlByUrl(url);
+        if (!html) {
+          throw new Error(`获取《${name}》页面失败`);
+        }
+        const parser = new DOMParser();
+        const htmlDoc = parser.parseFromString(html, "text/html");
+        const book = getBook(htmlDoc);
+        bookCache = book;
+        return book;
+      };
+      const classList = ["j", "a_collect_btn"];
+      const copyBtn = doc.createElement("span");
+      copyBtn.classList.add("gact");
+      copyBtn.appendChild(
+        createCopyBtn(doc, getBook$12, `${COPY_ID}-${idx}`, void 0, classList)
+      );
+      const addBtn = doc.createElement("span");
+      addBtn.classList.add("gact");
+      addBtn.appendChild(
+        createAddBtn(doc, getBook$12, `${ADD_SHELF_ID}-${idx}`, void 0, classList)
+      );
+      (_a = element.querySelector(".author-collect")) == null ? void 0 : _a.appendChild(copyBtn);
+      copyBtn.after(addBtn);
+    });
+    return true;
+  }
   function init(doc) {
     useInitBtns(doc);
   }
@@ -1046,9 +1282,12 @@ ${text}`;
     setup(__props) {
       vue.onMounted(async () => {
         const map = {
-          ["book.douban.com/subject"]: init$2,
-          ["search.douban.com/book"]: init$1,
-          ["book.douban.com/series"]: init
+          ["book.douban.com/subject"]: init$5,
+          ["search.douban.com/book"]: init$4,
+          ["book.douban.com/series"]: init$3,
+          ["book.douban.com/works"]: init$2,
+          ["book.douban.com/press"]: init$1,
+          ["book.douban.com/author"]: init
         };
         const url = new URL(document.URL);
         const initFunc = map[url.host + url.pathname.split("/").slice(0, 2).join("/")];

@@ -2,7 +2,7 @@
 // @name               豆瓣读书书架
 // @name:zh            豆瓣读书书架
 // @namespace          https://github.com/ilyydy/tampermonkey-script
-// @version            0.0.3
+// @version            0.0.4
 // @author             ilyydy
 // @description        无需登录，快速选择书籍加入书架，复制导出书籍信息
 // @description:zh     无需登录，快速选择书籍加入书架，复制导出书籍信息
@@ -14,7 +14,7 @@
 // @updateURL          https://github.com/ilyydy/tampermonkey-script/raw/douban-bookshelf/douban-bookshelf.meta.js
 // @match              http*://*book.douban.com/*
 // @match              http*://search.douban.com/book/*
-// @require            https://cdn.jsdelivr.net/npm/vue@3.2.45/dist/vue.global.prod.js
+// @require            https://cdn.jsdelivr.net/npm/vue@3.2.47/dist/vue.global.prod.js
 // @require            data:application/javascript,window.Vue%3DVue%3B
 // @require            https://cdn.jsdelivr.net/npm/element-plus@2.2.19/dist/index.full.min.js
 // @require            https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js
