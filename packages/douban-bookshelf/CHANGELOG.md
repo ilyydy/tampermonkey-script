@@ -1,3 +1,15 @@
+## [0.0.4](https://github.com/ilyydy/tampermonkey-script/compare/douban-bookshelf@0.0.3...douban-bookshelf@0.0.4) (2023-02-05)
+
+### Bug Fixes
+
+* **deps:** update dependency vue to v3.2.47 ([7fabad3](https://github.com/ilyydy/tampermonkey-script/commit/7fabad30f3d6e5df31b31cf8ba3b1c07e5325b35))
+* 书籍一些子页面不需要添加按钮 ([acf7520](https://github.com/ilyydy/tampermonkey-script/commit/acf7520e7782fdd55d4c4e0e52988d8307b4fbd2))
+
+
+### Features
+
+* 支持更多豆瓣页面 ([ccdd9f1](https://github.com/ilyydy/tampermonkey-script/commit/ccdd9f17c9c27c29ac81ea807276a8299e0a6d25))
+
 ## [0.0.3](https://github.com/ilyydy/tampermonkey-script/compare/douban-bookshelf@0.0.2...douban-bookshelf@0.0.3) (2022-12-21)
 
 
