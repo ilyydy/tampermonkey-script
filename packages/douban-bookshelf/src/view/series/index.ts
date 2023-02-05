@@ -12,6 +12,11 @@ import { getBookItemList } from './parser';
 import type { Book } from '../../types';
 
 export function useInitBtns(doc: Document) {
+  // 排除一些子页面
+  if (!/\/series\/\d+\/?$/.test(new URL(doc.URL).pathname)) {
+    return false;
+  }
+
   const btn = doc.getElementById(`${COPY_ID}-0`);
   if (btn) {
     // 已经添加过

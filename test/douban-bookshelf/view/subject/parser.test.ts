@@ -2,7 +2,7 @@ import { describe, expect, test, beforeAll, vi } from 'vitest';
 import { fileURLToPath } from 'node:url';
 
 import * as subjectParser from '../../../../packages/douban-bookshelf/src/view/subject/parser';
-import { createWindowFromFile } from '../../../util';
+import { createWindowFromFileAndUrl, DOU_DAN_PAGE } from '../../../util';
 
 import type { Document } from 'happy-dom';
 
@@ -12,23 +12,21 @@ let docSer: Document;
 let docDing: Document;
 
 beforeAll(async () => {
-  const windowAlice = await createWindowFromFile(
-    fileURLToPath(new URL('../../html/subjectAlice.html', import.meta.url))
+  const windowAlice = await createWindowFromFileAndUrl(
+    DOU_DAN_PAGE.subjectAlice
   );
   docAlice = windowAlice.document;
 
-  const windowMySkirt = await createWindowFromFile(
-    fileURLToPath(new URL('../../html/subjectMySkirt.html', import.meta.url))
+  const windowMySkirt = await createWindowFromFileAndUrl(
+    DOU_DAN_PAGE.subjectMySkirt
   );
   docMySkirt = windowMySkirt.document;
 
-  const windowMySer = await createWindowFromFile(
-    fileURLToPath(new URL('../../html/subjectSer.html', import.meta.url))
-  );
+  const windowMySer = await createWindowFromFileAndUrl(DOU_DAN_PAGE.subjectSer);
   docSer = windowMySer.document;
 
-  const windowMyDing = await createWindowFromFile(
-    fileURLToPath(new URL('../../html/subjectDing.html', import.meta.url))
+  const windowMyDing = await createWindowFromFileAndUrl(
+    DOU_DAN_PAGE.subjectDing
   );
   docDing = windowMyDing.document;
 });

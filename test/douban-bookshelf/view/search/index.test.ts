@@ -1,7 +1,7 @@
 import { beforeAll, beforeEach, assert, expect, test, vi } from 'vitest';
 import { fileURLToPath } from 'node:url';
 
-import { createWindowFromFile } from '../../../util';
+import { createWindowFromFileAndUrl, DOU_DAN_PAGE } from '../../../util';
 import * as douban from '../../../../packages/douban-bookshelf/src/common/douban';
 import { useInitBtns } from '../../../../packages/douban-bookshelf/src/view/search/index';
 import { getBookItemList } from '../../../../packages/douban-bookshelf/src/view/search/parser';
@@ -11,9 +11,7 @@ import type { Document } from 'happy-dom';
 let docAd: Document;
 
 beforeAll(async () => {
-  const windowAd = await createWindowFromFile(
-    fileURLToPath(new URL('../../html/searchAd.html', import.meta.url))
-  );
+  const windowAd = await createWindowFromFileAndUrl(DOU_DAN_PAGE.searchAd);
   docAd = windowAd.document;
 });
 

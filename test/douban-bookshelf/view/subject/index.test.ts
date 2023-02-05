@@ -1,7 +1,6 @@
 import { beforeAll, beforeEach, assert, expect, test, vi } from 'vitest';
-import { fileURLToPath } from 'node:url';
 
-import { createWindowFromFile } from '../../../util';
+import { createWindowFromFileAndUrl, DOU_DAN_PAGE } from '../../../util';
 import * as douban from '../../../../packages/douban-bookshelf/src/common/douban';
 import { useInitBtns } from '../../../../packages/douban-bookshelf/src/view/subject/index';
 
@@ -10,8 +9,8 @@ import type { Document } from 'happy-dom';
 let docAlice: Document;
 
 beforeAll(async () => {
-  const windowAlice = await createWindowFromFile(
-    fileURLToPath(new URL('../../html/subjectAlice.html', import.meta.url))
+  const windowAlice = await createWindowFromFileAndUrl(
+    DOU_DAN_PAGE.subjectAlice
   );
   docAlice = windowAlice.document;
 });

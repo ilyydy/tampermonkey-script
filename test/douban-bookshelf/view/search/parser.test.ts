@@ -2,7 +2,7 @@ import { describe, expect, test, beforeAll, vi } from 'vitest';
 import { fileURLToPath } from 'node:url';
 
 import * as searchParser from '../../../../packages/douban-bookshelf/src/view/search/parser';
-import { createWindowFromFile } from '../../../util';
+import { createWindowFromFileAndUrl, DOU_DAN_PAGE } from '../../../util';
 
 import type { Document } from 'happy-dom';
 
@@ -10,14 +10,10 @@ let docQing: Document;
 let docAd: Document;
 
 beforeAll(async () => {
-  const windowQing = await createWindowFromFile(
-    fileURLToPath(new URL('../../html/searchQing.html', import.meta.url))
-  );
+  const windowQing = await createWindowFromFileAndUrl(DOU_DAN_PAGE.searchQing);
   docQing = windowQing.document;
 
-  const windowAd = await createWindowFromFile(
-    fileURLToPath(new URL('../../html/searchAd.html', import.meta.url))
-  );
+  const windowAd = await createWindowFromFileAndUrl(DOU_DAN_PAGE.searchAd);
   docAd = windowAd.document;
 });
 

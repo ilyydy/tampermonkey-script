@@ -4,7 +4,11 @@ import { fileURLToPath } from 'node:url';
 import * as douban from '../../../packages/douban-bookshelf/src/common/douban';
 import { getBook } from '../../../packages/douban-bookshelf/src/view/subject/parser';
 import { useStore } from '../../../packages/douban-bookshelf/src/store/index';
-import { untilEventFired, createWindowFromFile } from '../../util';
+import {
+  untilEventFired,
+  createWindowFromFileAndUrl,
+  DOU_DAN_PAGE,
+} from '../../util';
 import { bookAlice } from '../data';
 
 import type { Document } from 'happy-dom';
@@ -12,8 +16,8 @@ import type { Document } from 'happy-dom';
 let docAlice: Document;
 
 beforeAll(async () => {
-  const windowAlice = await createWindowFromFile(
-    fileURLToPath(new URL('../html/subjectAlice.html', import.meta.url))
+  const windowAlice = await createWindowFromFileAndUrl(
+    DOU_DAN_PAGE.subjectAlice
   );
   docAlice = windowAlice.document;
 });
