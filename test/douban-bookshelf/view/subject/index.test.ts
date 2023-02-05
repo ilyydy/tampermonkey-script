@@ -46,6 +46,7 @@ test('useInitBtns exclude urls test', async () => {
     'https://book.douban.com/subject/36110302/discussion/create',
     'https://book.douban.com/subject/36110302/offers?new_offer=1',
     'https://book.douban.com/subject/36110302/annotation',
+    'https://book.douban.com/subject/36110302/new_version',
   ];
 
   for (const i of excludeUrls) {

@@ -45,6 +45,12 @@ export const DOU_DAN_PAGE = {
     ),
     url: 'https://book.douban.com/subject/19053330/',
   },
+  workAlice: {
+    htmlPath: fileURLToPath(
+      new URL('./douban-bookshelf/html/workAlice.html', import.meta.url)
+    ),
+    url: 'https://book.douban.com/works/1096137',
+  },
 };
 
 export function createWindowFromHtml(html: string) {
