@@ -17,7 +17,7 @@ importers:
       cz-conventional-changelog: 3.3.0
       eslint: 8.34.0
       eslint-plugin-vue: 9.9.0
-      happy-dom: 8.7.2
+      happy-dom: 8.9.0
       husky: 8.0.3
       lint-staged: 13.1.2
       lodash-es: 4.17.21
@@ -45,7 +45,7 @@ importers:
       cz-conventional-changelog: 3.3.0
       eslint: 8.34.0
       eslint-plugin-vue: 9.9.0_eslint@8.34.0
-      happy-dom: 8.7.2
+      happy-dom: 8.9.0
       husky: 8.0.3
       lint-staged: 13.1.2
       lodash-es: 4.17.21
@@ -54,7 +54,7 @@ importers:
       typescript: 4.9.5
       vite: 4.1.4_@types+node@18.14.1
       vite-plugin-monkey: 2.12.1_vite@4.1.4
-      vitest: 0.29.1_happy-dom@8.7.2
+      vitest: 0.29.1_happy-dom@8.9.0
       vue-tsc: 1.2.0_typescript@4.9.5
 
   packages/csdn:
@@ -883,7 +883,7 @@ packages:
       c8: 7.13.0
       picocolors: 1.0.0
       std-env: 3.3.1
-      vitest: 0.29.1_happy-dom@8.7.2
+      vitest: 0.29.1_happy-dom@8.9.0
     dev: true
 
   /@vitest/expect/0.29.1:
@@ -2750,11 +2750,12 @@ packages:
       uglify-js: 3.17.3
     dev: true
 
-  /happy-dom/8.7.2:
-    resolution: {integrity: sha512-lkm1l7SLNtI9svaU3PflbM8zahYahLrUZf0fZTUkQ8W6bo5gtXjC/2utOkcjpv9rhWTkHFUuDVjAvBWg4ClAxA==}
+  /happy-dom/8.9.0:
+    resolution: {integrity: sha512-JZwJuGdR7ko8L61136YzmrLv7LgTh5b8XaEM3P709mLjyQuXJ3zHTDXvUtBBahRjGlcYW0zGjIiEWizoTUGKfA==}
     dependencies:
       css.escape: 1.5.1
       he: 1.2.0
+      iconv-lite: 0.6.3
       node-fetch: 2.6.7
       webidl-conversions: 7.0.0
       whatwg-encoding: 2.0.0
@@ -4656,7 +4657,7 @@ packages:
       - terser
     dev: true
 
-  /vitest/0.29.1_happy-dom@8.7.2:
+  /vitest/0.29.1_happy-dom@8.9.0:
     resolution: {integrity: sha512-iSy6d9VwsIn7pz5I8SjVwdTLDRGKNZCRJVzROwjt0O0cffoymKwazIZ2epyMpRGpeL5tsXAl1cjXiT7agTyVug==}
     engines: {node: '>=v14.16.0'}
     hasBin: true
@@ -4690,7 +4691,7 @@ packages:
       cac: 6.7.14
       chai: 4.3.7
       debug: 4.3.4
-      happy-dom: 8.7.2
+      happy-dom: 8.9.0
       local-pkg: 0.4.2
       pathe: 1.1.0
       picocolors: 1.0.0
