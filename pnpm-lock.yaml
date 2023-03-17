@@ -7,7 +7,7 @@ importers:
       '@commitlint/cli': 17.4.4
       '@commitlint/config-conventional': 17.4.4
       '@rushstack/eslint-patch': 1.2.0
-      '@types/lodash-es': 4.17.6
+      '@types/lodash-es': 4.17.7
       '@types/node': 18.15.3
       '@vitejs/plugin-vue': 4.0.0
       '@vitest/coverage-c8': 0.29.2
@@ -35,7 +35,7 @@ importers:
       '@commitlint/cli': 17.4.4
       '@commitlint/config-conventional': 17.4.4
       '@rushstack/eslint-patch': 1.2.0
-      '@types/lodash-es': 4.17.6
+      '@types/lodash-es': 4.17.7
       '@types/node': 18.15.3
       '@vitejs/plugin-vue': 4.0.0_vite@4.1.4+vue@3.2.47
       '@vitest/coverage-c8': 0.29.2_vitest@0.29.2
@@ -737,6 +737,13 @@ packages:
     resolution: {integrity: sha512-R+zTeVUKDdfoRxpAryaQNRKk3105Rrgx2CFRClIgRGaqDTdjsm8h6IYA8ir584W3ePzkZfst5xIgDwYrlh9HLg==}
     dependencies:
       '@types/lodash': 4.14.186
+    dev: false
+
+  /@types/lodash-es/4.17.7:
+    resolution: {integrity: sha512-z0ptr6UI10VlU6l5MYhGwS4mC8DZyYer2mCoyysZtSF7p26zOX8UpbrV0YpNYLGS8K4PUFIyEr62IMFFjveSiQ==}
+    dependencies:
+      '@types/lodash': 4.14.186
+    dev: true
 
   /@types/lodash/4.14.186:
     resolution: {integrity: sha512-eHcVlLXP0c2FlMPm56ITode2AgLMSa6aJ05JTTbYbI+7EMkCEE5qk2E41d5g2lCVTqRe0GnnRFurmlCsDODrPw==}

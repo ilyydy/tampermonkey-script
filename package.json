@@ -25,7 +25,7 @@
     "@commitlint/cli": "17.4.4",
     "@commitlint/config-conventional": "17.4.4",
     "@rushstack/eslint-patch": "1.2.0",
-    "@types/lodash-es": "4.17.6",
+    "@types/lodash-es": "4.17.7",
     "@types/node": "18.15.3",
     "@vitejs/plugin-vue": "4.0.0",
     "@vitest/coverage-c8": "0.29.2",
