@@ -72,8 +72,8 @@ importers:
         specifier: 4.2.1
         version: 4.2.1(@types/node@18.15.11)
       vite-plugin-monkey:
-        specifier: 3.1.1
-        version: 3.1.1(vite@4.2.1)
+        specifier: 3.1.2
+        version: 3.1.2(vite@4.2.1)
       vitest:
         specifier: 0.29.8
         version: 0.29.8(happy-dom@8.9.0)
@@ -4615,8 +4615,8 @@ packages:
       - terser
     dev: true
 
-  /vite-plugin-monkey@3.1.1(vite@4.2.1):
-    resolution: {integrity: sha512-doP0zVII4Z/Hr8mim8gW4oYVVIcK5ezEmF+zHnRmCMhNsxcp7Hz1LFzyfZT4u2w5Lyao0r2vdpoKa/toRlpLzQ==}
+  /vite-plugin-monkey@3.1.2(vite@4.2.1):
+    resolution: {integrity: sha512-xc0jERUtOBVhOhSbBo6wC8JGuQ+7qtkyaBxaMQDxxeD2xDMaU+W7QUaf8sif5+MTGSTVNTKOj2/MdUwzmQ9KEA==}
     engines: {node: ^14.18 || >= 16, pnpm: '>=6'}
     peerDependencies:
       vite: '>=3.0.0'
