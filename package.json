@@ -22,8 +22,8 @@
     "node": "^14.18.0 || >=16.0.0"
   },
   "devDependencies": {
-    "@commitlint/cli": "17.6.0",
-    "@commitlint/config-conventional": "17.6.0",
+    "@commitlint/cli": "17.6.1",
+    "@commitlint/config-conventional": "17.6.1",
     "@rushstack/eslint-patch": "1.2.0",
     "@types/lodash-es": "4.17.7",
     "@types/node": "18.15.11",
