@@ -34,7 +34,7 @@
     "conventional-changelog-cli": "2.2.2",
     "cz-conventional-changelog": "3.3.0",
     "eslint": "8.40.0",
-    "eslint-plugin-vue": "9.11.0",
+    "eslint-plugin-vue": "9.11.1",
     "happy-dom": "9.10.9",
     "husky": "8.0.3",
     "lint-staged": "13.2.2",
