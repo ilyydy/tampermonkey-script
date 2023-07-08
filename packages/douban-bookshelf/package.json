@@ -13,7 +13,7 @@
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix",
     "lint:check": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts"
   },
-  "packageManager": "^pnpm@7.13.4",
+  "packageManager": "^pnpm@8.6.6",
   "dependencies": {
     "@element-plus/icons-vue": "^2.0.10",
     "csv-stringify": "^6.2.3",
