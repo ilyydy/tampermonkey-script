@@ -37,7 +37,7 @@
     "eslint-plugin-vue": "9.14.1",
     "happy-dom": "9.10.9",
     "husky": "8.0.3",
-    "lint-staged": "13.2.2",
+    "lint-staged": "13.2.3",
     "lodash-es": "4.17.21",
     "prettier": "2.8.8",
     "tsx": "3.12.7",
