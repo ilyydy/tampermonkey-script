@@ -34,7 +34,7 @@
     "cz-conventional-changelog": "3.3.0",
     "eslint": "8.44.0",
     "eslint-plugin-vue": "9.15.1",
-    "happy-dom": "9.10.9",
+    "happy-dom": "10.3.2",
     "husky": "8.0.3",
     "lint-staged": "13.2.3",
     "lodash-es": "4.17.21",
