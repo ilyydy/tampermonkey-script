@@ -49,8 +49,8 @@ importers:
         specifier: 9.15.1
         version: 9.15.1(eslint@8.45.0)
       happy-dom:
-        specifier: 10.3.2
-        version: 10.3.2
+        specifier: 10.5.2
+        version: 10.5.2
       husky:
         specifier: 8.0.3
         version: 8.0.3
@@ -77,7 +77,7 @@ importers:
         version: 3.3.1(vite@4.4.4)
       vitest:
         specifier: 0.33.0
-        version: 0.33.0(happy-dom@10.3.2)
+        version: 0.33.0(happy-dom@10.5.2)
       vue-tsc:
         specifier: 1.8.5
         version: 1.8.5(typescript@5.1.6)
@@ -98,7 +98,7 @@ importers:
         version: 4.4.4(@types/node@18.16.19)
       vitest:
         specifier: 0.33.0
-        version: 0.33.0(happy-dom@10.3.2)
+        version: 0.33.0(happy-dom@10.5.2)
 
   packages/douban-bookshelf:
     dependencies:
@@ -135,7 +135,7 @@ importers:
         version: 4.4.4(@types/node@18.16.19)
       vitest:
         specifier: 0.33.0
-        version: 0.33.0(happy-dom@10.3.2)
+        version: 0.33.0(happy-dom@10.5.2)
       vue-tsc:
         specifier: 1.8.5
         version: 1.8.5(typescript@5.1.6)
@@ -1007,7 +1007,7 @@ packages:
       std-env: 3.3.3
       test-exclude: 6.0.0
       v8-to-istanbul: 9.1.0
-      vitest: 0.33.0(happy-dom@10.3.2)
+      vitest: 0.33.0(happy-dom@10.5.2)
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -2894,8 +2894,8 @@ packages:
       uglify-js: 3.17.3
     dev: true
 
-  /happy-dom@10.3.2:
-    resolution: {integrity: sha512-SmV12YEaaAlEfhfq+4unIHkyvqY08as7x9dM+Q6TxjNpHX0k3ihJ4mukjxxstEpx463XhVQJsAKGlNoVdKWsVA==}
+  /happy-dom@10.5.2:
+    resolution: {integrity: sha512-dTA1cDcLOPIkAdykLd9Wo1k8Ly36Hh2OdKGkWEHWuAHb89KcVVRLSj1OFev7ir90xhRLSGCGrEdDvS6u9l13kg==}
     dependencies:
       css.escape: 1.5.1
       entities: 4.5.0
@@ -4736,7 +4736,7 @@ packages:
       fsevents: 2.3.2
     dev: true
 
-  /vitest@0.33.0(happy-dom@10.3.2):
+  /vitest@0.33.0(happy-dom@10.5.2):
     resolution: {integrity: sha512-1CxaugJ50xskkQ0e969R/hW47za4YXDUfWJDxip1hwbnhUjYolpfUn2AMOulqG/Dtd9WYAtkHmM/m3yKVrEejQ==}
     engines: {node: '>=v14.18.0'}
     hasBin: true
@@ -4780,7 +4780,7 @@ packages:
       cac: 6.7.14
       chai: 4.3.7
       debug: 4.3.4
-      happy-dom: 10.3.2
+      happy-dom: 10.5.2
       local-pkg: 0.4.3
       magic-string: 0.30.1
       pathe: 1.1.1
