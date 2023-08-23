@@ -25,8 +25,8 @@ importers:
         specifier: 4.17.8
         version: 4.17.8
       '@types/node':
-        specifier: 18.17.7
-        version: 18.17.7
+        specifier: 18.17.8
+        version: 18.17.8
       '@vitejs/plugin-vue':
         specifier: 4.3.3
         version: 4.3.3(vite@4.4.9)(vue@3.3.4)
@@ -71,7 +71,7 @@ importers:
         version: 5.1.6
       vite:
         specifier: 4.4.9
-        version: 4.4.9(@types/node@18.17.7)
+        version: 4.4.9(@types/node@18.17.8)
       vite-plugin-monkey:
         specifier: 3.4.1
         version: 3.4.1(vite@4.4.9)
@@ -95,7 +95,7 @@ importers:
         version: 5.1.6
       vite:
         specifier: 4.4.9
-        version: 4.4.9(@types/node@18.17.7)
+        version: 4.4.9(@types/node@18.17.8)
       vitest:
         specifier: 0.34.1
         version: 0.34.1(happy-dom@10.11.0)
@@ -132,7 +132,7 @@ importers:
         version: 5.1.6
       vite:
         specifier: 4.4.9
-        version: 4.4.9(@types/node@18.17.7)
+        version: 4.4.9(@types/node@18.17.8)
       vitest:
         specifier: 0.34.1
         version: 0.34.1(happy-dom@10.11.0)
@@ -849,8 +849,8 @@ packages:
     resolution: {integrity: sha512-xlR1jahfizdplZYRU59JlUx9uzF1ARa8jbhM11ccpCJya8kvos5jwdm2ZAgxSCwOl0fq21svP18EVwPBXMQudw==}
     dev: true
 
-  /@types/node@18.17.7:
-    resolution: {integrity: sha512-WJj/p/cIg6zUsxv1n2leZHpvn8hr9TYuLQxAZxZcK/7+5t5ukmJGelOLGOy3L1MLhAO/sapTJGd1V7kvoIuzUg==}
+  /@types/node@18.17.8:
+    resolution: {integrity: sha512-Av/7MqX/iNKwT9Tr60V85NqMnsmh8ilfJoBlIVibkXfitk9Q22D9Y5mSpm+FvG5DET7EbVfB40bOiLzKgYFgPw==}
     dev: true
 
   /@types/node@20.4.7:
@@ -1007,7 +1007,7 @@ packages:
       vite: ^4.0.0
       vue: ^3.2.25
     dependencies:
-      vite: 4.4.9(@types/node@18.17.7)
+      vite: 4.4.9(@types/node@18.17.8)
       vue: 3.3.4
     dev: true
 
@@ -4653,7 +4653,7 @@ packages:
       open: 9.1.0
       picocolors: 1.0.0
       systemjs: 6.14.1
-      vite: 4.4.9(@types/node@18.17.7)
+      vite: 4.4.9(@types/node@18.17.8)
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -4694,7 +4694,7 @@ packages:
       fsevents: 2.3.2
     dev: true
 
-  /vite@4.4.9(@types/node@18.17.7):
+  /vite@4.4.9(@types/node@18.17.8):
     resolution: {integrity: sha512-2mbUn2LlUmNASWwSCNSJ/EG2HuSRTnVNaydp6vMCm5VIqJsjMfbIWtbH2kDuwUVW5mMUKKZvGPX/rqeqVvv1XA==}
     engines: {node: ^14.18.0 || >=16.0.0}
     hasBin: true
@@ -4722,7 +4722,7 @@ packages:
       terser:
         optional: true
     dependencies:
-      '@types/node': 18.17.7
+      '@types/node': 18.17.8
       esbuild: 0.18.11
       postcss: 8.4.27
       rollup: 3.27.2
