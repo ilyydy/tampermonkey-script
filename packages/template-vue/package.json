@@ -19,7 +19,7 @@
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "4.3.3",
-    "conventional-changelog-cli": "3.0.0",
+    "conventional-changelog-cli": "4.0.0",
     "tsx": "3.12.7",
     "typescript": "5.2.2",
     "vite": "4.4.9",
