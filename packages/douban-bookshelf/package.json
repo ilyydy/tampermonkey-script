@@ -22,7 +22,7 @@
     "xlsx": "^0.18.5"
   },
   "devDependencies": {
-    "@vitejs/plugin-vue": "4.3.3",
+    "@vitejs/plugin-vue": "4.3.4",
     "conventional-changelog-cli": "4.0.0",
     "tsx": "3.12.7",
     "typescript": "5.2.2",
