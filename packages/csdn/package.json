@@ -16,7 +16,7 @@
   "packageManager": "^pnpm@8.6.6",
   "dependencies": {},
   "devDependencies": {
-    "conventional-changelog-cli": "4.0.0",
+    "conventional-changelog-cli": "4.1.0",
     "tsx": "3.12.8",
     "typescript": "5.2.2",
     "vite": "4.4.9",
