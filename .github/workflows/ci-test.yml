@@ -47,4 +47,4 @@ jobs:
       - run: pnpm coverage
       - name: Upload coverage to Codecov
         if: ${{ github.event_name == 'push' }}
-        uses: codecov/codecov-action@v3
+        uses: codecov/codecov-action@v4
