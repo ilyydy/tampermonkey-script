@@ -39,7 +39,7 @@
     "lint-staged": "14.0.1",
     "lodash-es": "4.17.21",
     "prettier": "3.0.3",
-    "tsx": "3.13.0",
+    "tsx": "3.14.0",
     "typescript": "5.2.2",
     "vite": "4.4.10",
     "vite-plugin-monkey": "3.5.0",
