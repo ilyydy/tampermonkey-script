@@ -24,7 +24,7 @@
   "devDependencies": {
     "@commitlint/cli": "18.4.2",
     "@commitlint/config-conventional": "18.4.2",
-    "@rushstack/eslint-patch": "1.5.1",
+    "@rushstack/eslint-patch": "1.6.0",
     "@types/lodash-es": "4.17.11",
     "@types/node": "20.9.1",
     "@vitejs/plugin-vue": "4.5.0",
