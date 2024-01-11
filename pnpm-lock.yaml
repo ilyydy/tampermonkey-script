@@ -28,8 +28,8 @@ importers:
         specifier: 20.10.6
         version: 20.10.6
       '@vitejs/plugin-vue':
-        specifier: 5.0.2
-        version: 5.0.2(vite@5.0.11)(vue@3.4.10)
+        specifier: 5.0.3
+        version: 5.0.3(vite@5.0.11)(vue@3.4.10)
       '@vitest/coverage-v8':
         specifier: ^0.34.0
         version: 0.34.0(vitest@0.34.1)
@@ -119,8 +119,8 @@ importers:
         version: 0.18.5
     devDependencies:
       '@vitejs/plugin-vue':
-        specifier: 5.0.2
-        version: 5.0.2(vite@5.0.11)(vue@3.4.10)
+        specifier: 5.0.3
+        version: 5.0.3(vite@5.0.11)(vue@3.4.10)
       conventional-changelog-cli:
         specifier: 4.1.0
         version: 4.1.0
@@ -1226,8 +1226,8 @@ packages:
     resolution: {integrity: sha512-zuVdFrMJiuCDQUMCzQaD6KL28MjnqqN8XnAqiEq9PNm/hCPTSGfrXCOfwj1ow4LFb/tNymJPwsNbVePc1xFqrQ==}
     dev: true
 
-  /@vitejs/plugin-vue@5.0.2(vite@5.0.11)(vue@3.4.10):
-    resolution: {integrity: sha512-kEjJHrLb5ePBvjD0SPZwJlw1QTRcjjCA9sB5VyfonoXVBxTS7TMnqL6EkLt1Eu61RDeiuZ/WN9Hf6PxXhPI2uA==}
+  /@vitejs/plugin-vue@5.0.3(vite@5.0.11)(vue@3.4.10):
+    resolution: {integrity: sha512-b8S5dVS40rgHdDrw+DQi/xOM9ed+kSRZzfm1T74bMmBDCd8XO87NKlFYInzCtwvtWwXZvo1QxE2OSspTATWrbA==}
     engines: {node: ^18.0.0 || >=20.0.0}
     peerDependencies:
       vite: ^5.0.0
