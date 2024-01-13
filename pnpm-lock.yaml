@@ -35,7 +35,7 @@ importers:
         version: 0.34.0(vitest@0.34.1)
       '@vue/eslint-config-typescript':
         specifier: 12.0.0
-        version: 12.0.0(eslint-plugin-vue@9.20.0)(eslint@8.56.0)(typescript@5.3.3)
+        version: 12.0.0(eslint-plugin-vue@9.20.1)(eslint@8.56.0)(typescript@5.3.3)
       conventional-changelog-cli:
         specifier: 4.1.0
         version: 4.1.0
@@ -46,8 +46,8 @@ importers:
         specifier: 8.56.0
         version: 8.56.0
       eslint-plugin-vue:
-        specifier: 9.20.0
-        version: 9.20.0(eslint@8.56.0)
+        specifier: 9.20.1
+        version: 9.20.1(eslint@8.56.0)
       happy-dom:
         specifier: 13.0.2
         version: 13.0.2
@@ -1366,7 +1366,7 @@ packages:
       '@vue/compiler-dom': 3.4.12
       '@vue/shared': 3.4.12
 
-  /@vue/eslint-config-typescript@12.0.0(eslint-plugin-vue@9.20.0)(eslint@8.56.0)(typescript@5.3.3):
+  /@vue/eslint-config-typescript@12.0.0(eslint-plugin-vue@9.20.1)(eslint@8.56.0)(typescript@5.3.3):
     resolution: {integrity: sha512-StxLFet2Qe97T8+7L8pGlhYBBr8Eg05LPuTDVopQV6il+SK6qqom59BA/rcFipUef2jD8P2X44Vd8tMFytfvlg==}
     engines: {node: ^14.17.0 || >=16.0.0}
     peerDependencies:
@@ -1380,7 +1380,7 @@ packages:
       '@typescript-eslint/eslint-plugin': 6.7.3(@typescript-eslint/parser@6.7.3)(eslint@8.56.0)(typescript@5.3.3)
       '@typescript-eslint/parser': 6.7.3(eslint@8.56.0)(typescript@5.3.3)
       eslint: 8.56.0
-      eslint-plugin-vue: 9.20.0(eslint@8.56.0)
+      eslint-plugin-vue: 9.20.1(eslint@8.56.0)
       typescript: 5.3.3
       vue-eslint-parser: 9.3.1(eslint@8.56.0)
     transitivePeerDependencies:
@@ -2363,8 +2363,8 @@ packages:
     engines: {node: '>=10'}
     dev: true
 
-  /eslint-plugin-vue@9.20.0(eslint@8.56.0):
-    resolution: {integrity: sha512-9/DV5CM7ItfgWmXjL6j3zyDtVTrslYdnEm+rnYNajdElx17b3erxi/Wc6FY7t3BQ6dgo0t/UBpgiWCOKtJyN8Q==}
+  /eslint-plugin-vue@9.20.1(eslint@8.56.0):
+    resolution: {integrity: sha512-GyCs8K3lkEvoyC1VV97GJhP1SvqsKCiWGHnbn0gVUYiUhaH2+nB+Dv1uekv1THFMPbBfYxukrzQdltw950k+LQ==}
     engines: {node: ^14.17.0 || >=16.0.0}
     peerDependencies:
       eslint: ^6.2.0 || ^7.0.0 || ^8.0.0
