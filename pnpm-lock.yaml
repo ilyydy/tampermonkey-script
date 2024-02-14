@@ -19,8 +19,8 @@ importers:
         specifier: 18.6.2
         version: 18.6.2
       '@rushstack/eslint-patch':
-        specifier: 1.7.1
-        version: 1.7.1
+        specifier: 1.7.2
+        version: 1.7.2
       '@types/lodash-es':
         specifier: 4.17.12
         version: 4.17.12
@@ -231,6 +231,7 @@ packages:
   /@commitlint/config-validator@18.6.1:
     resolution: {integrity: sha512-05uiToBVfPhepcQWE1ZQBR/Io3+tb3gEotZjnI4tTzzPk16NffN6YABgwFQCLmzZefbDcmwWqJWc2XT47q7Znw==}
     engines: {node: '>=v18'}
+    requiresBuild: true
     dependencies:
       '@commitlint/types': 18.6.1
       ajv: 8.11.0
@@ -251,6 +252,7 @@ packages:
   /@commitlint/execute-rule@18.6.1:
     resolution: {integrity: sha512-7s37a+iWyJiGUeMFF6qBlyZciUkF8odSAnHijbD36YDctLhGKoYltdvuJ/AFfRm6cBLRtRk9cCVPdsEFtt/2rg==}
     engines: {node: '>=v18'}
+    requiresBuild: true
     dev: true
 
   /@commitlint/format@18.6.1:
@@ -282,6 +284,7 @@ packages:
   /@commitlint/load@18.6.1(@types/node@20.11.6)(typescript@5.3.3):
     resolution: {integrity: sha512-p26x8734tSXUHoAw0ERIiHyW4RaI4Bj99D8YgUlVV9SedLf8hlWAfyIFhHRIhfPngLlCe0QYOdRKYFt8gy56TA==}
     engines: {node: '>=v18'}
+    requiresBuild: true
     dependencies:
       '@commitlint/config-validator': 18.6.1
       '@commitlint/execute-rule': 18.6.1
@@ -326,6 +329,7 @@ packages:
   /@commitlint/resolve-extends@18.6.1:
     resolution: {integrity: sha512-ifRAQtHwK+Gj3Bxj/5chhc4L2LIc3s30lpsyW67yyjsETR6ctHAHRu1FSpt0KqahK5xESqoJ92v6XxoDRtjwEQ==}
     engines: {node: '>=v18'}
+    requiresBuild: true
     dependencies:
       '@commitlint/config-validator': 18.6.1
       '@commitlint/types': 18.6.1
@@ -1017,8 +1021,8 @@ packages:
     dev: true
     optional: true
 
-  /@rushstack/eslint-patch@1.7.1:
-    resolution: {integrity: sha512-irBNt5094vHloql4QzY8RdeI8Tns2kGsaiJ/m6jENWx9xCz/m/F4gKQ1dAailFmpL0Id9tgWLqZbTUO4SINM/Q==}
+  /@rushstack/eslint-patch@1.7.2:
+    resolution: {integrity: sha512-RbhOOTCNoCrbfkRyoXODZp75MlpiHMgbE5MEBZAnnnLyQNgrigEj4p0lzsMDyc1zVsJDLrivB58tgg3emX0eEA==}
     dev: true
 
   /@sinclair/typebox@0.27.8:
