@@ -110,7 +110,7 @@ importers:
         version: 6.4.6
       element-plus:
         specifier: ^2.2.19
-        version: 2.6.0(vue@3.4.21)
+        version: 2.6.1(vue@3.4.21)
       vue:
         specifier: 3.4.21
         version: 3.4.21(typescript@5.3.3)
@@ -2181,8 +2181,8 @@ packages:
       is-obj: 2.0.0
     dev: true
 
-  /element-plus@2.6.0(vue@3.4.21):
-    resolution: {integrity: sha512-MP+N48P+diyndR+GjY+0VOrUmFnajD4U0CkrXIMzmeRmq4+dwi0bdzVo587v4wDo9Hs+ggviyacqm3NS8JYVqw==}
+  /element-plus@2.6.1(vue@3.4.21):
+    resolution: {integrity: sha512-6VRpLjwtIVdtUuITJPPKtpOH1NM6nuAkRE3q5O4Lrx0N1bYMhTkiqb2Jy7zfQuDPbOIkkF2OABTzegpNnzgsnQ==}
     peerDependencies:
       vue: ^3.2.0
     dependencies:
