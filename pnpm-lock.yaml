@@ -29,7 +29,7 @@ importers:
         version: 20.11.25
       '@vitejs/plugin-vue':
         specifier: 5.0.4
-        version: 5.0.4(vite@5.1.5)(vue@3.4.21)
+        version: 5.0.4(vite@5.1.6)(vue@3.4.21)
       '@vitest/coverage-v8':
         specifier: ^0.34.0
         version: 0.34.0(vitest@0.34.1)
@@ -70,11 +70,11 @@ importers:
         specifier: 5.3.3
         version: 5.3.3
       vite:
-        specifier: 5.1.5
-        version: 5.1.5(@types/node@20.11.25)
+        specifier: 5.1.6
+        version: 5.1.6(@types/node@20.11.25)
       vite-plugin-monkey:
         specifier: 3.5.1
-        version: 3.5.1(vite@5.1.5)
+        version: 3.5.1(vite@5.1.6)
       vitest:
         specifier: 0.34.1
         version: 0.34.1(happy-dom@13.7.3)
@@ -94,8 +94,8 @@ importers:
         specifier: 5.3.3
         version: 5.3.3
       vite:
-        specifier: 5.1.5
-        version: 5.1.5(@types/node@20.11.25)
+        specifier: 5.1.6
+        version: 5.1.6(@types/node@20.11.25)
       vitest:
         specifier: 0.34.1
         version: 0.34.1(happy-dom@13.7.3)
@@ -120,7 +120,7 @@ importers:
     devDependencies:
       '@vitejs/plugin-vue':
         specifier: 5.0.4
-        version: 5.0.4(vite@5.1.5)(vue@3.4.21)
+        version: 5.0.4(vite@5.1.6)(vue@3.4.21)
       conventional-changelog-cli:
         specifier: 4.1.0
         version: 4.1.0
@@ -131,8 +131,8 @@ importers:
         specifier: 5.3.3
         version: 5.3.3
       vite:
-        specifier: 5.1.5
-        version: 5.1.5(@types/node@20.11.25)
+        specifier: 5.1.6
+        version: 5.1.6(@types/node@20.11.25)
       vitest:
         specifier: 0.34.1
         version: 0.34.1(happy-dom@13.7.3)
@@ -1231,14 +1231,14 @@ packages:
     resolution: {integrity: sha512-zuVdFrMJiuCDQUMCzQaD6KL28MjnqqN8XnAqiEq9PNm/hCPTSGfrXCOfwj1ow4LFb/tNymJPwsNbVePc1xFqrQ==}
     dev: true
 
-  /@vitejs/plugin-vue@5.0.4(vite@5.1.5)(vue@3.4.21):
+  /@vitejs/plugin-vue@5.0.4(vite@5.1.6)(vue@3.4.21):
     resolution: {integrity: sha512-WS3hevEszI6CEVEx28F8RjTX97k3KsrcY6kvTg7+Whm5y3oYvcqzVeGCU3hxSAn4uY2CLCkeokkGKpoctccilQ==}
     engines: {node: ^18.0.0 || >=20.0.0}
     peerDependencies:
       vite: ^5.0.0
       vue: ^3.2.25
     dependencies:
-      vite: 5.1.5(@types/node@20.11.25)
+      vite: 5.1.6(@types/node@20.11.25)
       vue: 3.4.21(typescript@5.3.3)
     dev: true
 
@@ -4274,7 +4274,7 @@ packages:
       - terser
     dev: true
 
-  /vite-plugin-monkey@3.5.1(vite@5.1.5):
+  /vite-plugin-monkey@3.5.1(vite@5.1.6):
     resolution: {integrity: sha512-sLbWbhvhXbm1d4SFY9eVx3KFqDP1gbjqUJlbpf/KRKLAFcjO3VIMOJb0oqxH77zlmSZhITrqLcsB3AyH+92i/w==}
     engines: {node: ^14.18 || >= 16, pnpm: '>=6'}
     peerDependencies:
@@ -4291,7 +4291,7 @@ packages:
       open: 9.1.0
       picocolors: 1.0.0
       systemjs: 6.14.2
-      vite: 5.1.5(@types/node@20.11.25)
+      vite: 5.1.6(@types/node@20.11.25)
     dev: true
 
   /vite@4.5.0(@types/node@18.17.1):
@@ -4330,8 +4330,8 @@ packages:
       fsevents: 2.3.3
     dev: true
 
-  /vite@5.1.5(@types/node@20.11.25):
-    resolution: {integrity: sha512-BdN1xh0Of/oQafhU+FvopafUp6WaYenLU/NFoL5WyJL++GxkNfieKzBhM24H3HVsPQrlAqB7iJYTHabzaRed5Q==}
+  /vite@5.1.6(@types/node@20.11.25):
+    resolution: {integrity: sha512-yYIAZs9nVfRJ/AiOLCA91zzhjsHUgMjB+EigzFb6W2XTLO8JixBCKCjvhKZaye+NKYHCrkv3Oh50dH9EdLU2RA==}
     engines: {node: ^18.0.0 || >=20.0.0}
     hasBin: true
     peerDependencies:
