@@ -19,8 +19,8 @@ importers:
         specifier: 19.1.0
         version: 19.1.0
       '@rushstack/eslint-patch':
-        specifier: 1.9.0
-        version: 1.9.0
+        specifier: 1.10.1
+        version: 1.10.1
       '@types/lodash-es':
         specifier: 4.17.12
         version: 4.17.12
@@ -174,6 +174,7 @@ packages:
   /@babel/highlight@7.23.4:
     resolution: {integrity: sha512-acGdbYSfp2WheJoJm/EBBBLh/ID8KDc64ISZ9DYtBmC8/Q204PZJLHyzeB5qMzJ5trcOkybd78M4x2KWsUq++A==}
     engines: {node: '>=6.9.0'}
+    requiresBuild: true
     dependencies:
       '@babel/helper-validator-identifier': 7.22.20
       chalk: 2.4.2
@@ -1236,8 +1237,8 @@ packages:
     dev: true
     optional: true
 
-  /@rushstack/eslint-patch@1.9.0:
-    resolution: {integrity: sha512-AAWymnpvHbGty1BmgbdfbqQDboXs6xN6h2yAacO4yKVyyUUBnpYkp+P9jjPrV9zrAGw7JVVriRtGOHPInnfjZQ==}
+  /@rushstack/eslint-patch@1.10.1:
+    resolution: {integrity: sha512-S3Kq8e7LqxkA9s7HKLqXGTGck1uwis5vAXan3FnU5yw1Ec5hsSGnq4s/UCaSqABPOnOTg7zASLyst7+ohgWexg==}
     dev: true
 
   /@sinclair/typebox@0.27.8:
