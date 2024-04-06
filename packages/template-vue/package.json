@@ -22,7 +22,7 @@
     "conventional-changelog-cli": "4.1.0",
     "tsx": "4.7.2",
     "typescript": "5.4.4",
-    "vite": "5.2.7",
+    "vite": "5.2.8",
     "vitest": "0.34.1",
     "vue-tsc": "2.0.10"
   }
