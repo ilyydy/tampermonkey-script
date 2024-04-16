@@ -21,7 +21,7 @@
     "@vitejs/plugin-vue": "5.0.4",
     "conventional-changelog-cli": "4.1.0",
     "tsx": "4.7.2",
-    "typescript": "5.4.4",
+    "typescript": "5.4.5",
     "vite": "5.2.8",
     "vitest": "0.34.1",
     "vue-tsc": "2.0.10"
