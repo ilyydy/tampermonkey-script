@@ -19,7 +19,7 @@
     "conventional-changelog-cli": "4.1.0",
     "tsx": "4.7.2",
     "typescript": "5.4.5",
-    "vite": "5.2.8",
+    "vite": "5.2.9",
     "vitest": "0.34.1"
   }
 }
