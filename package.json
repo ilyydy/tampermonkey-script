@@ -14,12 +14,12 @@
     "changelog": "pnpm -r --parallel changelog",
     "prepare": "husky install"
   },
-  "packageManager": "^pnpm@8.6.6",
+  "packageManager": "pnpm@8.6.6",
   "dependencies": {
     "vue": "3.4.21"
   },
   "engines": {
-    "node": ">=18.0.0"
+    "node": ">=20.0.0"
   },
   "devDependencies": {
     "@commitlint/cli": "19.2.1",
