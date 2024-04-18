@@ -3,12 +3,11 @@ import { join } from 'node:path';
 import { unlinkSync, existsSync } from 'node:fs';
 
 import { exportXlsx } from '../../../packages/douban-bookshelf/src/common/xlsx';
-import { getProjectRootAbsPath } from '../../../packages/util';
+import { projectRootPath } from '../../util';
 
 test('exportXlsx test', () => {
-  const projectRoot = getProjectRootAbsPath();
   const filename = 'test.xlsx';
-  const csvPath = join(projectRoot, filename);
+  const csvPath = join(projectRootPath, filename);
 
   if (existsSync(csvPath)) {
     unlinkSync(csvPath);

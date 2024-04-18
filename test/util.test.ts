@@ -2,6 +2,7 @@ import { describe, expect, test, vi } from 'vitest';
 import path, { join } from 'node:path';
 
 import * as util from '../packages/util';
+import { projectRootPath } from './util';
 
 const fileName = 'util.test.ts';
 
@@ -24,7 +25,7 @@ test('getDirname test', () => {
 });
 
 test('getProjectRootAbsPath test', () => {
-  expect(util.getProjectRootAbsPath()).toBe(process.cwd());
+  expect(util.getProjectRootAbsPath()).toBe(projectRootPath);
 });
 
 describe.concurrent('getScriptName test', () => {

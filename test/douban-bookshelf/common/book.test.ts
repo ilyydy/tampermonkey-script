@@ -10,7 +10,7 @@ import {
   exportXlsxName,
   copyBook,
 } from '../../../packages/douban-bookshelf/src/common/book';
-import { getProjectRootAbsPath } from '../../../packages/util';
+import { projectRootPath } from '../../util';
 import { book1, book2 } from '../data';
 
 import type { Book } from '../../../packages/douban-bookshelf/src/types';
@@ -32,8 +32,7 @@ describe('getBookViewText test', () => {
 // });
 
 test('exportBookCsv test', () => {
-  const projectRoot = getProjectRootAbsPath();
-  const excelPath = join(projectRoot, exportCsvName);
+  const excelPath = join(projectRootPath, exportCsvName);
 
   if (existsSync(excelPath)) {
     unlinkSync(excelPath);
@@ -48,8 +47,7 @@ test('exportBookCsv test', () => {
 });
 
 test('exportBookXlsx test', () => {
-  const projectRoot = getProjectRootAbsPath();
-  const excelPath = join(projectRoot, exportXlsxName);
+  const excelPath = join(projectRootPath, exportXlsxName);
 
   if (existsSync(excelPath)) {
     unlinkSync(excelPath);
