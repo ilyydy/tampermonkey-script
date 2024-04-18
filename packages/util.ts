@@ -1,4 +1,4 @@
-import { basename, dirname, relative, join } from 'node:path';
+import { basename, dirname, resolve, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 export function getFileAbsPath(metaUrl: string) {
@@ -18,7 +18,7 @@ export function getDirname(metaUrl: string) {
 }
 
 export function getProjectRootAbsPath() {
-  return dirname(fileURLToPath(new URL('../package.json', import.meta.url)));
+  return resolve(dirname(fileURLToPath(import.meta.url)), '..');
 }
 
 export const isProd = (env?: string) => env === 'production';
