@@ -14,7 +14,7 @@
     "changelog": "pnpm -r --parallel changelog",
     "prepare": "husky install"
   },
-  "packageManager": "pnpm@9.0.2",
+  "packageManager": "pnpm@9.0.4",
   "dependencies": {
     "vue": "3.4.23"
   },
