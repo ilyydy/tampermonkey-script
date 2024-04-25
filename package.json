@@ -44,7 +44,7 @@
     "vite": "5.2.10",
     "vite-plugin-monkey": "3.5.2",
     "vitest": "1.5.2",
-    "vue-tsc": "2.0.13"
+    "vue-tsc": "2.0.14"
   },
   "config": {
     "commitizen": {
