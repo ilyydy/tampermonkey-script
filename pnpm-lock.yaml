@@ -110,7 +110,7 @@ importers:
         version: 6.4.6
       element-plus:
         specifier: ^2.2.19
-        version: 2.7.1(vue@3.4.25(typescript@5.4.5))
+        version: 2.7.2(vue@3.4.25(typescript@5.4.5))
       vue:
         specifier: 3.4.25
         version: 3.4.25(typescript@5.4.5)
@@ -1283,8 +1283,8 @@ packages:
     resolution: {integrity: sha512-QM8q3zDe58hqUqjraQOmzZ1LIH9SWQJTlEKCH4kJ2oQvLZk7RbQXvtDM2XEq3fwkV9CCvvH4LA0AV+ogFsBM2Q==}
     engines: {node: '>=8'}
 
-  element-plus@2.7.1:
-    resolution: {integrity: sha512-yk/vXFwJp0flMrd2kfcR0XlumhwtPjB19HJvwcf0n3DvRE7UK8LeSK14LVghSzk0TzPsFFElweMnZEEv7+MYuQ==}
+  element-plus@2.7.2:
+    resolution: {integrity: sha512-AdEzBU/A68iUleio0MkQ46JeU5SeQvFFd915GJFScJmUEo5AmYg3OQ4pVjcu+p3b3Nupg9MC5Wa4xjAiC51kUg==}
     peerDependencies:
       vue: ^3.2.0
 
@@ -3756,7 +3756,7 @@ snapshots:
     dependencies:
       is-obj: 2.0.0
 
-  element-plus@2.7.1(vue@3.4.25(typescript@5.4.5)):
+  element-plus@2.7.2(vue@3.4.25(typescript@5.4.5)):
     dependencies:
       '@ctrl/tinycolor': 3.6.1
       '@element-plus/icons-vue': 2.3.1(vue@3.4.25(typescript@5.4.5))
