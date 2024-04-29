@@ -16,7 +16,7 @@
   },
   "packageManager": "pnpm@9.0.6",
   "dependencies": {
-    "vue": "3.4.25"
+    "vue": "3.4.26"
   },
   "engines": {
     "node": ">=20.0.0"
