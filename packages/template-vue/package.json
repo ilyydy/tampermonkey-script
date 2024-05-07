@@ -15,7 +15,7 @@
   },
   "packageManager": "pnpm@9.0.6",
   "dependencies": {
-    "vue": "3.4.26"
+    "vue": "3.4.27"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "5.0.4",
