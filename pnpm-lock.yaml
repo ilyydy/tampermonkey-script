@@ -32,7 +32,7 @@ importers:
         version: 5.0.4(vite@5.2.11(@types/node@20.12.8))(vue@3.4.26(typescript@5.4.5))
       '@vitest/coverage-v8':
         specifier: ^1.5.0
-        version: 1.6.0(vitest@1.6.0(@types/node@20.12.8)(happy-dom@14.7.1))
+        version: 1.6.0(vitest@1.6.0(@types/node@20.12.8)(happy-dom@14.10.1))
       '@vue/eslint-config-typescript':
         specifier: 13.0.0
         version: 13.0.0(eslint-plugin-vue@9.25.0(eslint@8.57.0))(eslint@8.57.0)(typescript@5.4.5)
@@ -49,8 +49,8 @@ importers:
         specifier: 9.25.0
         version: 9.25.0(eslint@8.57.0)
       happy-dom:
-        specifier: 14.7.1
-        version: 14.7.1
+        specifier: 14.10.1
+        version: 14.10.1
       husky:
         specifier: 9.0.11
         version: 9.0.11
@@ -77,7 +77,7 @@ importers:
         version: 3.5.2(vite@5.2.11(@types/node@20.12.8))
       vitest:
         specifier: 1.6.0
-        version: 1.6.0(@types/node@20.12.8)(happy-dom@14.7.1)
+        version: 1.6.0(@types/node@20.12.8)(happy-dom@14.10.1)
       vue-tsc:
         specifier: 2.0.16
         version: 2.0.16(typescript@5.4.5)
@@ -98,7 +98,7 @@ importers:
         version: 5.2.11(@types/node@20.12.8)
       vitest:
         specifier: 1.6.0
-        version: 1.6.0(@types/node@20.12.8)(happy-dom@14.7.1)
+        version: 1.6.0(@types/node@20.12.8)(happy-dom@14.10.1)
 
   packages/douban-bookshelf:
     dependencies:
@@ -135,7 +135,7 @@ importers:
         version: 5.2.11(@types/node@20.12.8)
       vitest:
         specifier: 1.6.0
-        version: 1.6.0(@types/node@20.12.8)(happy-dom@14.7.1)
+        version: 1.6.0(@types/node@20.12.8)(happy-dom@14.10.1)
       vue-tsc:
         specifier: 2.0.16
         version: 2.0.16(typescript@5.4.5)
@@ -1448,8 +1448,8 @@ packages:
     engines: {node: '>=0.4.7'}
     hasBin: true
 
-  happy-dom@14.7.1:
-    resolution: {integrity: sha512-v60Q0evZ4clvMcrAh5/F8EdxDdfHdFrtffz/CNe10jKD+nFweZVxM91tW+UyY2L4AtpgIaXdZ7TQmiO1pfcwbg==}
+  happy-dom@14.10.1:
+    resolution: {integrity: sha512-GRbrZYIezi8+tTtffF4v2QcF8bk1h2loUTO5VYQz3GZdrL08Vk0fI+bwf/vFEBf4C/qVf/easLJ/MY1wwdhytA==}
     engines: {node: '>=16.0.0'}
 
   has-flag@3.0.0:
@@ -3032,7 +3032,7 @@ snapshots:
       vite: 5.2.11(@types/node@20.12.8)
       vue: 3.4.26(typescript@5.4.5)
 
-  '@vitest/coverage-v8@1.6.0(vitest@1.6.0(@types/node@20.12.8)(happy-dom@14.7.1))':
+  '@vitest/coverage-v8@1.6.0(vitest@1.6.0(@types/node@20.12.8)(happy-dom@14.10.1))':
     dependencies:
       '@ampproject/remapping': 2.3.0
       '@bcoe/v8-coverage': 0.2.3
@@ -3047,7 +3047,7 @@ snapshots:
       std-env: 3.7.0
       strip-literal: 2.1.0
       test-exclude: 6.0.0
-      vitest: 1.6.0(@types/node@20.12.8)(happy-dom@14.7.1)
+      vitest: 1.6.0(@types/node@20.12.8)(happy-dom@14.10.1)
     transitivePeerDependencies:
       - supports-color
 
@@ -4002,7 +4002,7 @@ snapshots:
     optionalDependencies:
       uglify-js: 3.17.4
 
-  happy-dom@14.7.1:
+  happy-dom@14.10.1:
     dependencies:
       entities: 4.5.0
       webidl-conversions: 7.0.0
@@ -4856,7 +4856,7 @@ snapshots:
       '@types/node': 20.12.8
       fsevents: 2.3.3
 
-  vitest@1.6.0(@types/node@20.12.8)(happy-dom@14.7.1):
+  vitest@1.6.0(@types/node@20.12.8)(happy-dom@14.10.1):
     dependencies:
       '@vitest/expect': 1.6.0
       '@vitest/runner': 1.6.0
@@ -4880,7 +4880,7 @@ snapshots:
       why-is-node-running: 2.2.2
     optionalDependencies:
       '@types/node': 20.12.8
-      happy-dom: 14.7.1
+      happy-dom: 14.10.1
     transitivePeerDependencies:
       - less
       - lightningcss
