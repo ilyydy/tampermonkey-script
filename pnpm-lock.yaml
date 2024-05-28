@@ -32,7 +32,7 @@ importers:
         version: 5.0.4(vite@5.2.11(@types/node@20.12.12))(vue@3.4.27(typescript@5.4.5))
       '@vitest/coverage-v8':
         specifier: ^1.5.0
-        version: 1.6.0(vitest@1.6.0(@types/node@20.12.12)(happy-dom@14.11.0))
+        version: 1.6.0(vitest@1.6.0(@types/node@20.12.12)(happy-dom@14.11.2))
       '@vue/eslint-config-typescript':
         specifier: 13.0.0
         version: 13.0.0(eslint-plugin-vue@9.26.0(eslint@8.57.0))(eslint@8.57.0)(typescript@5.4.5)
@@ -49,8 +49,8 @@ importers:
         specifier: 9.26.0
         version: 9.26.0(eslint@8.57.0)
       happy-dom:
-        specifier: 14.11.0
-        version: 14.11.0
+        specifier: 14.11.2
+        version: 14.11.2
       husky:
         specifier: 9.0.11
         version: 9.0.11
@@ -77,7 +77,7 @@ importers:
         version: 3.5.2(vite@5.2.11(@types/node@20.12.12))
       vitest:
         specifier: 1.6.0
-        version: 1.6.0(@types/node@20.12.12)(happy-dom@14.11.0)
+        version: 1.6.0(@types/node@20.12.12)(happy-dom@14.11.2)
       vue-tsc:
         specifier: 2.0.19
         version: 2.0.19(typescript@5.4.5)
@@ -98,7 +98,7 @@ importers:
         version: 5.2.11(@types/node@20.12.12)
       vitest:
         specifier: 1.6.0
-        version: 1.6.0(@types/node@20.12.12)(happy-dom@14.11.0)
+        version: 1.6.0(@types/node@20.12.12)(happy-dom@14.11.2)
 
   packages/douban-bookshelf:
     dependencies:
@@ -135,7 +135,7 @@ importers:
         version: 5.2.11(@types/node@20.12.12)
       vitest:
         specifier: 1.6.0
-        version: 1.6.0(@types/node@20.12.12)(happy-dom@14.11.0)
+        version: 1.6.0(@types/node@20.12.12)(happy-dom@14.11.2)
       vue-tsc:
         specifier: 2.0.19
         version: 2.0.19(typescript@5.4.5)
@@ -1406,6 +1406,7 @@ packages:
 
   glob@7.2.3:
     resolution: {integrity: sha512-nFR0zLpU2YCaRxwoCJvL6UvCH2JFyFVIvwTLsIf21AuHlMskA1hhTdk+LlYJtOlYt9v6dvszD2BGRqBL+iQK9Q==}
+    deprecated: Glob versions prior to v9 are no longer supported
 
   global-directory@4.0.1:
     resolution: {integrity: sha512-wHTUcDUoZ1H5/0iVqEudYW4/kAlN5cZ3j/bXn0Dpbizl9iaUVeWSHqiOjsgk6OW2bkLclbBjzewBz6weQ1zA2Q==}
@@ -1438,8 +1439,8 @@ packages:
     engines: {node: '>=0.4.7'}
     hasBin: true
 
-  happy-dom@14.11.0:
-    resolution: {integrity: sha512-vu25dY7YJqLuTG/3ADC0FZRRF0yNBp3q2K0YTN08opXdZi8V/YzIJDNJWFiCnDIuyc+RrCIE093+H5fa9Trlxg==}
+  happy-dom@14.11.2:
+    resolution: {integrity: sha512-KUrwcT2GAVIGkFev287ude3n0BGGK3BWGltlVEPE8osMbDRU4zwKfcg6jUO7HkX1tAUU+kKt2g+LycmCH0Zwsg==}
     engines: {node: '>=16.0.0'}
 
   has-flag@3.0.0:
@@ -2083,6 +2084,7 @@ packages:
 
   rimraf@3.0.2:
     resolution: {integrity: sha512-JZkJMZkAGFFPP2YqXZXPbMlMBgsxzE8ILs4lMIX/2o0L9UBw9O/Y3o6wFw/i9YLapcUJWwqbi3kdxIPdC62TIA==}
+    deprecated: Rimraf versions prior to v4 are no longer supported
     hasBin: true
 
   rollup@4.13.0:
@@ -3021,7 +3023,7 @@ snapshots:
       vite: 5.2.11(@types/node@20.12.12)
       vue: 3.4.27(typescript@5.4.5)
 
-  '@vitest/coverage-v8@1.6.0(vitest@1.6.0(@types/node@20.12.12)(happy-dom@14.11.0))':
+  '@vitest/coverage-v8@1.6.0(vitest@1.6.0(@types/node@20.12.12)(happy-dom@14.11.2))':
     dependencies:
       '@ampproject/remapping': 2.3.0
       '@bcoe/v8-coverage': 0.2.3
@@ -3036,7 +3038,7 @@ snapshots:
       std-env: 3.7.0
       strip-literal: 2.1.0
       test-exclude: 6.0.0
-      vitest: 1.6.0(@types/node@20.12.12)(happy-dom@14.11.0)
+      vitest: 1.6.0(@types/node@20.12.12)(happy-dom@14.11.2)
     transitivePeerDependencies:
       - supports-color
 
@@ -3991,7 +3993,7 @@ snapshots:
     optionalDependencies:
       uglify-js: 3.17.4
 
-  happy-dom@14.11.0:
+  happy-dom@14.11.2:
     dependencies:
       entities: 4.5.0
       webidl-conversions: 7.0.0
@@ -4852,7 +4854,7 @@ snapshots:
       '@types/node': 20.12.12
       fsevents: 2.3.3
 
-  vitest@1.6.0(@types/node@20.12.12)(happy-dom@14.11.0):
+  vitest@1.6.0(@types/node@20.12.12)(happy-dom@14.11.2):
     dependencies:
       '@vitest/expect': 1.6.0
       '@vitest/runner': 1.6.0
@@ -4876,7 +4878,7 @@ snapshots:
       why-is-node-running: 2.2.2
     optionalDependencies:
       '@types/node': 20.12.12
-      happy-dom: 14.11.0
+      happy-dom: 14.11.2
     transitivePeerDependencies:
       - less
       - lightningcss
