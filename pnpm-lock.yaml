@@ -29,7 +29,7 @@ importers:
         version: 20.12.12
       '@vitejs/plugin-vue':
         specifier: 5.0.4
-        version: 5.0.4(vite@5.2.11(@types/node@20.12.12))(vue@3.4.27(typescript@5.4.5))
+        version: 5.0.4(vite@5.2.12(@types/node@20.12.12))(vue@3.4.27(typescript@5.4.5))
       '@vitest/coverage-v8':
         specifier: ^1.5.0
         version: 1.6.0(vitest@1.6.0(@types/node@20.12.12)(happy-dom@14.11.0))
@@ -70,11 +70,11 @@ importers:
         specifier: 5.4.5
         version: 5.4.5
       vite:
-        specifier: 5.2.11
-        version: 5.2.11(@types/node@20.12.12)
+        specifier: 5.2.12
+        version: 5.2.12(@types/node@20.12.12)
       vite-plugin-monkey:
         specifier: 3.5.2
-        version: 3.5.2(vite@5.2.11(@types/node@20.12.12))
+        version: 3.5.2(vite@5.2.12(@types/node@20.12.12))
       vitest:
         specifier: 1.6.0
         version: 1.6.0(@types/node@20.12.12)(happy-dom@14.11.0)
@@ -94,8 +94,8 @@ importers:
         specifier: 5.4.5
         version: 5.4.5
       vite:
-        specifier: 5.2.11
-        version: 5.2.11(@types/node@20.12.12)
+        specifier: 5.2.12
+        version: 5.2.12(@types/node@20.12.12)
       vitest:
         specifier: 1.6.0
         version: 1.6.0(@types/node@20.12.12)(happy-dom@14.11.0)
@@ -120,7 +120,7 @@ importers:
     devDependencies:
       '@vitejs/plugin-vue':
         specifier: 5.0.4
-        version: 5.0.4(vite@5.2.11(@types/node@20.12.12))(vue@3.4.27(typescript@5.4.5))
+        version: 5.0.4(vite@5.2.12(@types/node@20.12.12))(vue@3.4.27(typescript@5.4.5))
       conventional-changelog-cli:
         specifier: 5.0.0
         version: 5.0.0
@@ -131,8 +131,8 @@ importers:
         specifier: 5.4.5
         version: 5.4.5
       vite:
-        specifier: 5.2.11
-        version: 5.2.11(@types/node@20.12.12)
+        specifier: 5.2.12
+        version: 5.2.12(@types/node@20.12.12)
       vitest:
         specifier: 1.6.0
         version: 1.6.0(@types/node@20.12.12)(happy-dom@14.11.0)
@@ -1406,6 +1406,7 @@ packages:
 
   glob@7.2.3:
     resolution: {integrity: sha512-nFR0zLpU2YCaRxwoCJvL6UvCH2JFyFVIvwTLsIf21AuHlMskA1hhTdk+LlYJtOlYt9v6dvszD2BGRqBL+iQK9Q==}
+    deprecated: Glob versions prior to v9 are no longer supported
 
   global-directory@4.0.1:
     resolution: {integrity: sha512-wHTUcDUoZ1H5/0iVqEudYW4/kAlN5cZ3j/bXn0Dpbizl9iaUVeWSHqiOjsgk6OW2bkLclbBjzewBz6weQ1zA2Q==}
@@ -2083,6 +2084,7 @@ packages:
 
   rimraf@3.0.2:
     resolution: {integrity: sha512-JZkJMZkAGFFPP2YqXZXPbMlMBgsxzE8ILs4lMIX/2o0L9UBw9O/Y3o6wFw/i9YLapcUJWwqbi3kdxIPdC62TIA==}
+    deprecated: Rimraf versions prior to v4 are no longer supported
     hasBin: true
 
   rollup@4.13.0:
@@ -2370,8 +2372,8 @@ packages:
       vite:
         optional: true
 
-  vite@5.2.11:
-    resolution: {integrity: sha512-HndV31LWW05i1BLPMUCE1B9E9GFbOu1MbenhS58FuK6owSO5qHm7GiCotrNY1YE5rMeQSFBGmT5ZaLEjFizgiQ==}
+  vite@5.2.12:
+    resolution: {integrity: sha512-/gC8GxzxMK5ntBwb48pR32GGhENnjtY30G4A0jemunsBkiEZFw60s8InGpN8gkhHEkjnRK1aSAxeQgwvFhUHAA==}
     engines: {node: ^18.0.0 || >=20.0.0}
     hasBin: true
     peerDependencies:
@@ -3016,9 +3018,9 @@ snapshots:
 
   '@ungap/structured-clone@1.2.0': {}
 
-  '@vitejs/plugin-vue@5.0.4(vite@5.2.11(@types/node@20.12.12))(vue@3.4.27(typescript@5.4.5))':
+  '@vitejs/plugin-vue@5.0.4(vite@5.2.12(@types/node@20.12.12))(vue@3.4.27(typescript@5.4.5))':
     dependencies:
-      vite: 5.2.11(@types/node@20.12.12)
+      vite: 5.2.12(@types/node@20.12.12)
       vue: 3.4.27(typescript@5.4.5)
 
   '@vitest/coverage-v8@1.6.0(vitest@1.6.0(@types/node@20.12.12)(happy-dom@14.11.0))':
@@ -4819,7 +4821,7 @@ snapshots:
       debug: 4.3.4
       pathe: 1.1.2
       picocolors: 1.0.0
-      vite: 5.2.11(@types/node@20.12.12)
+      vite: 5.2.12(@types/node@20.12.12)
     transitivePeerDependencies:
       - '@types/node'
       - less
@@ -4830,7 +4832,7 @@ snapshots:
       - supports-color
       - terser
 
-  vite-plugin-monkey@3.5.2(vite@5.2.11(@types/node@20.12.12)):
+  vite-plugin-monkey@3.5.2(vite@5.2.12(@types/node@20.12.12)):
     dependencies:
       acorn-walk: 8.3.2
       cross-spawn: 7.0.3
@@ -4841,9 +4843,9 @@ snapshots:
       picocolors: 1.0.0
       systemjs: 6.14.3
     optionalDependencies:
-      vite: 5.2.11(@types/node@20.12.12)
+      vite: 5.2.12(@types/node@20.12.12)
 
-  vite@5.2.11(@types/node@20.12.12):
+  vite@5.2.12(@types/node@20.12.12):
     dependencies:
       esbuild: 0.20.2
       postcss: 8.4.38
@@ -4871,7 +4873,7 @@ snapshots:
       strip-literal: 2.1.0
       tinybench: 2.6.0
       tinypool: 0.8.4
-      vite: 5.2.11(@types/node@20.12.12)
+      vite: 5.2.12(@types/node@20.12.12)
       vite-node: 1.6.0(@types/node@20.12.12)
       why-is-node-running: 2.2.2
     optionalDependencies:
