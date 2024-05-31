@@ -18,7 +18,7 @@
     "vue": "3.4.27"
   },
   "devDependencies": {
-    "@vitejs/plugin-vue": "5.0.4",
+    "@vitejs/plugin-vue": "5.0.5",
     "conventional-changelog-cli": "5.0.0",
     "tsx": "4.11.0",
     "typescript": "5.4.5",
