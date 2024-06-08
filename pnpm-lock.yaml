@@ -29,7 +29,7 @@ importers:
         version: 20.14.2
       '@vitejs/plugin-vue':
         specifier: 5.0.5
-        version: 5.0.5(vite@5.2.12(@types/node@20.14.2))(vue@3.4.27(typescript@5.4.5))
+        version: 5.0.5(vite@5.2.13(@types/node@20.14.2))(vue@3.4.27(typescript@5.4.5))
       '@vitest/coverage-v8':
         specifier: ^1.5.0
         version: 1.6.0(vitest@1.6.0(@types/node@20.14.2)(happy-dom@14.12.0))
@@ -70,11 +70,11 @@ importers:
         specifier: 5.4.5
         version: 5.4.5
       vite:
-        specifier: 5.2.12
-        version: 5.2.12(@types/node@20.14.2)
+        specifier: 5.2.13
+        version: 5.2.13(@types/node@20.14.2)
       vite-plugin-monkey:
         specifier: 4.0.0
-        version: 4.0.0(vite@5.2.12(@types/node@20.14.2))
+        version: 4.0.0(vite@5.2.13(@types/node@20.14.2))
       vitest:
         specifier: 1.6.0
         version: 1.6.0(@types/node@20.14.2)(happy-dom@14.12.0)
@@ -94,8 +94,8 @@ importers:
         specifier: 5.4.5
         version: 5.4.5
       vite:
-        specifier: 5.2.12
-        version: 5.2.12(@types/node@20.14.2)
+        specifier: 5.2.13
+        version: 5.2.13(@types/node@20.14.2)
       vitest:
         specifier: 1.6.0
         version: 1.6.0(@types/node@20.14.2)(happy-dom@14.12.0)
@@ -120,7 +120,7 @@ importers:
     devDependencies:
       '@vitejs/plugin-vue':
         specifier: 5.0.5
-        version: 5.0.5(vite@5.2.12(@types/node@20.14.2))(vue@3.4.27(typescript@5.4.5))
+        version: 5.0.5(vite@5.2.13(@types/node@20.14.2))(vue@3.4.27(typescript@5.4.5))
       conventional-changelog-cli:
         specifier: 5.0.0
         version: 5.0.0
@@ -131,8 +131,8 @@ importers:
         specifier: 5.4.5
         version: 5.4.5
       vite:
-        specifier: 5.2.12
-        version: 5.2.12(@types/node@20.14.2)
+        specifier: 5.2.13
+        version: 5.2.13(@types/node@20.14.2)
       vitest:
         specifier: 1.6.0
         version: 1.6.0(@types/node@20.14.2)(happy-dom@14.12.0)
@@ -2370,8 +2370,8 @@ packages:
       vite:
         optional: true
 
-  vite@5.2.12:
-    resolution: {integrity: sha512-/gC8GxzxMK5ntBwb48pR32GGhENnjtY30G4A0jemunsBkiEZFw60s8InGpN8gkhHEkjnRK1aSAxeQgwvFhUHAA==}
+  vite@5.2.13:
+    resolution: {integrity: sha512-SSq1noJfY9pR3I1TUENL3rQYDQCFqgD+lM6fTRAM8Nv6Lsg5hDLaXkjETVeBt+7vZBCMoibD+6IWnT2mJ+Zb/A==}
     engines: {node: ^18.0.0 || >=20.0.0}
     hasBin: true
     peerDependencies:
@@ -3016,9 +3016,9 @@ snapshots:
 
   '@ungap/structured-clone@1.2.0': {}
 
-  '@vitejs/plugin-vue@5.0.5(vite@5.2.12(@types/node@20.14.2))(vue@3.4.27(typescript@5.4.5))':
+  '@vitejs/plugin-vue@5.0.5(vite@5.2.13(@types/node@20.14.2))(vue@3.4.27(typescript@5.4.5))':
     dependencies:
-      vite: 5.2.12(@types/node@20.14.2)
+      vite: 5.2.13(@types/node@20.14.2)
       vue: 3.4.27(typescript@5.4.5)
 
   '@vitest/coverage-v8@1.6.0(vitest@1.6.0(@types/node@20.14.2)(happy-dom@14.12.0))':
@@ -4817,7 +4817,7 @@ snapshots:
       debug: 4.3.4
       pathe: 1.1.2
       picocolors: 1.0.0
-      vite: 5.2.12(@types/node@20.14.2)
+      vite: 5.2.13(@types/node@20.14.2)
     transitivePeerDependencies:
       - '@types/node'
       - less
@@ -4828,7 +4828,7 @@ snapshots:
       - supports-color
       - terser
 
-  vite-plugin-monkey@4.0.0(vite@5.2.12(@types/node@20.14.2)):
+  vite-plugin-monkey@4.0.0(vite@5.2.13(@types/node@20.14.2)):
     dependencies:
       acorn-walk: 8.3.2
       cross-spawn: 7.0.3
@@ -4840,9 +4840,9 @@ snapshots:
       picocolors: 1.0.0
       systemjs: 6.14.3
     optionalDependencies:
-      vite: 5.2.12(@types/node@20.14.2)
+      vite: 5.2.13(@types/node@20.14.2)
 
-  vite@5.2.12(@types/node@20.14.2):
+  vite@5.2.13(@types/node@20.14.2):
     dependencies:
       esbuild: 0.20.2
       postcss: 8.4.38
@@ -4870,7 +4870,7 @@ snapshots:
       strip-literal: 2.1.0
       tinybench: 2.6.0
       tinypool: 0.8.4
-      vite: 5.2.12(@types/node@20.14.2)
+      vite: 5.2.13(@types/node@20.14.2)
       vite-node: 1.6.0(@types/node@20.14.2)
       why-is-node-running: 2.2.2
     optionalDependencies:
