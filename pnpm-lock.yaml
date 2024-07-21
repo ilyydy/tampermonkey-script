@@ -73,8 +73,8 @@ importers:
         specifier: 5.3.1
         version: 5.3.1(@types/node@20.14.11)
       vite-plugin-monkey:
-        specifier: 4.0.4
-        version: 4.0.4(vite@5.3.1(@types/node@20.14.11))
+        specifier: 4.0.6
+        version: 4.0.6(vite@5.3.1(@types/node@20.14.11))
       vitest:
         specifier: 2.0.3
         version: 2.0.3(@types/node@20.14.11)(happy-dom@14.12.3)
@@ -2554,8 +2554,8 @@ packages:
     engines: {node: ^18.0.0 || >=20.0.0}
     hasBin: true
 
-  vite-plugin-monkey@4.0.4:
-    resolution: {integrity: sha512-U7G463yGr/IOOzadWwA3Z2CpQR4fvpb6xEO8chwtO1AR4OQUDSQu9s/UbAUNBufav3YDkb69d2LUZtfkTRIdsA==}
+  vite-plugin-monkey@4.0.6:
+    resolution: {integrity: sha512-JiJqlDhU/4xkAMDuJV/iR2QQXqQG+YGmSNubJTumcNQr4T+DQlQ7+VP6zbdAGDO/vVfSReDn+Ztr5bcFu0GIww==}
     peerDependencies:
       vite: ^5.0.0
     peerDependenciesMeta:
@@ -5174,7 +5174,7 @@ snapshots:
       - supports-color
       - terser
 
-  vite-plugin-monkey@4.0.4(vite@5.3.1(@types/node@20.14.11)):
+  vite-plugin-monkey@4.0.6(vite@5.3.1(@types/node@20.14.11)):
     dependencies:
       acorn-walk: 8.3.2
       cross-spawn: 7.0.3
@@ -5183,7 +5183,7 @@ snapshots:
       magic-string: 0.30.10
       mrmime: 1.0.1
       open: 9.1.0
-      picocolors: 1.0.0
+      picocolors: 1.0.1
       systemjs: 6.14.3
     optionalDependencies:
       vite: 5.3.1(@types/node@20.14.11)
