@@ -43,7 +43,7 @@
     "typescript": "5.5.2",
     "vite": "5.3.1",
     "vite-plugin-monkey": "4.0.4",
-    "vitest": "2.0.1",
+    "vitest": "2.0.3",
     "vue-tsc": "2.0.26"
   },
   "config": {
