@@ -13,7 +13,7 @@
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix",
     "lint:check": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts"
   },
-  "packageManager": "pnpm@9.5.0",
+  "packageManager": "pnpm@9.12.2",
   "dependencies": {
     "vue": "3.4.33"
   },
