@@ -14,7 +14,7 @@ importers:
     devDependencies:
       '@commitlint/cli':
         specifier: 19.3.0
-        version: 19.3.0(@types/node@20.14.11)(typescript@5.5.2)
+        version: 19.3.0(@types/node@20.19.43)(typescript@5.5.2)
       '@commitlint/config-conventional':
         specifier: 19.2.2
         version: 19.2.2
@@ -25,14 +25,14 @@ importers:
         specifier: 4.17.12
         version: 4.17.12
       '@types/node':
-        specifier: 20.14.11
-        version: 20.14.11
+        specifier: 20.19.43
+        version: 20.19.43
       '@vitejs/plugin-vue':
         specifier: 5.0.5
-        version: 5.0.5(vite@5.3.1(@types/node@20.14.11))(vue@3.4.33(typescript@5.5.2))
+        version: 5.0.5(vite@5.3.1(@types/node@20.19.43))(vue@3.4.33(typescript@5.5.2))
       '@vitest/coverage-v8':
         specifier: ^2.0.0
-        version: 2.0.3(vitest@2.0.3(@types/node@20.14.11)(happy-dom@14.12.3))
+        version: 2.0.3(vitest@2.0.3(@types/node@20.19.43)(happy-dom@14.12.3))
       '@vue/eslint-config-typescript':
         specifier: 13.0.0
         version: 13.0.0(eslint-plugin-vue@9.27.0(eslint@8.57.0))(eslint@8.57.0)(typescript@5.5.2)
@@ -41,7 +41,7 @@ importers:
         version: 5.0.0
       cz-conventional-changelog:
         specifier: 3.3.0
-        version: 3.3.0(@types/node@20.14.11)(typescript@5.5.2)
+        version: 3.3.0(@types/node@20.19.43)(typescript@5.5.2)
       eslint:
         specifier: 8.57.0
         version: 8.57.0
@@ -71,13 +71,13 @@ importers:
         version: 5.5.2
       vite:
         specifier: 5.3.1
-        version: 5.3.1(@types/node@20.14.11)
+        version: 5.3.1(@types/node@20.19.43)
       vite-plugin-monkey:
         specifier: 4.0.4
-        version: 4.0.4(vite@5.3.1(@types/node@20.14.11))
+        version: 4.0.4(vite@5.3.1(@types/node@20.19.43))
       vitest:
         specifier: 2.0.3
-        version: 2.0.3(@types/node@20.14.11)(happy-dom@14.12.3)
+        version: 2.0.3(@types/node@20.19.43)(happy-dom@14.12.3)
       vue-tsc:
         specifier: 2.0.26
         version: 2.0.26(typescript@5.5.2)
@@ -95,10 +95,10 @@ importers:
         version: 5.5.2
       vite:
         specifier: 5.3.1
-        version: 5.3.1(@types/node@20.14.11)
+        version: 5.3.1(@types/node@20.19.43)
       vitest:
         specifier: 2.0.3
-        version: 2.0.3(@types/node@20.14.11)(happy-dom@14.12.3)
+        version: 2.0.3(@types/node@20.19.43)(happy-dom@14.12.3)
 
   packages/douban-bookshelf:
     dependencies:
@@ -120,7 +120,7 @@ importers:
     devDependencies:
       '@vitejs/plugin-vue':
         specifier: 5.0.5
-        version: 5.0.5(vite@5.3.1(@types/node@20.14.11))(vue@3.4.33(typescript@5.5.2))
+        version: 5.0.5(vite@5.3.1(@types/node@20.19.43))(vue@3.4.33(typescript@5.5.2))
       conventional-changelog-cli:
         specifier: 5.0.0
         version: 5.0.0
@@ -132,10 +132,10 @@ importers:
         version: 5.5.2
       vite:
         specifier: 5.3.1
-        version: 5.3.1(@types/node@20.14.11)
+        version: 5.3.1(@types/node@20.19.43)
       vitest:
         specifier: 2.0.3
-        version: 2.0.3(@types/node@20.14.11)(happy-dom@14.12.3)
+        version: 2.0.3(@types/node@20.19.43)(happy-dom@14.12.3)
       vue-tsc:
         specifier: 2.0.26
         version: 2.0.26(typescript@5.5.2)
@@ -736,8 +736,8 @@ packages:
   '@types/lodash@4.17.7':
     resolution: {integrity: sha512-8wTvZawATi/lsmNu10/j2hk1KEP0IvjubqPE3cu1Xz7xfXXt5oCq3SNUz4fMIP4XGF9Ky+Ue2tBA3hcS7LSBlA==}
 
-  '@types/node@20.14.11':
-    resolution: {integrity: sha512-kprQpL8MMeszbz6ojB5/tU8PLN4kesnN8Gjzw349rDlNgsSzg90lAVj3llK99Dh7JON+t9AuscPPFW6mPbTnSA==}
+  '@types/node@20.19.43':
+    resolution: {integrity: sha512-6oYBAi5ikg4Pl+kGsoYtawUMBT2zZMCvPNF7pVLnHZfd1zf38DRiWn/gT01RYCdUqkv7Fhr+C9ot4/tb+2sVvA==}
 
   '@types/normalize-package-data@2.4.4':
     resolution: {integrity: sha512-37i+OaWTh9qeK4LSHPsyRC7NahnGotNuZvjLSgcPzblpHB3rrCJxAOgI5gCdKm7coonsaX1Of0ILiTcnZjbfxA==}
@@ -808,6 +808,7 @@ packages:
 
   '@ungap/structured-clone@1.2.0':
     resolution: {integrity: sha512-zuVdFrMJiuCDQUMCzQaD6KL28MjnqqN8XnAqiEq9PNm/hCPTSGfrXCOfwj1ow4LFb/tNymJPwsNbVePc1xFqrQ==}
+    deprecated: Potential CWE-502 - Update to 1.3.1 or higher
 
   '@vitejs/plugin-vue@5.0.5':
     resolution: {integrity: sha512-LOjm7XeIimLBZyzinBQ6OSm3UBCNVCpLkxGC0oWmm2YPzVZoxMsdvNVimLTBzpAnR9hl/yn1SHGuRfe6/Td9rQ==}
@@ -1147,15 +1148,18 @@ packages:
   conventional-changelog-atom@5.0.0:
     resolution: {integrity: sha512-WfzCaAvSCFPkznnLgLnfacRAzjgqjLUjvf3MftfsJzQdDICqkOOpcMtdJF3wTerxSpv2IAAjX8doM3Vozqle3g==}
     engines: {node: '>=18'}
+    deprecated: This preset is deprecated. Please use conventional-changelog-conventionalcommits or conventional-changelog-angular instead.
 
   conventional-changelog-cli@5.0.0:
     resolution: {integrity: sha512-9Y8fucJe18/6ef6ZlyIlT2YQUbczvoQZZuYmDLaGvcSBP+M6h+LAvf7ON7waRxKJemcCII8Yqu5/8HEfskTxJQ==}
     engines: {node: '>=18'}
+    deprecated: This package is no longer maintained. Please use the conventional-changelog package instead.
     hasBin: true
 
   conventional-changelog-codemirror@5.0.0:
     resolution: {integrity: sha512-8gsBDI5Y3vrKUCxN6Ue8xr6occZ5nsDEc4C7jO/EovFGozx8uttCAyfhRrvoUAWi2WMm3OmYs+0mPJU7kQdYWQ==}
     engines: {node: '>=18'}
+    deprecated: This preset is deprecated. Please use conventional-changelog-conventionalcommits or conventional-changelog-angular instead.
 
   conventional-changelog-conventionalcommits@7.0.2:
     resolution: {integrity: sha512-NKXYmMR/Hr1DevQegFB4MwfM5Vv0m4UIxKZTTYuD98lpTknaZlSRrDOG4X7wIXpGkfsYxZTghUN+Qq+T0YQI7w==}
@@ -1168,26 +1172,32 @@ packages:
   conventional-changelog-core@8.0.0:
     resolution: {integrity: sha512-EATUx5y9xewpEe10UEGNpbSHRC6cVZgO+hXQjofMqpy+gFIrcGvH3Fl6yk2VFKh7m+ffenup2N7SZJYpyD9evw==}
     engines: {node: '>=18'}
+    deprecated: Deprecated and no longer maintained. Please use conventional-changelog instead.
 
   conventional-changelog-ember@5.0.0:
     resolution: {integrity: sha512-RPflVfm5s4cSO33GH/Ey26oxhiC67akcxSKL8CLRT3kQX2W3dbE19sSOM56iFqUJYEwv9mD9r6k79weWe1urfg==}
     engines: {node: '>=18'}
+    deprecated: This preset is deprecated. Please use conventional-changelog-conventionalcommits or conventional-changelog-angular instead.
 
   conventional-changelog-eslint@6.0.0:
     resolution: {integrity: sha512-eiUyULWjzq+ybPjXwU6NNRflApDWlPEQEHvI8UAItYW/h22RKkMnOAtfCZxMmrcMO1OKUWtcf2MxKYMWe9zJuw==}
     engines: {node: '>=18'}
+    deprecated: This preset is deprecated. Please use conventional-changelog-conventionalcommits or conventional-changelog-angular instead.
 
   conventional-changelog-express@5.0.0:
     resolution: {integrity: sha512-D8Q6WctPkQpvr2HNCCmwU5GkX22BVHM0r4EW8vN0230TSyS/d6VQJDAxGb84lbg0dFjpO22MwmsikKL++Oo/oQ==}
     engines: {node: '>=18'}
+    deprecated: This preset is deprecated. Please use conventional-changelog-conventionalcommits or conventional-changelog-angular instead.
 
   conventional-changelog-jquery@6.0.0:
     resolution: {integrity: sha512-2kxmVakyehgyrho2ZHBi90v4AHswkGzHuTaoH40bmeNqUt20yEkDOSpw8HlPBfvEQBwGtbE+5HpRwzj6ac2UfA==}
     engines: {node: '>=18'}
+    deprecated: This preset is deprecated. Please use conventional-changelog-conventionalcommits or conventional-changelog-angular instead.
 
   conventional-changelog-jshint@5.0.0:
     resolution: {integrity: sha512-gGNphSb/opc76n2eWaO6ma4/Wqu3tpa2w7i9WYqI6Cs2fncDSI2/ihOfMvXveeTTeld0oFvwMVNV+IYQIk3F3g==}
     engines: {node: '>=18'}
+    deprecated: This preset is deprecated. Please use conventional-changelog-conventionalcommits or conventional-changelog-angular instead.
 
   conventional-changelog-preset-loader@5.0.0:
     resolution: {integrity: sha512-SetDSntXLk8Jh1NOAl1Gu5uLiCNSYenB5tm0YVeZKePRIgDW9lQImromTwLa3c/Gae298tsgOM+/CYT9XAl0NA==}
@@ -1416,6 +1426,7 @@ packages:
   eslint@8.57.0:
     resolution: {integrity: sha512-dZ6+mexnaTIbSBZWgou51U6OmzIhYM2VcNdtiTtI7qPNZm35Akpr0f6vtw3w1Kmn5PYo+tZVfh13WrhpS6oLqQ==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
+    deprecated: This version is no longer supported. Please see https://eslint.org/version-support for other options.
     hasBin: true
 
   espree@9.6.1:
@@ -1572,16 +1583,19 @@ packages:
   git-raw-commits@4.0.0:
     resolution: {integrity: sha512-ICsMM1Wk8xSGMowkOmPrzo2Fgmfo4bMHLNX6ytHjajRJUqvHOw/TFapQ+QG75c3X/tTDDhOSRPGC52dDbNM8FQ==}
     engines: {node: '>=16'}
+    deprecated: Deprecated and no longer maintained. Use @conventional-changelog/git-client instead.
     hasBin: true
 
   git-raw-commits@5.0.0:
     resolution: {integrity: sha512-I2ZXrXeOc0KrCvC7swqtIFXFN+rbjnC7b2T943tvemIOVNl+XP8YnA9UVwqFhzzLClnSA60KR/qEjLpXzs73Qg==}
     engines: {node: '>=18'}
+    deprecated: Deprecated and no longer maintained. Use @conventional-changelog/git-client instead.
     hasBin: true
 
   git-semver-tags@8.0.0:
     resolution: {integrity: sha512-N7YRIklvPH3wYWAR2vysaqGLPRcpwQ0GKdlqTiVN5w1UmCdaeY3K8s6DMKRCh54DDdzyt/OAB6C8jgVtb7Y2Fg==}
     engines: {node: '>=18'}
+    deprecated: Deprecated and no longer maintained. Use @conventional-changelog/git-client instead.
     hasBin: true
 
   glob-parent@5.1.2:
@@ -1594,11 +1608,12 @@ packages:
 
   glob@10.4.5:
     resolution: {integrity: sha512-7Bv8RF0k6xjo7d4A/PxYLbUCfb6c+Vpd2/mB2yRDlew7Jb5hEXiCD9ibfO7wpk8i4sevK6DFny9h7EYbM3/sHg==}
+    deprecated: Old versions of glob are not supported, and contain widely publicized security vulnerabilities, which have been fixed in the current version. Please update. Support for old versions may be purchased (at exorbitant rates) by contacting i@izs.me
     hasBin: true
 
   glob@7.2.3:
     resolution: {integrity: sha512-nFR0zLpU2YCaRxwoCJvL6UvCH2JFyFVIvwTLsIf21AuHlMskA1hhTdk+LlYJtOlYt9v6dvszD2BGRqBL+iQK9Q==}
-    deprecated: Glob versions prior to v9 are no longer supported
+    deprecated: Old versions of glob are not supported, and contain widely publicized security vulnerabilities, which have been fixed in the current version. Please update. Support for old versions may be purchased (at exorbitant rates) by contacting i@izs.me
 
   global-directory@4.0.1:
     resolution: {integrity: sha512-wHTUcDUoZ1H5/0iVqEudYW4/kAlN5cZ3j/bXn0Dpbizl9iaUVeWSHqiOjsgk6OW2bkLclbBjzewBz6weQ1zA2Q==}
@@ -2525,8 +2540,8 @@ packages:
     engines: {node: '>=0.8.0'}
     hasBin: true
 
-  undici-types@5.26.5:
-    resolution: {integrity: sha512-JlCMO+ehdEIKqlFxk6IfVoAUVmgz7cU7zD/h9XZ0qzeosSHmUJVOzSQvvYSYWXkFXC+IfLKSIffhv0sVZup6pA==}
+  undici-types@6.21.0:
+    resolution: {integrity: sha512-iwDZqg0QAGrg9Rav5H4n0M64c3mkR59cJ6wQp+7C4nI0gsmExaedaYLNO44eT4AtBBwjbTiGPMlt2Md0T9H9JQ==}
 
   unicorn-magic@0.1.0:
     resolution: {integrity: sha512-lRfVq8fE8gz6QMBuDM6a+LO3IAzTi05H6gCVaUpir2E1Rwpo4ZUog45KpNXKC/Mn3Yb9UDuHumeFTo9iV/D9FQ==}
@@ -2800,11 +2815,11 @@ snapshots:
 
   '@bcoe/v8-coverage@0.2.3': {}
 
-  '@commitlint/cli@19.3.0(@types/node@20.14.11)(typescript@5.5.2)':
+  '@commitlint/cli@19.3.0(@types/node@20.19.43)(typescript@5.5.2)':
     dependencies:
       '@commitlint/format': 19.3.0
       '@commitlint/lint': 19.2.2
-      '@commitlint/load': 19.2.0(@types/node@20.14.11)(typescript@5.5.2)
+      '@commitlint/load': 19.2.0(@types/node@20.19.43)(typescript@5.5.2)
       '@commitlint/read': 19.2.1
       '@commitlint/types': 19.0.3
       execa: 8.0.1
@@ -2851,7 +2866,7 @@ snapshots:
       '@commitlint/rules': 19.0.3
       '@commitlint/types': 19.0.3
 
-  '@commitlint/load@19.2.0(@types/node@20.14.11)(typescript@5.5.2)':
+  '@commitlint/load@19.2.0(@types/node@20.19.43)(typescript@5.5.2)':
     dependencies:
       '@commitlint/config-validator': 19.0.3
       '@commitlint/execute-rule': 19.0.0
@@ -2859,7 +2874,7 @@ snapshots:
       '@commitlint/types': 19.0.3
       chalk: 5.3.0
       cosmiconfig: 9.0.0(typescript@5.5.2)
-      cosmiconfig-typescript-loader: 5.0.0(@types/node@20.14.11)(cosmiconfig@9.0.0(typescript@5.5.2))(typescript@5.5.2)
+      cosmiconfig-typescript-loader: 5.0.0(@types/node@20.19.43)(cosmiconfig@9.0.0(typescript@5.5.2))(typescript@5.5.2)
       lodash.isplainobject: 4.0.6
       lodash.merge: 4.6.2
       lodash.uniq: 4.5.0
@@ -3198,7 +3213,7 @@ snapshots:
 
   '@types/conventional-commits-parser@5.0.0':
     dependencies:
-      '@types/node': 20.14.11
+      '@types/node': 20.19.43
 
   '@types/estree@1.0.5': {}
 
@@ -3212,9 +3227,9 @@ snapshots:
 
   '@types/lodash@4.17.7': {}
 
-  '@types/node@20.14.11':
+  '@types/node@20.19.43':
     dependencies:
-      undici-types: 5.26.5
+      undici-types: 6.21.0
 
   '@types/normalize-package-data@2.4.4': {}
 
@@ -3310,12 +3325,12 @@ snapshots:
 
   '@ungap/structured-clone@1.2.0': {}
 
-  '@vitejs/plugin-vue@5.0.5(vite@5.3.1(@types/node@20.14.11))(vue@3.4.33(typescript@5.5.2))':
+  '@vitejs/plugin-vue@5.0.5(vite@5.3.1(@types/node@20.19.43))(vue@3.4.33(typescript@5.5.2))':
     dependencies:
-      vite: 5.3.1(@types/node@20.14.11)
+      vite: 5.3.1(@types/node@20.19.43)
       vue: 3.4.33(typescript@5.5.2)
 
-  '@vitest/coverage-v8@2.0.3(vitest@2.0.3(@types/node@20.14.11)(happy-dom@14.12.3))':
+  '@vitest/coverage-v8@2.0.3(vitest@2.0.3(@types/node@20.19.43)(happy-dom@14.12.3))':
     dependencies:
       '@ampproject/remapping': 2.3.0
       '@bcoe/v8-coverage': 0.2.3
@@ -3330,7 +3345,7 @@ snapshots:
       strip-literal: 2.1.0
       test-exclude: 7.0.1
       tinyrainbow: 1.2.0
-      vitest: 2.0.3(@types/node@20.14.11)(happy-dom@14.12.3)
+      vitest: 2.0.3(@types/node@20.19.43)(happy-dom@14.12.3)
     transitivePeerDependencies:
       - supports-color
 
@@ -3676,10 +3691,10 @@ snapshots:
 
   commander@12.1.0: {}
 
-  commitizen@4.3.0(@types/node@20.14.11)(typescript@5.5.2):
+  commitizen@4.3.0(@types/node@20.19.43)(typescript@5.5.2):
     dependencies:
       cachedir: 2.3.0
-      cz-conventional-changelog: 3.3.0(@types/node@20.14.11)(typescript@5.5.2)
+      cz-conventional-changelog: 3.3.0(@types/node@20.19.43)(typescript@5.5.2)
       dedent: 0.7.0
       detect-indent: 6.1.0
       find-node-modules: 2.1.3
@@ -3802,9 +3817,9 @@ snapshots:
     dependencies:
       meow: 13.2.0
 
-  cosmiconfig-typescript-loader@5.0.0(@types/node@20.14.11)(cosmiconfig@9.0.0(typescript@5.5.2))(typescript@5.5.2):
+  cosmiconfig-typescript-loader@5.0.0(@types/node@20.19.43)(cosmiconfig@9.0.0(typescript@5.5.2))(typescript@5.5.2):
     dependencies:
-      '@types/node': 20.14.11
+      '@types/node': 20.19.43
       cosmiconfig: 9.0.0(typescript@5.5.2)
       jiti: 1.21.0
       typescript: 5.5.2
@@ -3832,16 +3847,16 @@ snapshots:
 
   csv-stringify@6.5.0: {}
 
-  cz-conventional-changelog@3.3.0(@types/node@20.14.11)(typescript@5.5.2):
+  cz-conventional-changelog@3.3.0(@types/node@20.19.43)(typescript@5.5.2):
     dependencies:
       chalk: 2.4.2
-      commitizen: 4.3.0(@types/node@20.14.11)(typescript@5.5.2)
+      commitizen: 4.3.0(@types/node@20.19.43)(typescript@5.5.2)
       conventional-commit-types: 3.0.0
       lodash.map: 4.6.0
       longest: 2.0.1
       word-wrap: 1.2.5
     optionalDependencies:
-      '@commitlint/load': 19.2.0(@types/node@20.14.11)(typescript@5.5.2)
+      '@commitlint/load': 19.2.0(@types/node@20.19.43)(typescript@5.5.2)
     transitivePeerDependencies:
       - '@types/node'
       - typescript
@@ -5138,7 +5153,7 @@ snapshots:
   uglify-js@3.17.4:
     optional: true
 
-  undici-types@5.26.5: {}
+  undici-types@6.21.0: {}
 
   unicorn-magic@0.1.0: {}
 
@@ -5157,13 +5172,13 @@ snapshots:
       spdx-correct: 3.2.0
       spdx-expression-parse: 3.0.1
 
-  vite-node@2.0.3(@types/node@20.14.11):
+  vite-node@2.0.3(@types/node@20.19.43):
     dependencies:
       cac: 6.7.14
       debug: 4.3.5
       pathe: 1.1.2
       tinyrainbow: 1.2.0
-      vite: 5.3.1(@types/node@20.14.11)
+      vite: 5.3.1(@types/node@20.19.43)
     transitivePeerDependencies:
       - '@types/node'
       - less
@@ -5174,7 +5189,7 @@ snapshots:
       - supports-color
       - terser
 
-  vite-plugin-monkey@4.0.4(vite@5.3.1(@types/node@20.14.11)):
+  vite-plugin-monkey@4.0.4(vite@5.3.1(@types/node@20.19.43)):
     dependencies:
       acorn-walk: 8.3.2
       cross-spawn: 7.0.3
@@ -5186,18 +5201,18 @@ snapshots:
       picocolors: 1.0.0
       systemjs: 6.14.3
     optionalDependencies:
-      vite: 5.3.1(@types/node@20.14.11)
+      vite: 5.3.1(@types/node@20.19.43)
 
-  vite@5.3.1(@types/node@20.14.11):
+  vite@5.3.1(@types/node@20.19.43):
     dependencies:
       esbuild: 0.21.4
       postcss: 8.4.38
       rollup: 4.13.0
     optionalDependencies:
-      '@types/node': 20.14.11
+      '@types/node': 20.19.43
       fsevents: 2.3.3
 
-  vitest@2.0.3(@types/node@20.14.11)(happy-dom@14.12.3):
+  vitest@2.0.3(@types/node@20.19.43)(happy-dom@14.12.3):
     dependencies:
       '@ampproject/remapping': 2.3.0
       '@vitest/expect': 2.0.3
@@ -5215,11 +5230,11 @@ snapshots:
       tinybench: 2.8.0
       tinypool: 1.0.0
       tinyrainbow: 1.2.0
-      vite: 5.3.1(@types/node@20.14.11)
-      vite-node: 2.0.3(@types/node@20.14.11)
+      vite: 5.3.1(@types/node@20.19.43)
+      vite-node: 2.0.3(@types/node@20.19.43)
       why-is-node-running: 2.2.2
     optionalDependencies:
-      '@types/node': 20.14.11
+      '@types/node': 20.19.43
       happy-dom: 14.12.3
     transitivePeerDependencies:
       - less
